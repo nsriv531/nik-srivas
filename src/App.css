@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Navbar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 260px;
+  align-items: center;
+  background-color: #3f54f7;
+}
+
+.Navbarlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: #fff;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 5px;
+  color: #fff;
+}
+
+.Navbarlinks a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.Navbarlinks a:hover {
+  text-decoration: underline;
+}
+
+.Landing {
+  background-color: #3f54f7;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.Landing h1 {
+  font-size: 50px;
+  font-weight: 800;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.Landing h2 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.LandingButton {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  color: black;
+  width: 200px;
+  height: 50px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border: 2px solid black;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.LandingButton:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.Projects {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 260px 100px;
+}
+
+.Project:nth-child(even) {
+  text-align: right;
+}
+
+.Projects h1 {
+  font-size: 50px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.Projects h2 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.Project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  gap: 20px;
+}
+
+.Project > div {
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.Project > div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.Project > div p {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+
+.Project img {
+  margin-left: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.ProjectTags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.Project:nth-child(even) .ProjectTags {
+  justify-content: flex-end;
+}
+
+.ProjectTags div {
+  text-decoration: none;
+  color: #3f54f7;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: rgba(63, 84, 247, 0.2);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.ProjectLink {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(63, 84, 247, 0.2);
+  color: #3f54f7;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-top: 40px;
+}
+
+.ProjectLink:hover {
+  background-color: #3f54f7;
+  color: #fff;
+}
+
+.HireMe {
+  background-color: #3f54f7;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 260px;
+}
+
+.HireMe h1 {
+  font-size: 50px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.HireMe form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+
+.HireMe label {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.HireMe form input {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+}
+
+.HireMe form select {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+}
+
+.HireMe form textarea {
+  width: 100%;
+  height: 200px;
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+}
+
+.HireMe form input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.HireMe form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #3f54f7;
+  cursor: pointer;
+}
+
+.Footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 12px;
+
+  margin: 50px 260px;
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #000;
+}
+
+.Footer h4,
+.Footer h5 {
+  color: #000;
+}
+
+.Footer .socials {
+  grid-column: -1 / 1;
+  grid-row: 2;
+}
+
+.Footer .socials a {
+  color: #000;
+  font-size: 30px;
+  padding-right: 10px;
+  transition: all 0.2s;
+}
+
+small {
+  padding-left: 260px;
+}
