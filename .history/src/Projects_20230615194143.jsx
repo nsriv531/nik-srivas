@@ -7,6 +7,24 @@ function Projects() {
       <h2>Web Design, Software Engineering, and Game Development.</h2>
       <div className="ProjectContainer">
         <div className="Project">
+          <img src="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png" alt="Project 1" />
+          <div>
+            <h2>Buckey the Bucket</h2>
+            <p>
+             Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines,
+             while successfuly incoporating all the wild cards associated with the theme.
+            </p>
+            <div className="ProjectTags">
+              <div>GDScript</div>
+              <div>Aseprite</div>
+              <div>Audacity</div>
+            </div>
+            <a class="ProjectLink" href="https://nashdashin.itch.io/buckythebucket">
+              View Project
+            </a>
+          </div>
+        </div>
+        <div className="Project">
           <div>
             <h2>Web II - The Project</h2>
             <p>
@@ -62,25 +80,7 @@ function Projects() {
               <div>C#</div>
               <div>Engineering Principles</div>
             </div>
-            <a class="ProjectLink" href="https://www.acrobotics.ca/project-xp1-canis">
-              View Project
-            </a>
-          </div>
-        </div>
-        <div className="Project">
-          <img src="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png" alt="Project 1" />
-          <div>
-            <h2>Buckey the Bucket</h2>
-            <p>
-             Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines,
-             while successfuly incoporating all the wild cards associated with the theme.
-            </p>
-            <div className="ProjectTags">
-              <div>GDScript</div>
-              <div>Aseprite</div>
-              <div>Audacity</div>
-            </div>
-            <a class="ProjectLink" href="https://nashdashin.itch.io/buckythebucket">
+            <a class="ProjectLink" href="https://www.google.com">
               View Project
             </a>
           </div>
