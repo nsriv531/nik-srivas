@@ -37,7 +37,6 @@ function Projects() {
             <div className="ProjectTags">
               <div>CSS</div>
               <div>JavaScript</div>
-              <div>PHP</div>
               <div>SQL</div>
             </div>
             <a class="ProjectLink" href="https://www.google.com">
