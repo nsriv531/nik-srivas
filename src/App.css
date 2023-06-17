@@ -96,6 +96,36 @@ h5 {
   cursor: pointer;
 }
 
+.Volunteering {
+  background-color: #3f54f7;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 260px 100px;
+  
+}
+
+.Volunteering:nth-child(even) {
+  text-align: right;
+}
+
+.Volunteering h1 {
+  font-size: 50px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+.Volunteering h2 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+
 .Projects {
   background-color: #fff;
   color: #000;
