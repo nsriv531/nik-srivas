@@ -4,7 +4,7 @@ function Volunteering() {
 
     return (
         <div className="Volunteering">
-        <h1 id="projects">Volunteering and Extracurricular Activities</h1>
+        <h1 id="projects">Volunteering and Extra</h1>
         <h2>AC Robotics and Game Development</h2>
         <div className="ProjectContainer">
           <div className="Project">
