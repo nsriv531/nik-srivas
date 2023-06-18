@@ -34,14 +34,13 @@ function Volunteering() {
             <div>
               <h2>President - MRU GDDC</h2>
               <p>
-               At Mount Royal University, I started my schools first club revolving around Game Design and Development. Through this club and my exec team,
-               I was able to faciliate a great environment for those wanting to learn game development. This was done through my efforts in hosting events, such
-               as game jams, social meet ups, as well as the collaboration with other organizations and clubs throughout calgary and the alberta region. 
+               Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines,
+               while successfuly incoporating all the wild cards associated with the theme.
               </p>
               <div className="ProjectTags">
-                <div>Leadership</div>
-                <div>Game Development</div>
-                <div>Event Handeling</div>
+                <div>GDScript</div>
+                <div>Aseprite</div>
+                <div>Audacity</div>
               </div>
               <a class="ProjectLink" href="https://nashdashin.itch.io/buckythebucket">
                 View Project

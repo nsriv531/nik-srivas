@@ -39,9 +39,9 @@ function Volunteering() {
                as game jams, social meet ups, as well as the collaboration with other organizations and clubs throughout calgary and the alberta region. 
               </p>
               <div className="ProjectTags">
-                <div>Leadership</div>
-                <div>Game Development</div>
-                <div>Event Handeling</div>
+                <div>GDScript</div>
+                <div>Aseprite</div>
+                <div>Audacity</div>
               </div>
               <a class="ProjectLink" href="https://nashdashin.itch.io/buckythebucket">
                 View Project
