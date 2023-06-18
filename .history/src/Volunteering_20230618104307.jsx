@@ -12,7 +12,7 @@ function Volunteering() {
               <h2>Director of Education - AC Robotics
               </h2>
               <p>
-                At AC Robotics, I lead the entire education team for the non-profit organization of AC Robotics.
+                At AC Robotics, I lead the entire educataion team for the non-profit organization of AC Robotics.
                 We're an organization that has extended into all post secondary schools here in Calgary. I run all our teams in
                 the name of First Robotics. As of last year, our first FTC reached the provincial championships, where we placed 
                 top 20 out of 50 teams that competed.
@@ -23,7 +23,7 @@ function Volunteering() {
                 <div>Education</div>
                 <div>Java</div>
               </div>
-              <a class="ProjectLink" href="https://www.acrobotics.ca/first">
+              <a class="ProjectLink" href="https://www.google.com">
                 View Project
               </a>
             </div>
@@ -41,7 +41,7 @@ function Volunteering() {
               <div className="ProjectTags">
                 <div>Leadership</div>
                 <div>Game Development</div>
-                <div>Event Handling</div>
+                <div>Event Handeling</div>
               </div>
               <a class="ProjectLink" href="https://mru-gddc.vercel.app/">
                 View Project
