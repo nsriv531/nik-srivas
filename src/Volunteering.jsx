@@ -9,7 +9,7 @@ function Volunteering() {
         <div className="ProjectContainer">
           <div className="Project">
             <div>
-              <h2>Director of Education - AC Robotics
+              <h2>Director of Education for AC Robotics
               </h2>
               <p>
                 At AC Robotics, I lead the entire educataion team for the non-profit organization of AC Robotics.
