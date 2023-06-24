@@ -4,19 +4,18 @@ function Volunteering() {
 
     return (
         <div className="Volunteering">
-        <h1 id="projects">Volunteering and Extracurricular Activities</h1>
+        <h1 id="projects">Volunteering and Extra</h1>
         <h2>AC Robotics and Game Development</h2>
         <div className="ProjectContainer">
           <div className="Project">
             <div>
-              <h2>Director of Education for AC Robotics
+              <h2>Director of Education - AC Robotics
               </h2>
               <p>
-                At AC Robotics, a non-for-profit organization that is about teaching youth and post-secondar about robotics. I lead the entire education team.
+                At AC Robotics, I lead the entire education team for the non-profit organization of AC Robotics.
                 We're an organization that has extended into all post secondary schools here in Calgary. I run all our teams in
                 the name of First Robotics. As of last year, our first FTC reached the provincial championships, where we placed 
-                top 20 out of 50 teams that competed. I also help the organization run STEM related challenges and competitions that revolve around educating the youth and freshman
-                post-secondary students.
+                top 20 out of 50 teams that competed.
                 </p>
               <div className="ProjectTags">
                 <div>Leadership</div>
