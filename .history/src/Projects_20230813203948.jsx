@@ -19,7 +19,7 @@ function Projects() {
               <div>PHP</div>
               <div>SQL</div>
             </div>
-            <a class="ProjectLink" href="http://tasks.dentrisdms.com/">
+            <a class="ProjectLink" href="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531">
               View Project
             </a>
           </div>
