@@ -23,7 +23,7 @@ function Projects() {
               View Project
             </a>
           </div>
-          <img src="https://media.istockphoto.com/id/873192518/vector/dental-icon.jpg?s=612x612&w=0&k=20&c=23zrV_lGykKdRELzuHF511vvNmC6j0eIcsfc_EPpguA=" alt="Project 1" />
+          <img src="https://i.ibb.co/cQrJkSg/dentris-square.png" alt="Project 1" />
         </div>
         <div className="Project">
           <div>
