@@ -18,13 +18,16 @@ function Volunteering() {
                 top 20 out of 50 teams that competed. I also help the organization run STEM related challenges and competitions that revolve around educating the youth and freshman
                 post-secondary students.
                 </p>
-              <div className="ProjectTags">
+              <div className="VolunteeringTags">
                 <div>Leadership</div>
                 <div>Creativity</div>
-                <div>Education</div>
+                <div>Teaching</div>
+                <div>Teamwork</div>
+                <div>Engineering</div>
+                <div>Event Planning</div>
                 <div>Java</div>
               </div>
-              <a class="ProjectLink" href="https://www.acrobotics.ca/first">
+              <a class="ProjectLink" href="https://www.acrobotics.ca">
                 View Project
               </a>
             </div>
@@ -39,10 +42,11 @@ function Volunteering() {
                I was able to facilitate a great environment for those wanting to learn game development. This was done through my efforts in hosting events, such
                as game jams, social meet ups, as well as the collaboration with other organizations and clubs throughout calgary and the alberta region. 
               </p>
-              <div className="ProjectTags">
+              <div className="VolunteeringTags">
                 <div>Leadership</div>
                 <div>Game Development</div>
                 <div>Event Handling</div>
+                <div>Teamwork</div>
               </div>
               <a class="ProjectLink" href="https://mru-gddc.vercel.app/">
                 View Project

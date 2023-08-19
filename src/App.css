@@ -209,6 +209,19 @@ h5 {
   font-weight: bold;
 }
 
+.VolunteeringTags div {
+  text-decoration: none;
+  color: #fbfbfb;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: rgba(0, 30, 255, 0.2);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+
 .ProjectLink {
   width: 100%;
   display: flex;
