@@ -1,5 +1,4 @@
 import "./App.css";
-import Project from "./Project";
 
 function Projects() {
   return (
@@ -8,12 +7,35 @@ function Projects() {
       <h2>Web Design, Software Engineering, and Game Development.</h2>
       <div className="ProjectContainer">
       <Project 
+      
         title = "Tasks DentrisDMS"
-        description = "Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks for this dental clinic, making their work extremly efficent."
-        tags={["CodeIgnitor", "PHP", "SQL"]}
+        description = "Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature
+        allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks
+        for this dental clinic, making their work extremly efficent."
+        tags=""
         link="http://tasks.dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
+      
       />
+      <div className="Project">
+          <div>
+            <h2>Tasks - DentrisDMS</h2>
+            <p>
+              Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature
+              allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks
+              for this dental clinic, making their work extremly efficent. 
+            </p>
+            <div className="ProjectTags">
+              <div>CodeIgnitor</div>
+              <div>PHP</div>
+              <div>SQL</div>
+            </div>
+            <a class="ProjectLink" href="http://tasks.dentrisdms.com/">
+              View Project
+            </a>
+          </div>
+          <img src="https://i.ibb.co/cQrJkSg/dentris-square.png" alt="Project 1" />
+        </div>
         <div className="Project">
           <img src="https://www.mtroyal.ca/ProgramsCourses/FacultiesSchoolsCentres/Business/Institutes/InstituteInnovationEntrepreneurship/_images/ac_robotics_logo.png" alt="Project 1" />
           <div>
