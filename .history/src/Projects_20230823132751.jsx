@@ -10,18 +10,26 @@ function Projects() {
       <Project 
         title = "Tasks DentrisDMS"
         description = "Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks for this dental clinic, making their work extremly efficent."
-        tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
+        tags={["CodeIgnitor", "PHP", "SQL"]}
         link="http://tasks.dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
       />
-         <div className="Project">
+      <Project 
+        title = "Anhike's Kitchen"
+        description = "Anhike's Kitchen is a nigerian cuisine restaurant that operates in the Forest Lawn area of Calgary NE. For a work term of September 2023 - December 2023, I was employed with Ventures Canada to help Anhike Maintain their website. During this work term, I actively work on updating
+        anhikes website using sqaure space, migrated the sites operations to clover, and got very familar with various web plugins that are used in a business setting." 
+        tags={["SquareSpace", "Clover", "Hosting", "HTML", "Plugins"]}
+        link="https://www.ahinkeskitchen.com/"
+        projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
+      />
+        <div className="Project">
           <img src="https://www.mtroyal.ca/ProgramsCourses/FacultiesSchoolsCentres/Business/Institutes/InstituteInnovationEntrepreneurship/_images/ac_robotics_logo.png" alt="Project 1" />
           <div>
             <h2>AC Robotics Website</h2>
             <p>
-              Durign our revamp to a non-for-profit student run organization, the web team and I decided to make a website from scratch representing AC Robotics.
-              This website is built using NextJS, a rapid React Framework, as well as Tailwind CSS for styling and design. This site was very important as it allows many members to 
-              gain information about our projects, as well as potential First Recruits on our FIRST Robotics teams that I help run with The Hive. 
+              Durign our revamp into a a bigger non-for-profit organization,the web team and I decided to make a website from scratch representing AC Robotics.
+              This website is built using NextJS, a rapid React Framework, as well as Tailwind CSS for styling and design. This site was very important as it allows many students to 
+              gain information about our projects, as well as potential First Recruits on our FIRST Robotics teams that I help run. 
             </p>
             <div className="ProjectTags">
               <div>React</div>
@@ -34,14 +42,6 @@ function Projects() {
             </a>
           </div>
         </div>
-      <Project 
-       title = "Ahinke's Kitchen"
-        description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a web developer intern with the task of maintaing Ahinke's site through SquareSpace. Thisgot me very familar with SqaureSpace as a tool while, allowing me to learn how to work in a dynamic team environment. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
-        tags={["HTML", "SquareSpace", "Clover", "Google Plugins"]}
-        link="https://www.ahinkeskitchen.com/"
-        projectimage="https://media.swipepages.com/2021/6/ahinkes_logo2-3xhr-1-750.png"
-      />
-     
         <div className="Project">
           <div>
             <h2>Web II - The Project</h2>
@@ -52,10 +52,10 @@ function Projects() {
               an assortment of images with various filters.
             </p>
             <div className="ProjectTags">
+              <div>CSS</div>
               <div>JavaScript</div>
               <div>PHP</div>
-              <div>CSS</div>
-              <div>MySQL</div>
+              <div>SQL</div>
             </div>
             <a class="ProjectLink" href="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531">
               View Project

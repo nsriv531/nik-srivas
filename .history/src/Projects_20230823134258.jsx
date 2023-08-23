@@ -52,9 +52,9 @@ function Projects() {
               an assortment of images with various filters.
             </p>
             <div className="ProjectTags">
+              <div>CSS</div>
               <div>JavaScript</div>
               <div>PHP</div>
-              <div>CSS</div>
               <div>MySQL</div>
             </div>
             <a class="ProjectLink" href="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531">

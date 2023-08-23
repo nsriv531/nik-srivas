@@ -10,7 +10,7 @@ function Projects() {
       <Project 
         title = "Tasks DentrisDMS"
         description = "Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks for this dental clinic, making their work extremly efficent."
-        tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
+        tags={"HTML", "CodeIgnitor", "PHP", "SQL"]}
         link="http://tasks.dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
       />
@@ -52,10 +52,10 @@ function Projects() {
               an assortment of images with various filters.
             </p>
             <div className="ProjectTags">
+              <div>CSS</div>
               <div>JavaScript</div>
               <div>PHP</div>
-              <div>CSS</div>
-              <div>MySQL</div>
+              <div>SQL</div>
             </div>
             <a class="ProjectLink" href="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531">
               View Project
