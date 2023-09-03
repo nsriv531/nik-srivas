@@ -1,8 +1,11 @@
 import "./App.css";
 
-function Project({ title, description, tags, link, projectimage }) {
+function ProjectLeft({ title, description, tags, link, projectimage }) {
     return (
         <div className="Project">
+            <div class="image-container">
+            <img src={projectimage} alt="Project 1" />
+            </div>
             <div>
                 <h2>{title}</h2>
                 <p>
@@ -18,11 +21,8 @@ function Project({ title, description, tags, link, projectimage }) {
                     View Project
                 </a>
             </div>
-            <div class="image-container">
-            <img src={projectimage} alt="Project 1" />
-            </div>
              </div>
     );
 }
 
-export default Project;
+export default ProjectLeft;

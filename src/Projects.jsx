@@ -1,5 +1,7 @@
 import "./App.css";
 import Project from "./Project";
+import ProjectLeft from "./ProjectLeft";
+
 
 function Projects() {
   return (
@@ -14,26 +16,13 @@ function Projects() {
         link="http://tasks.dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
       />
-         <div className="Project">
-          <img src="https://www.mtroyal.ca/ProgramsCourses/FacultiesSchoolsCentres/Business/Institutes/InstituteInnovationEntrepreneurship/_images/ac_robotics_logo.png" alt="Project 1" />
-          <div>
-            <h2>AC Robotics Website</h2>
-            <p>
-              Durign our revamp to a non-for-profit student run organization, the web team and I decided to make a website from scratch representing AC Robotics.
-              This website is built using NextJS, a rapid React Framework, as well as Tailwind CSS for styling and design. This site was very important as it allows many members to 
-              gain information about our projects, as well as potential First Recruits on our FIRST Robotics teams that I help run with The Hive. 
-            </p>
-            <div className="ProjectTags">
-              <div>React</div>
-              <div>Next.js</div>
-              <div>Tailwind CSS</div>
-              <div>HTML</div>
-            </div>
-            <a class="ProjectLink" href="https://www.acrobotics.ca/">
-              View Project
-            </a>
-          </div>
-        </div>
+        <ProjectLeft 
+        title = "AC Robotics Website"
+        description = " Durign our revamp to a non-for-profit student run organization, the web team and I decided to make a website from scratch representing AC Robotics. This website is built using NextJS, a rapid React Framework, as well as Tailwind CSS for styling and design. This site was very important as it allows many members to  gain information about our projects, as well as potential First Recruits on our FIRST Robotics teams that I help run with The Hive. "
+        tags={["Next.js","React", "Tailwind CSS", "HTML"]}
+        link="https://www.acrobotics.ca/"
+        projectimage="https://www.mtroyal.ca/ProgramsCourses/FacultiesSchoolsCentres/Business/Institutes/InstituteInnovationEntrepreneurship/_images/ac_robotics_logo.png"
+      />
       <Project 
        title = "Ahinke's Kitchen"
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a web developer intern with the task of maintaing Ahinke's site through SquareSpace. Thisgot me very familar with SqaureSpace as a tool while, allowing me to learn how to work in a dynamic team environment. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
