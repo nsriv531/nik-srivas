@@ -13,7 +13,7 @@ function Footer() {
           <h5>Projects</h5>
           <h5>Hire Me</h5>
         </div>
-        {/* <div className="socials">
+        <div className="socials">
           <a href="instagram.com">
             <img src="https://via.placeholder.com/30" alt="Instagram" />
           </a>
@@ -26,7 +26,7 @@ function Footer() {
           <a href="github.com">
             <img src="https://via.placeholder.com/30" alt="Github" />
           </a>
-        </div> */}
+        </div>
       </div>
       <small>2023 © Nikhil. All rights reserved.</small>
     </>
