@@ -28,7 +28,7 @@ function Projects() {
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a web developer intern with the task of maintaing Ahinke's site through SquareSpace. Thisgot me very familar with SqaureSpace as a tool while, allowing me to learn how to work in a dynamic team environment. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
         tags={["HTML", "SquareSpace", "Clover", "Google Plugins"]}
         link="https://www.ahinkeskitchen.com/"
-        projectimage="https://media.swipepages.com/2021/6/ahinkes_logo2-3xhr-1-750.png"
+        projectimage="https://87d272ebbb1affd5c015.cdn6.editmysite.com/uploads/b/87d272ebbb1affd5c015b895e84a81bb7bc717ca77d7beab79ca3e8930ce02b6/Logo1_1592068369.jpg?width=400&optimize=medium"
       />    
         <ProjectLeft 
         title = "The Project - COMP 3512"
