@@ -7,7 +7,7 @@ function Projects() {
   return (
     <div className="Projects">
       <h1 id="projects">Project Highlights</h1>
-      <h2>Web Design, Software Engineering, and Game Development.</h2>
+      <h2>Web Design, Software Engineering, Project Management and Game Development.</h2>
       <div className="ProjectContainer">
       <Project 
         title = "Tasks DentrisDMS"
@@ -39,7 +39,7 @@ function Projects() {
       />
         <Project 
         title = "CANIS"
-        description = "CANIS is an open source project that I worked on at AC Robotics. CANIS is a fully functional robot dogthat is using inverse kinematics and was modeled after the boston-dynamics dog project. CANIS uses complex ROS along with advanced software engineering principles for movement and autonomous functionality. On this project, I learned a lot about ROS, along with Software Engineering principles."
+        description = "CANIS is an open source project that I worked on at AC Robotics. CANIS is a fully functional robot dog that is using inverse kinematics and was modeled after the boston-dynamics dog project. This project uses complex ROS along with advanced software engineering principles for movement and autonomous functionality. On this project, I learned about ROS, along with software engineering principles."
         tags={["C++", "ROS", "Software Engineering"]}
         link="https://github.com/AC-Robotics-uofc/canis_mini_firmware"
         projectimage="https://hips.hearstapps.com/hmg-prod/images/boston-dynamics-spot-1581450774.jpg"
@@ -51,24 +51,21 @@ function Projects() {
         link="https://github.com/nsriv531/2503Assignment5"
         projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webp"
       />
-        <div className="Project">
-          <img src="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png" alt="Project 1" />
-          <div>
-            <h2>Buckey the Bucket</h2>
-            <p>
-             Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines,
-             while successfully incorporating all the wild cards associated with the theme.
-            </p>
-            <div className="ProjectTags">
-              <div>GDScript</div>
-              <div>Aseprite</div>
-              <div>Audacity</div>
-            </div>
-            <a class="ProjectLink" href="https://nashdashin.itch.io/buckythebucket">
-              View Project
-            </a>
-          </div>
-        </div>
+      
+      <Project 
+        title = "Buckey The Bucket"
+        description = "Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines, while successfully incorporating all the wild cards associated with the theme."
+        tags={["GDScript", "Aseprite", "Audacity"]}
+        link="https://nashdashin.itch.io/buckythebucket"
+        projectimage="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png"
+      />
+      <ProjectLeft 
+        title = "Propel Alberta Game Jam"
+        description = "This was a game jam I organized across Alberta with both my club, the Game Design and Development Club, and the Game Design Club at the University of Calgary. This game jam was possible with the combined effort of me and a team I managed across these clubs. Not only did we make a successful event for aspiring game developers, but I was able to secure multiple sponsors that accumulated to a prize pool of over $2000."
+        tags={["Project Management", "Marketing", "Communication"]}
+        link="https://www.propelalberta.ca/streams/food-fight"
+        projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webphttps://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
+      />
       </div>
     </div>
   );
