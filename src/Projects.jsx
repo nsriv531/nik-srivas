@@ -61,10 +61,10 @@ function Projects() {
       />
       <ProjectLeft 
         title = "Propel Alberta Game Jam"
-        description = "This was a game jam I organized across Alberta with both my club, the Game Design and Development Club, and the Game Design Club at the University of Calgary. This game jam was possible with the combined effort of me and a team I managed across these clubs. Not only did we make a successful event for aspiring game developers, but I was able to secure multiple sponsors that accumulated to a prize pool of over $2000."
+        description = "This was a game jam I organized for students across Alberta. With both my club, the Game Design and Development Club, and the Game Design Club at the University of Calgary, I managed a team of executives. This game jam was possible with this team and I. Not only did we make a successful event for aspiring game developers, but I was able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
         tags={["Project Management", "Marketing", "Communication"]}
         link="https://www.propelalberta.ca/streams/food-fight"
-        projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webphttps://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
+        projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
       />
       </div>
     </div>

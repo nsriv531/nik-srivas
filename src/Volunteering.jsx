@@ -27,7 +27,7 @@ function Volunteering() {
                 <div>Event Planning</div>
                 <div>Java</div>
               </div>
-              <a class="ProjectLink" href="https://www.acrobotics.ca">
+              <a class="VolunteeringLink" href="https://www.acrobotics.ca">
                 View Project
               </a>
             </div>
@@ -48,7 +48,7 @@ function Volunteering() {
                 <div>Event Handling</div>
                 <div>Teamwork</div>
               </div>
-              <a class="ProjectLink" href="https://mru-gddc.vercel.app/">
+              <a class="VolunteeringLink" href="https://mru-gddc.vercel.app/">
                 View Project
               </a>
             </div>
