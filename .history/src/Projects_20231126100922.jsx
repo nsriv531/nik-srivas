@@ -11,7 +11,7 @@ function Projects() {
       <div className="ProjectContainer">
       <Project 
         title = "Tasks DentrisDMS"
-        description = "Tasks.dentrisDMS is a task distribution tool I built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS, I was able to build a simple to-do-list tool allowing users who work for The Pas Dental Clinic to make task distribution easy and simple within their work environment. This website helps 30 active employees manage their tasks for this dental clinic, making their work-flow to become extremely efficient."
+        description = "Tasks.dentrisDMS is a task system built using the CodeIgnitor framework in PHP. With some basic Javascript and simple styling with CSS was I able to build a simple to-do-list feature allowing users who work for The Pas Dental Clinic to make task assigning easy and practical for business use. This website helps 30 active employees manage their tasks for this dental clinic, making their work extremely efficient."
         tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
         link="http://tasks.dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
