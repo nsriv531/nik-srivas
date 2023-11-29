@@ -7,7 +7,7 @@ function Projects() {
   return (
     <div className="Projects">
       <h1 id="projects">Project Highlights</h1>
-      <h2>Web Design, Software Engineering, Project Management and Game Development.</h2>
+      <h2>Web Development, Game Development, Software Engineering, and Project Management.</h2>
       <div className="ProjectContainer">
       <Project 
         title = "Tasks DentrisDMS"
