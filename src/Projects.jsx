@@ -58,13 +58,19 @@ function Projects() {
         link="https://github.com/nsriv531/2503Assignment5"
         projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webp"
       />
-      
-      <Project 
+      <ProjectLeft 
         title = "Buckey The Bucket"
         description = "Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines, while successfully incorporating all the wild cards associated with the theme."
         tags={["GDScript", "Aseprite", "Audacity"]}
         link="https://nashdashin.itch.io/buckythebucket"
         projectimage="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png"
+      />
+      <Project 
+        title = "Freddy's Escape"
+        description = "This game I made in unity with two friends of mine. This was an after project after the GMTK game jam."
+        tags={["Unity", "Aseprite", "C#", ""]}
+        link="https://nashdashin.itch.io/freddys-escape"
+        projectimage="https://i.etsystatic.com/37643300/r/il/15430a/4842016610/il_794xN.4842016610_fefb.jpg"
       />
       </div>
     </div>
