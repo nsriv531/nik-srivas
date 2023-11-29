@@ -7,7 +7,6 @@ function Landing() {
       <h2>
         I'm a Software Engineer, Game Developer, and a leader in STEM education.
       </h2>
-      <div className="LandingButton">Contact Me</div>
     </div>
   );
 }
