@@ -68,7 +68,7 @@ function Projects() {
       <Project 
         title = "Freddy's Escape"
         description = "This game I made in unity with two friends of mine. This was an after project after the GMTK game jam."
-        tags={["Unity", "Aseprite", "C#", ""]}
+        tags={["Unity", "Aseprite", "C#"]}
         link="https://nashdashin.itch.io/freddys-escape"
         projectimage="https://i.etsystatic.com/37643300/r/il/15430a/4842016610/il_794xN.4842016610_fefb.jpg"
       />
