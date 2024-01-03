@@ -10,10 +10,10 @@ function Projects() {
       <h2>Web Development, Game Development, Software Engineering, and Project Management.</h2>
       <div className="ProjectContainer">
       <Project 
-        title = "Tasks DentrisDMS"
-        description = "Tasks.dentrisDMS is a task distribution tool I built using the CodeIgnitor framework in PHP. This website helps 30 active employees manage their tasks for this dental clinic, making their work-flow to become extremely efficient. With some basic Javascript and simple styling with CSS, I was able to build a simple to-do-list tool allowing users who work for The Pas Dental Clinic to make task distribution easy and simple within their work environment."
+        title = "DentrisDMS -  Inventory Management System"
+        description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps 30 active employees manage their tasks for this dental clinic, making their work-flow to become extremely efficient. With some basic Javascript and simple styling with CSS, I was able to build a simple to-do-list tool allowing users who work for The Pas Dental Clinic to make task distribution easy and simple within their work environment."
         tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
-        link="http://tasks.dentrisdms.com/"
+        link="http://dentrisdms.com/"
         projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
       />
        <ProjectLeft 
