@@ -14,7 +14,7 @@ function Projects() {
         description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps 30 active employees manage their tasks for this dental clinic, making their work-flow to become extremely efficient. With some basic Javascript and simple styling with CSS, I was able to build a simple to-do-list tool allowing users who work for The Pas Dental Clinic to make task distribution easy and simple within their work environment."
         tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
         link="http://dentrisdms.com/"
-        projectimage="https://i.ibb.co/cQrJkSg/dentris-square.png"
+        projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
        <ProjectLeft 
         title = "Propel Alberta Game Jam"
