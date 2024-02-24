@@ -31,7 +31,7 @@ function Volunteering() {
                 View Project
               </a>
             </div>
-            <img src="https://acrobotics.ca/Neo.webp" alt="Project 1" />
+            <img src="https://acrobotics.ca/about_me_group_photo.webp" alt="Project 1" />
           </div>
           <div className="Project">
             <img src="https://mru-gddc.vercel.app/assets/gdd-blue-banner-c53c6a24.png" alt="Project 1" />
