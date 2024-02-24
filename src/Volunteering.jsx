@@ -31,10 +31,10 @@ function Volunteering() {
                 View Project
               </a>
             </div>
-            <img src="https://cdn.discordapp.com/attachments/803773872167059488/1120031830545014834/020A9400.JPG" alt="Project 1" />
+            <img src="https://acrobotics.ca/Neo.webp" alt="Project 1" />
           </div>
           <div className="Project">
-            <img src="https://media.discordapp.net/attachments/1080855321796427858/1110994064465199195/gdd-blue-banner.png" alt="Project 1" />
+            <img src="https://mru-gddc.vercel.app/assets/gdd-blue-banner-c53c6a24.png" alt="Project 1" />
             <div>
               <h2>President - MRU GDDC</h2>
               <p>
