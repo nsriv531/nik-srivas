@@ -21,7 +21,7 @@ function Projects() {
         description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
         tags={["Project Management", "Marketing", "Communication"]}
         link="https://www.propelalberta.ca/streams/food-fight"
-        projectimage="https://cdn.discordapp.com/attachments/1076739832568627342/1177829494007021630/PropelAlberta_Colours1.png?ex=6573ee32&is=65617932&hm=65ced315969b2443f574e7c6adef4af0657e536bf853053c02cda27d31aad8e4&"
+        projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
       />
       <Project 
         title = "AC Robotics Website"
