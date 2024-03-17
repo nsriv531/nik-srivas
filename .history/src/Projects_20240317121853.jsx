@@ -40,11 +40,12 @@ function Projects() {
 
       <Project 
         title = "Health Tech Challenge 2024 - Team Mobility"
-        description = "With a team of three others, we participated in the Health Tech Challenge offered by the Institute of Innovation and Entrepreneurship. For this challenge we developed a mobile knee brace that would gather data that health professionals could use for assestments and injuries related to the knee. On my team I was responsible for developing the web companion app."        
+        description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
         tags={["React.js","Tailwind CSS", "Supabase"]}
-        link="https://htc-2024-team-mobility.vercel.app/"
-        projectimage="https://i.ibb.co/3WS4ZsB/kneeflexlogo.png"
+        link="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531"
+        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
+
         <Project 
         title = "The Project - COMP 3512"
         description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
