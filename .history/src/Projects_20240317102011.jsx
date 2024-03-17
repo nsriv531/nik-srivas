@@ -47,7 +47,7 @@ function Projects() {
 
       <ProjectLeft 
         title = "COMP 4522 - Assignment 1"
-        description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
+        description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script."
         tags={["Python"]}
         link="https://github.com/nsriv531/COMP4522-Assignment1"
         projectimage="https://www.svgrepo.com/show/376344/python.svg"
@@ -55,10 +55,10 @@ function Projects() {
 
       <Project 
         title = "COMP 4522 - Assignment 2"
-        description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to anaylze their effectivies with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog."        
+        description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
         tags={["Python","Pandas", "SQLite"]}
-        link="https://github.com/nsriv531/COMP4522-Assignment2"
-        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
+        link="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531"
+        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
 
 
