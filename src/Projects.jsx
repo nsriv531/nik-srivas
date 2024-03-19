@@ -65,7 +65,7 @@ function Projects() {
         title = "COMP 4522 - Assignment 2"
         description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
         tags={["Python","Pandas", "SQLite"]}
-        link="https://github.com/nsriv531/COMP4522-Assignment-2"
+        link="https://github.com/nsriv531/COMP4522-Assignment2_Jupyter"
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
 
