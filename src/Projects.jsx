@@ -45,7 +45,7 @@ function Projects() {
         link="https://htc-2024-team-mobility.vercel.app/"
         projectimage="https://i.ibb.co/3WS4ZsB/kneeflexlogo.png"
       />
-        <Project 
+        <ProjectLeft 
         title = "The Project - COMP 3512"
         description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
         tags={["JavaScipt","PHP", "CSS", "MySQL"]}
@@ -53,8 +53,16 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
 
+      <Project
+        title = "COMP 4513 (Advanced Web) - Assignment 1"
+        description = "For my advanced web class, I created an API using Node.js. The associated tables were in the form of CSV Files, that were then uploaded and maintained through Supabase."
+        tags={["Node.js", "Glitch", "Supabase"]}
+        link="https://github.com/nsriv531/COMP4513-Assignment-1"
+        projectimage="https://miro.medium.com/v2/resize:fit:800/1*v2vdfKqD4MtmTSgNP0o5cg.png"
+      />
+
       <ProjectLeft 
-        title = "COMP 4522 - Assignment 1"
+        title = "COMP 4522 (Advanced Databases) - Assignment 1"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
         tags={["Python"]}
         link="https://github.com/nsriv531/COMP4522-Assignment1"
