@@ -6,7 +6,7 @@ function Footer() {
       <div className="Footer">
         <div>
           <h4>Nikhil</h4>
-          <h5>Web Designer</h5>
+          <h5>Software Engineer</h5>
         </div>
         <div>
           <h4>Home</h4>
