@@ -46,6 +46,14 @@ function Projects() {
         projectimage="https://i.ibb.co/3WS4ZsB/kneeflexlogo.png"
       />
 
+    <ProjectLeft
+        title = "Assignment 1 - COMP 4513"
+        description = "For my advanced web class, I created an API using Node.js. The associated tables were in the form of CSV Files, that were then uploaded and maintained through Supabase."
+        tags={["Node.js", "Glitch", "Supabase"]}
+        link="https://github.com/nsriv531/COMP4513-Assignment-1"
+        projectimage="https://miro.medium.com/v2/resize:fit:800/1*v2vdfKqD4MtmTSgNP0o5cg.png"
+      />
+
       <ProjectLeft 
         title = "Assignment 2 - COMP 4513"
         description = "This assignment uses a custom API built in Node.js to make various cells of data appear in a basic website built in React. I made this in collaboration with a partner where I helped create the API's, as well as implemeting TailWind CSS into the project itself."        
@@ -53,23 +61,25 @@ function Projects() {
         link="https://comp-4513-assignment-2-7vu1.vercel.app/"
         projectimage="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
       />
-        <Project 
-        title = "The Project - COMP 3512"
-        description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
-        tags={["JavaScipt","PHP", "CSS", "MySQL"]}
-        link="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531"
-        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
+    
+  
+      <Project
+        title = "COMP 4522 (Advanced Databases) - Assignment 3"
+        description = ""        
+        tags={["Python","Pandas", "Linear Regression"]}
+        link="https://github.com/nsriv531/COMP-4522-Assignment3"
+        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
-
-      <ProjectLeft
-        title = "COMP 4513 (Advanced Web) - Assignment 1"
-        description = "For my advanced web class, I created an API using Node.js. The associated tables were in the form of CSV Files, that were then uploaded and maintained through Supabase."
-        tags={["Node.js", "Glitch", "Supabase"]}
-        link="https://github.com/nsriv531/COMP4513-Assignment-1"
-        projectimage="https://miro.medium.com/v2/resize:fit:800/1*v2vdfKqD4MtmTSgNP0o5cg.png"
+      
+      <Project
+        title = "COMP 4522 (Advanced Databases) - Assignment 2"
+        description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
+        tags={["Python","Pandas", "SQLite"]}
+        link="https://github.com/nsriv531/COMP4522-Assignment2_Jupyter"
+        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
-
-      <Project 
+      
+      <ProjectLeft 
         title = "COMP 4522 (Advanced Databases) - Assignment 1"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
         tags={["Python"]}
@@ -77,14 +87,14 @@ function Projects() {
         projectimage="https://www.svgrepo.com/show/376344/python.svg"
       />
 
-      <ProjectLeft 
-        title = "COMP 4522 - Assignment 2"
-        description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
-        tags={["Python","Pandas", "SQLite"]}
-        link="https://github.com/nsriv531/COMP4522-Assignment2_Jupyter"
-        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
+      
+    <Project 
+        title = "The Project - COMP 3512"
+        description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
+        tags={["JavaScipt","PHP", "CSS", "MySQL"]}
+        link="https://github.com/MRU-CSIS-3512-001-202301-ASG/the-project-nsriv531"
+        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
-
         <Project 
         title = "CANIS"
         description = "CANIS is an open source project that I worked on at AC Robotics. CANIS is a work in-progress robot dog that is using inverse kinematics and was modeled after the boston-dynamics dog project. This project uses ROS commands along with advanced software engineering principles for movement and autonomous functionality."
