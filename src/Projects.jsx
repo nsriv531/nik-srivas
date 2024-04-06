@@ -69,7 +69,7 @@ function Projects() {
       <Project
         title = "Assignment 3 - COMP 4522 (Advanced Databases)"
         description = "This assignment involved cleansing data that were given in the form of CSV files, while also finding certain calculations by using "        
-        tags={["Python","Pandas", "Linear Regression"]}
+        tags={["Python", "Pandas", "Linear Regression"]}
         link="https://github.com/nsriv531/COMP-4522-Assignment3"
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
@@ -77,7 +77,7 @@ function Projects() {
       <ProjectLeft
         title = " Assignment 2 - COMP 4522 (Advanced Databases)"
         description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
-        tags={["Python","Pandas", "SQLite"]}
+        tags={["Python", "Pandas", "SQLite"]}
         link="https://github.com/nsriv531/COMP4522-Assignment2_Jupyter"
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
