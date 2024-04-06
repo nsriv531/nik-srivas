@@ -2,7 +2,6 @@ import "./App.css";
 import Project from "./Project";
 import ProjectLeft from "./ProjectLeft";
 
-
 function Projects() {
   return (
     <div className="Projects">
@@ -68,7 +67,7 @@ function Projects() {
   
       <Project
         title = "Assignment 3 - COMP 4522 (Advanced Databases)"
-        description = "This assignment involved cleansing data that were given in the form of CSV files, while also finding certain calculations by using "        
+        description = "This assignment involved cleansing data that were given in the form of CSV files, while also finding certain calculations by using the proper libaries."        
         tags={["Python", "Pandas", "Linear Regression"]}
         link="https://github.com/nsriv531/COMP-4522-Assignment3"
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
