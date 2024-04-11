@@ -13,7 +13,6 @@ function App() {
       <Landing />
       <Projects />
       <Volunteering />
-      <HireMe />
       <Footer />
     </div>
   );

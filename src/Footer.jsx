@@ -11,7 +11,6 @@ function Footer() {
         <div>
           <h4>Home</h4>
           <h5>Projects</h5>
-          <h5>Hire Me</h5>
         </div>
         {/* <div className="socials">
           <a href="instagram.com">
