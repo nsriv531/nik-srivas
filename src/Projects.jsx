@@ -50,7 +50,7 @@ function Projects() {
       />
 
     <ProjectLeft 
-        title = "Assignment 2 - COMP 4513 (Advanced Web Development)"
+        title = "Assignment 2 - COMP 4513 (Web III)"
         description = "This assignment uses a custom API built in Node.js to make various cells of data appear in a basic website built in React. I made this in collaboration with a partner where I helped create the API's, as well as implemeting TailWind CSS into the project itself."        
         tags={["React.js", "Node.js", "Tailwind CSS"]}
         link="https://comp-4513-assignment-2-7vu1.vercel.app/"
@@ -58,7 +58,7 @@ function Projects() {
       />
   
     <Project
-        title = "Assignment 1 - COMP 4513 (Advanced Web Development)"
+        title = "Assignment 1 - COMP 4513 (Web III)"
         description = "For my advanced web class, I created an API using Node.js. The associated tables were in the form of CSV Files, that were then uploaded and maintained through Supabase."
         tags={["Node.js", "Glitch", "Supabase"]}
         link="https://github.com/nsriv531/COMP4513-Assignment-1"
@@ -66,7 +66,7 @@ function Projects() {
       />
   
       <ProjectLeft
-        title = "Assignment 3 - COMP 4522 (Advanced Databases)"
+        title = "Assignment 3 - COMP 4522 (Databases II)"
         description = "This assignment involved cleansing data that were given in the form of CSV files, while also finding certain calculations by using the proper libaries."        
         tags={["Python", "Pandas", "Linear Regression"]}
         link="https://github.com/nsriv531/COMP-4522-Assignment3"
@@ -74,7 +74,7 @@ function Projects() {
       />
       
       <Project
-        title = " Assignment 2 - COMP 4522 (Advanced Databases)"
+        title = " Assignment 2 - COMP 4522 (Databases II)"
         description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
         tags={["Python", "Pandas", "SQLite"]}
         link="https://github.com/nsriv531/COMP4522-Assignment2_Jupyter"
