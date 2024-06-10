@@ -8,7 +8,15 @@ function Projects() {
       <h1 id="projects">Project Highlights</h1>
       <h2>Web Development, Game Development, Software Engineering, and Project Management.</h2>
       <div className="ProjectContainer">
-    
+        
+      <ProjectLeft 
+        title = "Handle - Workshop Studios"
+        description = "Handle is a website I worked on primarily on the back-end. This website is responsible for organizing and managing user's art studios around ceramics and other crafts. Through this software, a user admin can manage their kilns, user experience, members, and other aspects of their business. I worked on this project collaboratively with another programmer, and used technologies like Git for collaborative programming."
+        tags={["Django","JavaScript", "React"]}
+        link="https://workshopstudios.ca/"
+        projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
+      /> 
+
       <Project 
         title = "DentrisDMS -  Inventory Management System"
         description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps this dental clinic manage their inventory for a catalogue of over 100 items. With some basic Javascript and simple styling with CSS, I was able to build this system. To inspect this application, login with Username: subadmin@admin.com, Password: 123456."
