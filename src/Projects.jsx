@@ -143,6 +143,14 @@ function Projects() {
         link="https://nashdashin.itch.io/freddys-escape"
         projectimage="https://i.etsystatic.com/37643300/r/il/15430a/4842016610/il_794xN.4842016610_fefb.jpg"
       />
+    <Project 
+        title = "RoboChaos"
+        description = "This is a game I made in Godot 4.0 with three friends of mine. This was for the Summer Slow Game Jam 2024 - Portland USA."
+        tags={["Godot", "Aseprite", "GDScript"]}
+        link="https://nashdashin.itch.io/robochaos"
+        projectimage="https://img.itch.zone/aW1nLzE3MDM3NTA0LnBuZw==/315x250%23c/ZBsbBE.png"
+      />
+
       </div>
     </div>
   );
