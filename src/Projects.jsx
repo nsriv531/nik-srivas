@@ -129,20 +129,6 @@ function Projects() {
         projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webp"
       />
   
-  <Project
-      title = "Text Game in C++ - Prisoner Escape"
-        description = "This was a text based game I made in C++ to familiarize myself with Arrays, Pointers, Concurrency, and Move Semantics."
-        tags={["C++"]}
-        link="https://github.com/nsriv531/Text-Game-in-C-"
-        projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
-    />
-    <ProjectLeft
-      title = "Text Game in Python - Swords and Daggers"
-        description = "This was a text based game I made in Python to familiarize myself with the language."
-        tags={["Python"]}
-        link="https://github.com/nsriv531/Text-Game-in-Python"
-        projectimage = "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=1920%2C1920&ssl=1"
-    />
     <Project
         title = "Buckey The Bucket"
         description = "Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines, while successfully incorporating all the wild cards associated with the theme."
