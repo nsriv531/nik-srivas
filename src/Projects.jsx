@@ -66,6 +66,14 @@ function Projects() {
       />
 
     <Project 
+        title = "Ruby Fundamentals - Book Management System"
+        description = "This is a simple project I put together to practise and harness my skills in Ruby. This is a simple book management system that uses advanced data structures written in the Ruby stack."        
+        tags={["Ruby"]}
+        link="https://github.com/nsriv531/Ruby-Fundamentals"
+        projectimage="https://sumatosoft.com/wp-content/uploads/2023/03/ruby-lang-ar21.png"
+      />
+
+    <Project 
         title = "Assignment 2 - COMP 4513 (Web III)"
         description = "This assignment uses a custom API built in Node.js to make various cells of data appear in a basic website built in React. I made this in collaboration with a partner where I helped create the API's, as well as implemeting TailWind CSS into the project itself."        
         tags={["React.js", "Node.js", "Tailwind CSS"]}
