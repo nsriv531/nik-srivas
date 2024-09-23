@@ -114,7 +114,7 @@ function Projects() {
         projectimage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsqbuvRgmIsxTT1R_bCdv8txFKkw2ylx5Lg&s"
       />
 
-      <Project
+      <ProjectLeft
         title = "Assignment 1 - COMP 4522 (Advanced Databases)"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
         tags={["Python"]}
@@ -122,7 +122,7 @@ function Projects() {
         projectimage="https://www.svgrepo.com/show/376344/python.svg"
       />
 
-    <ProjectLeft 
+    <Project 
         title = "The Project - COMP 3512 (Web II)"
         description = "The Project was a term-long project that I made over the course of my Winter 2023 Semester for my advanced Web Class, Web-II. In this class, I made an advanced website using Javascript and PHP, with a user facing side and an admin side. This site I was using complex queries in SQL to get an assortment of images with various filters."        
         tags={["JavaScipt","PHP", "CSS", "MySQL"]}
@@ -130,7 +130,7 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
       
-    <Project 
+    <ProjectLeft 
         title = "CANIS"
         description = "CANIS is an open source project that I worked on at AC Robotics. CANIS is a work in-progress robot dog that is using inverse kinematics and was modeled after the boston-dynamics dog project. This project uses ROS commands along with advanced software engineering principles for movement and autonomous functionality."
         tags={["C++", "ROS", "Software Engineering"]}
@@ -138,7 +138,7 @@ function Projects() {
         projectimage="https://hips.hearstapps.com/hmg-prod/images/boston-dynamics-spot-1581450774.jpg"
       />
     
-    <ProjectLeft 
+    <Project 
         title = "Hashmap Assignment - COMP 2503 (Advanced Data Structures)"
         description = "This assignment is from my advanced data structures class, where we were instructed to implement hash maps. This assignment involves finding an appropriate key for a word puzzle. It was a very complex assignment which I received an A on and required a deep understanding of hash map implementation using Java. I worked on this with another partner of mine where we collaboratively programmed using git."
         tags={["Java", "Git", "Teamwork"]}
@@ -146,21 +146,21 @@ function Projects() {
         projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webp"
       />
   
-    <Project
+    <ProjectLeft
         title = "Buckey The Bucket"
         description = "Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines, while successfully incorporating all the wild cards associated with the theme."
         tags={["GDScript", "Aseprite", "Audacity"]}
         link="https://nashdashin.itch.io/buckythebucket"
         projectimage="https://img.itch.zone/aW1nLzEyNDI5ODQ5LnBuZw==/315x250%23c/im8f89.png"
       />
-    <ProjectLeft 
+    <Project 
         title = "Freddy's Escape"
         description = "This game I made in unity with two friends of mine. This was an after project after the GMTK game jam."
         tags={["Unity", "Aseprite", "C#"]}
         link="https://nashdashin.itch.io/freddys-escape"
         projectimage="https://i.etsystatic.com/37643300/r/il/15430a/4842016610/il_794xN.4842016610_fefb.jpg"
       />
-    <Project 
+    <ProjectLeft 
         title = "RoboChaos"
         description = "This is a game I made in Godot 4.0 with three friends of mine. This was for the Summer Slow Game Jam 2024 - Portland USA."
         tags={["Godot", "Aseprite", "GDScript"]}
