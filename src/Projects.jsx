@@ -65,6 +65,17 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/393/187/datas/gallery.jpg"
       />
 
+
+      
+      <Project
+        title = "TensorFlow Project"
+        description = "This is a personal project of mine where I got familar with the TensorFlow ML Framework."
+        tags={["Python", "TensorFlow"]}
+        link="https://github.com/nsriv531/TensorFlow-Personal-Project"
+        projectimage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsqbuvRgmIsxTT1R_bCdv8txFKkw2ylx5Lg&s"
+      />
+
+
     <Project 
         title = "Ruby Fundamentals - Book Management System"
         description = "This is a simple project I put together to practise and harness my skills in Ruby. This is a simple book management system that uses advanced data structures written in the Ruby stack."        
@@ -105,15 +116,6 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
       
-
-      <Project
-        title = "TensorFlow Project"
-        description = "This is a personal project of mine where I got familar with the TensorFlow ML Framework."
-        tags={["Python", "TensorFlow"]}
-        link="https://github.com/nsriv531/TensorFlow-Personal-Project"
-        projectimage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsqbuvRgmIsxTT1R_bCdv8txFKkw2ylx5Lg&s"
-      />
-
       <ProjectLeft
         title = "Assignment 1 - COMP 4522 (Advanced Databases)"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
