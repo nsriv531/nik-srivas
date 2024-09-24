@@ -75,6 +75,14 @@ function Projects() {
         projectimage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsqbuvRgmIsxTT1R_bCdv8txFKkw2ylx5Lg&s"
       />
 
+      <ProjectLeft
+        title = "PyTorch Project"
+        description = "This is a personal project of mine where I got familar with the PyTorch ML Framework."
+        tags={["Python", "PyTorch"]}
+        link="https://github.com/nsriv531/PyTorch-Personal-Project"
+        projectimage="https://miro.medium.com/v2/resize:fit:512/1*IMGOKBIN8qkOBt5CH55NSw.png"
+      />
+
 
     <Project 
         title = "Ruby Fundamentals - Book Management System"
