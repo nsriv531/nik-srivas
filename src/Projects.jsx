@@ -25,6 +25,14 @@ function Projects() {
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
     
+      <ProjectLeft 
+        title = "NashPy"
+        description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
+        tags={["React.js", "Node.js", "Python"]}
+        link="https://py-web-app.vercel.app/"
+        projectimage="https://static-00.iconduck.com/assets.00/logo-python-icon-506x512-t38ct41x.png"
+      />
+
        <ProjectLeft 
         title = "Propel Alberta Game Jam"
         description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
@@ -64,8 +72,6 @@ function Projects() {
         link="https://devpost.com/software/jurassic-park"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/393/187/datas/gallery.jpg"
       />
-
-
       
       <Project
         title = "TensorFlow Project"
@@ -115,7 +121,7 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
       
-      <ProjectLeft
+      <Project
         title = " Assignment 2 - COMP 4522 (Databases II)"
         description = "Additionally for my advanced data base class, I worked in Pandas and Prolog to analyze their effectiveness with query construction. This assignment gave me a deeper understanding how to use Pandas, and gave me context through my understanding in prolog. I also did this assignment in a team of two which helped foster my skills in teamwork and collaboration."        
         tags={["Python", "Pandas", "SQLite"]}
