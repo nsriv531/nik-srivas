@@ -83,7 +83,6 @@ function Projects() {
         projectimage="https://miro.medium.com/v2/resize:fit:512/1*IMGOKBIN8qkOBt5CH55NSw.png"
       />
 
-
     <Project 
         title = "Ruby Fundamentals - Book Management System"
         description = "This is a simple project I put together to practise and harness my skills in Ruby. This is a simple book management system that uses advanced data structures written in the Ruby stack."        
@@ -125,7 +124,7 @@ function Projects() {
       />
       
       <ProjectLeft
-        title = "Assignment 1 - COMP 4522 (Advanced Databases)"
+        title = "Assignment 1 - COMP 4522 (Databases II)"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
         tags={["Python"]}
         link="https://github.com/nsriv531/COMP4522-Assignment1"
