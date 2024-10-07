@@ -27,13 +27,13 @@ function Projects() {
     
       <ProjectLeft 
         title = "NashPy"
-        description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
+        description = "My own personal web compiler to showcase my python assignments"
         tags={["React.js", "Node.js", "Python"]}
         link="https://py-web-app.vercel.app/"
         projectimage="https://static-00.iconduck.com/assets.00/logo-python-icon-506x512-t38ct41x.png"
       />
 
-       <ProjectLeft 
+       <Project 
         title = "Propel Alberta Game Jam"
         description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
         tags={["Project Management", "Marketing", "Communication"]}
@@ -41,12 +41,12 @@ function Projects() {
         projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
       />
     
-      <Project 
-        title = "AC Robotics Website"
-        description = "During our revamp into a non-for-profit student run organization, the web team and I decided to make a website from scratch representing AC Robotics. This website is built using Next.js, a React Framework with it's own back-end component, as well as Tailwind CSS for styling and design. This site was very important as it allows many members to  gain information about our projects, as well as potential FIRST Robotics Recruits on our FIRST Robotics teams that I help run in the name of The Hive."
-        tags={["Next.js","React.js", "Tailwind CSS", "HTML"]}
-        link="https://www.instagram.com/ac_robotics/"
-        projectimage="https://www.mtroyal.ca/ProgramsCourses/FacultiesSchoolsCentres/Business/Institutes/InstituteInnovationEntrepreneurship/_images/ac_robotics_logo.png"
+      <ProjectLeft 
+        title = "ConQuest"
+        description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
+        tags={["React.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL"]}
+        link="https://conquest-nine.vercel.app/"
+        projectimage="https://conquest-nine.vercel.app/static/media/conQuest_logo_with_banner.7cb99635796f1614479a.png"
       />
     
       <ProjectLeft 
