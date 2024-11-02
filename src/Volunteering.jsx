@@ -36,7 +36,7 @@ function Volunteering() {
           <div className="Project">
             <img src="https://mru-gddc.vercel.app/assets/gdd-blue-banner-c53c6a24.png" alt="Project 1" />
             <div>
-              <h2>President - MRU GDDC</h2>
+              <h2>President - MRU GDDC - May 2023 - April 2024</h2>
               <p>
                At Mount Royal University, I started my schools first club revolving around Game Design and Development. Through this club and my executive team,
                I was able to facilitate a great environment for those wanting to learn game development. This was done through my efforts in hosting events, such
@@ -56,6 +56,24 @@ function Volunteering() {
             </div>
           </div>
         </div>
+
+        <div className="Project">
+            <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="Project 1" />
+            <div>
+              <h2>President - CAMRU</h2>
+              <p>
+                As President of CAMRU, I was resonsible for leading my team in various projects. This included workshops for students on building their technical skills, as well as orgranizing our Annual Networking Event, where we collaborated with companies like ATB, Lockheed Martin, CNRL and Keyera.
+              </p>
+              <div className="VolunteeringTags">
+                <div>Leadership</div>
+                <div>Project Management</div>
+                <div>Teamwork</div>
+              </div>
+              <a class="VolunteeringLink" href="https://www.camru.ca/">
+                View Project
+              </a>
+            </div>
+          </div>
       </div>
     );
 }
