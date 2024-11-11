@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 import "./App.css";
 
 function Project({ title, description, tags, link, projectimage, otherLinks = [] }) {
@@ -33,28 +34,32 @@ function Project({ title, description, tags, link, projectimage, otherLinks = []
             </button>
 
             {showLinks && (
-                <div className="space-y-2 mt-4">
-                    <a
-                        className="block text-blue-600 hover:text-blue-800 font-medium"
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Project Link
-                    </a>
-                    {otherLinks.map((otherLink, index) => (
-                        <a
-                            key={index}
-                            className="block text-blue-600 hover:text-blue-800 font-medium"
-                            href={otherLink.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {otherLink.label}
-                        </a>
-                    ))}
-                </div>
-            )}
+    <div
+    className={`space-y-2 mt-4 transition-all duration-500 ease-in-out transform ${
+        showLinks ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
+    } origin-top`}
+>
+    <a
+        className="block text-blue-600 hover:text-blue-800 font-medium"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Project Link
+    </a>
+    {otherLinks.map((otherLink, index) => (
+        <a
+            key={index}
+            className="block text-blue-600 hover:text-blue-800 font-medium"
+            href={otherLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {otherLink.label}
+        </a>
+    ))}
+</div>
+)}
 
             <div className="image-container mt-4 flex justify-center">
                 <img
