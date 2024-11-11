@@ -4,12 +4,17 @@ import ProjectLeft from "./ProjectLeft";
 
 function Projects() {
   return (
-    <div className="Projects">
-      <h1 id="projects">Project Highlights</h1>
-      <h2>Web Development, Game Development, Software Engineering, and Project Management.</h2>
-      <div className="ProjectContainer">
-        
+    <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen py-10">
+      <h1 id="projects" className="text-4xl font-bold text-center text-gray-800 mb-4">
+        Project Highlights
+      </h1>
+      <h2 className="text-lg text-center text-gray-600 mb-8">
+        Web Development, Game Development, Software Engineering, and Project Management.
+      </h2>
       
+      {/* ProjectContainer with Tailwind classes */}
+      <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
+        
       <Project 
         title = "Promenade - Hack The Change 2024"
         description = "This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safelty at night and connect them users based on a matching algorithm. This applications helps with safety as well as connected like-minded individuals to promote peace and inclusion."

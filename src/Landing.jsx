@@ -12,9 +12,11 @@ function Landing() {
   };
 
   return (
-    <div className="Landing">
-      <h1>Hi, I'm <span onClick={toggleModal}>Nik</span>.</h1>
-      <h2>
+    <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen flex flex-col justify-center items-center text-white text-center py-10">
+      <h1 className="text-5xl font-bold mb-4 text-gray-800">
+        Hi, I'm Nik!
+      </h1>
+      <h2 className="text-xl font-light text-gray-800">
         I'm a Software Engineer, Game Developer, and a leader in STEM education.
       </h2>
       {/* Conditional rendering of the Modal component */}
