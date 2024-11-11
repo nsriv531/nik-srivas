@@ -1,80 +1,148 @@
+import React, { useState } from "react";
 import "./App.css";
 
 function Volunteering() {
+    const [showLinks, setShowLinks] = useState({
+        acRobotics: false,
+        mruGddc: false,
+        camru: false,
+    });
+
+    const toggleLinks = (key) => {
+        setShowLinks((prev) => ({ ...prev, [key]: !prev[key] }));
+    };
 
     return (
-        <div className="Volunteering">
-        <h1 id="projects">Volunteering and Extracurricular Activities</h1>
-        <h2>AC Robotics and Game Development</h2>
-        <div className="ProjectContainer">
-          <div className="Project">
-            <div>
-              <h2>Director of Education for AC Robotics
-              </h2>
-              <p>
-                I'm a board member at AC Robotics, a non-for-profit organization that is about teaching youth and post-secondary about robotics. I lead the entire education team that consist of post-secondary students and high school students,
-                where we run three different FIRST Robotics teams. This is under it's own branch called 'The Hive'. As of last year, our First Tech Challenge Team, Neo Robotics, reached the provincial championships in Red Deer of 2023 for the PowerPlay Season, where we placed 
-                20th out of 50 teams that competed in the entire season. I also help the organization run STEM related challenges and competitions that revolve around educating the youth and freshman
-                post-secondary students.
-                </p>
-              <div className="VolunteeringTags">
-                <div>Leadership</div>
-                <div>Creativity</div>
-                <div>Teaching</div>
-                <div>Teamwork</div>
-                <div>Engineering</div>
-                <div>Project Management</div>
-                <div>Java</div>
-                <div>C++</div>
-              </div>
-              <a class="VolunteeringLink" href="https://www.acrobotics.ca">
-                View Project
-              </a>
-            </div>
-            <img src="https://pbs.twimg.com/media/FmdDVAmaUAAtwjH.jpg" alt="Project 1" />
-          </div>
-          <div className="Project">
-            <img src="https://mru-gddc.vercel.app/assets/gdd-blue-banner-c53c6a24.png" alt="Project 1" />
-            <div>
-              <h2>President - MRU GDDC - May 2023 - April 2024</h2>
-              <p>
-               At Mount Royal University, I started my schools first club revolving around Game Design and Development. Through this club and my executive team,
-               I was able to facilitate a great environment for those wanting to learn game development. This was done through my efforts in hosting events, such
-               as game jams, social meet ups, as well as the collaboration with other organizations and clubs throughout calgary and the Alberta region. 
-              </p>
-              <div className="VolunteeringTags">
-                <div>Leadership</div>
-                <div>Game Development</div>
-                <div>Project Management</div>
-                <div>Teamwork</div>
-                <div>C#</div>
-                <div>Godot</div>
-              </div>
-              <a class="VolunteeringLink" href="https://mru-gddc.vercel.app/">
-                View Project
-              </a>
-            </div>
-          </div>
-        </div>
+        <div className="bg-white py-10 px-6">
+            <h1 className="text-3xl font-bold text-center mb-8" id="volunteering">
+                Volunteering and Extracurricular Activities
+            </h1>
+            <div className="max-w-3xl mx-auto space-y-8">
 
-        <div className="Project">
-            <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="Project 1" />
-            <div>
-              <h2>President - CAMRU</h2>
-              <p>
-                As President of CAMRU, I was resonsible for leading my team in various projects. This included workshops for students on building their technical skills, as well as orgranizing our Annual Networking Event, where we collaborated with companies like ATB, Lockheed Martin, CNRL and Keyera.
-              </p>
-              <div className="VolunteeringTags">
-                <div>Leadership</div>
-                <div>Project Management</div>
-                <div>Teamwork</div>
-              </div>
-              <a class="VolunteeringLink" href="https://www.camru.ca/">
-                View Project
-              </a>
+                {/* AC Robotics Section */}
+                <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div onClick={() => toggleLinks('acRobotics')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">Director of Education for AC Robotics</h2>
+                        <p className="text-gray-700 mb-4">
+                            I'm a board member at AC Robotics, a non-profit organization focused on teaching youth and post-secondary students about robotics. I lead the education team, consisting of students, overseeing three FIRST Robotics teams under the 'The Hive' branch. Our team, Neo Robotics, reached the provincial championships in Red Deer in 2023, placing 20th out of 50 teams. I also help organize STEM challenges and competitions.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {["Leadership", "Creativity", "Teaching", "Teamwork", "Engineering", "Project Management", "Java", "C++"].map((tag, index) => (
+                                <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => toggleLinks('acRobotics')}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                    >
+                        {showLinks.acRobotics ? "Hide Links" : "Show Links"}
+                    </button>
+
+                    {showLinks.acRobotics && (
+                        <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
+                            <a
+                                className="block text-blue-600 hover:text-blue-800 font-medium"
+                                href="https://www.acrobotics.ca"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    )}
+
+                    <div className="image-container mt-4 flex justify-center">
+                        <img src="https://pbs.twimg.com/media/FmdDVAmaUAAtwjH.jpg" alt="AC Robotics" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                    </div>
+                </div>
+
+                {/* MRU GDDC Section */}
+                <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div onClick={() => toggleLinks('mruGddc')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">President - MRU GDDC (May 2023 - April 2024)</h2>
+                        <p className="text-gray-700 mb-4">
+                            At Mount Royal University, I founded the first Game Design and Development club. Through this club, I facilitated an environment for students interested in game development, hosting events, game jams, social meet-ups, and collaborating with other organizations in Calgary.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {["Leadership", "Game Development", "Project Management", "Teamwork", "C#", "Godot"].map((tag, index) => (
+                                <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => toggleLinks('mruGddc')}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                    >
+                        {showLinks.mruGddc ? "Hide Links" : "Show Links"}
+                    </button>
+
+                    {showLinks.mruGddc && (
+                        <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
+                            <a
+                                className="block text-blue-600 hover:text-blue-800 font-medium"
+                                href="https://mru-gddc.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    )}
+
+                    <div className="image-container mt-4 flex justify-center">
+                        <img src="https://mru-gddc.vercel.app/assets/gdd-blue-banner-c53c6a24.png" alt="MRU GDDC" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                    </div>
+                </div>
+
+                {/* CAMRU Section */}
+                <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div onClick={() => toggleLinks('camru')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">President - CAMRU</h2>
+                        <p className="text-gray-700 mb-4">
+                            As President of CAMRU, I led my team in various projects, including technical workshops for students and our Annual Networking Event with companies like ATB, Lockheed Martin, CNRL, and Keyera.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {["Leadership", "Project Management", "Teamwork"].map((tag, index) => (
+                                <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => toggleLinks('camru')}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                    >
+                        {showLinks.camru ? "Hide Links" : "Show Links"}
+                    </button>
+
+                    {showLinks.camru && (
+                        <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
+                            <a
+                                className="block text-blue-600 hover:text-blue-800 font-medium"
+                                href="https://www.camru.ca/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    )}
+
+                    <div className="image-container mt-4 flex justify-center">
+                        <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="CAMRU" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
+        </div>
     );
 }
 
