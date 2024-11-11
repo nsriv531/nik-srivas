@@ -49,19 +49,19 @@ h4 {
   font-size: 20px;
   font-weight: 700;
   padding-bottom: 5px;
-  color: #fff;
+  color: #000;
 }
 
 h5 {
   font-size: 16px;
   font-weight: 500;
   padding-bottom: 5px;
-  color: #fff;
+  color: #000;
 }
 
 .Navbarlinks a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-size: 18px;
   font-weight: 500;
   padding: 0 10px;
