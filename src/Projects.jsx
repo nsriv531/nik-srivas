@@ -33,7 +33,6 @@ function Projects() {
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
   
-  
       <ProjectLeft 
         title = "ConQuest"
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
