@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-
 import "./App.css";
 
 function Project({ title, description, tags, link, projectimage, otherLinks = [] }) {
