@@ -2,7 +2,7 @@ import "./App.css";
 
 function Navbar() {
   return (
-    <div className="Navbar">
+    <div className="Navbar bg-gradient-to-r from-lavender-pink to-light-cyan">
       <div className="Navbarlogo">
         <h4>Nik</h4>
         <h5>Software Developer</h5>
