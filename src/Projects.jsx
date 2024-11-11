@@ -17,6 +17,14 @@ function Projects() {
         projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
       /> 
 
+      <ProjectLeft 
+        title = "Promenade - Hack The Change 2024"
+        description = "This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safelty at night and connect them users based on a matching algorithm. This applications helps with safety as well as connected like-minded individuals to promote peace and inclusion."
+        tags={["React.js","Tailwind CSS", "Swift", "Vercel", "Google Firebase"]}
+        link="https://devpost.com/software/promenade"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
+      /> 
+
       <Project 
         title = "DentrisDMS -  Inventory Management System"
         description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps this dental clinic manage their inventory for a catalogue of over 100 items. With some basic Javascript and simple styling with CSS, I was able to build this system. To inspect this application, login with Username: subadmin@admin.com, Password: 123456."
@@ -24,23 +32,8 @@ function Projects() {
         link="http://dentrisdms.com/"
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
-    
-      <ProjectLeft 
-        title = "NashPy"
-        description = "My own personal web compiler to showcase my python assignments"
-        tags={["React.js", "Node.js", "Python"]}
-        link="https://py-web-app.vercel.app/"
-        projectimage="https://static-00.iconduck.com/assets.00/logo-python-icon-506x512-t38ct41x.png"
-      />
-
-       <Project 
-        title = "Propel Alberta Game Jam"
-        description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
-        tags={["Project Management", "Marketing", "Communication"]}
-        link="https://www.instagram.com/propel_alberta/"
-        projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
-      />
-    
+  
+  
       <ProjectLeft 
         title = "ConQuest"
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
@@ -49,6 +42,15 @@ function Projects() {
         projectimage="https://conquest-nine.vercel.app/static/media/conQuest_logo_with_banner.7cb99635796f1614479a.png"
       />
     
+      <Project 
+        title = "Propel Alberta Game Jam"
+        description = "This was a game jam I organized for students across Alberta. With both the GDDC from Mount Royal University and the Game Design Club at the University of Calgary, I managed a team of executives. where we worked and made a a successful event for aspiring game developers. Through this event, my team and I were able to secure multiple sponsors that accumulated to a prize pool of over $2000. These sponsors were from the video game industry, and beyond."
+        tags={["Project Management", "Marketing", "Communication"]}
+        link="https://www.instagram.com/propel_alberta/"
+        projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
+      />
+    
+
       <ProjectLeft 
        title = "Ahinke's Kitchen"
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a IT Developer intern with the task of maintaining Ahinke's site through the POS system Square and WordPress. This got me very familiar with Sqaure as a tool while, allowing me to learn how to work in a dynamic team environment with chefs and graphic designers. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
