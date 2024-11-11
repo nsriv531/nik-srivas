@@ -9,20 +9,22 @@ function Projects() {
       <h2>Web Development, Game Development, Software Engineering, and Project Management.</h2>
       <div className="ProjectContainer">
         
-      <ProjectLeft 
-        title = "Handle - Workshop Studios"
-        description = "Handle is a website I worked on primarily on the back-end. This website is responsible for organizing and managing user's art studios around ceramics and other crafts. Through this software, a user admin can manage their kilns, user experience, members, and other aspects of their business. I worked on this project collaboratively with another programmer, and used technologies like Git for collaborative programming."
-        tags={["Django","JavaScript", "React"]}
-        link="https://github.com/nsriv531/Handle-Public-Repository"
-        projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
-      /> 
-
-      <ProjectLeft 
+      
+      <Project 
         title = "Promenade - Hack The Change 2024"
         description = "This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safelty at night and connect them users based on a matching algorithm. This applications helps with safety as well as connected like-minded individuals to promote peace and inclusion."
         tags={["React.js","Tailwind CSS", "Swift", "Vercel", "Google Firebase"]}
         link="https://devpost.com/software/promenade"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
+      /> 
+      
+
+      <Project 
+        title = "Handle - Workshop Studios"
+        description = "Handle is a website I worked on primarily on the back-end. This website is responsible for organizing and managing user's art studios around ceramics and other crafts. Through this software, a user admin can manage their kilns, user experience, members, and other aspects of their business. I worked on this project collaboratively with another programmer, and used technologies like Git for collaborative programming."
+        tags={["Django","JavaScript", "React"]}
+        link="https://github.com/nsriv531/Handle-Public-Repository"
+        projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
       /> 
 
       <Project 
@@ -33,7 +35,7 @@ function Projects() {
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
   
-      <ProjectLeft 
+      <Project 
         title = "ConQuest"
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
         tags={["React.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL"]}
@@ -50,7 +52,7 @@ function Projects() {
       />
     
 
-      <ProjectLeft 
+      <Project 
        title = "Ahinke's Kitchen"
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a IT Developer intern with the task of maintaining Ahinke's site through the POS system Square and WordPress. This got me very familiar with Sqaure as a tool while, allowing me to learn how to work in a dynamic team environment with chefs and graphic designers. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
         tags={["HTML", "Square", "Clover", "Google Plugins", "React.js"]}
@@ -66,7 +68,7 @@ function Projects() {
         projectimage="https://i.ibb.co/3WS4ZsB/kneeflexlogo.png"
       />
 
-    <ProjectLeft 
+    <Project 
         title = "CalgaryHacks 2023 - Jurrasic Park"
         description = "For the CalgaryHacks Hackathon for 2023, I worked with three others to develop a mobile app that would find available parking spots in the vicinity of Mount Royal University. This app in concept can also work for the University of Calgary for it's parking lot, and we pitched a successful app that advanced us in the rankings."        
         tags={["Java", "Android Studio"]}
@@ -82,7 +84,7 @@ function Projects() {
         projectimage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsqbuvRgmIsxTT1R_bCdv8txFKkw2ylx5Lg&s"
       />
 
-      <ProjectLeft
+      <Project
         title = "PyTorch Project"
         description = "This is a personal project of mine where I got familar with the PyTorch ML Framework."
         tags={["Python", "PyTorch"]}
@@ -106,7 +108,7 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
       />
   
-    <ProjectLeft
+    <Project
         title = "Assignment 1 - COMP 4513 (Web III)"
         description = "For my advanced web class, I created an API using Node.js. The associated tables were in the form of CSV Files, that were then uploaded and maintained through Supabase."
         tags={["Node.js", "Glitch", "Supabase"]}
@@ -130,7 +132,7 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png"
       />
       
-      <ProjectLeft
+      <Project
         title = "Assignment 1 - COMP 4522 (Databases II)"
         description = "For my advanced database class, I implemented a Roll-Back system using Python. This assignment simulates a roll-back system with the use of a CSV file upon execution of the script. I did this assignment in a team of two which helped foster my skills in teamwork and collaboration."
         tags={["Python"]}
@@ -146,7 +148,7 @@ function Projects() {
         projectimage="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
       />
       
-    <ProjectLeft 
+    <Project 
         title = "CANIS"
         description = "CANIS is an open source project that I worked on at AC Robotics. CANIS is a work in-progress robot dog that is using inverse kinematics and was modeled after the boston-dynamics dog project. This project uses ROS commands along with advanced software engineering principles for movement and autonomous functionality."
         tags={["C++", "ROS", "Software Engineering"]}
@@ -162,7 +164,7 @@ function Projects() {
         projectimage="https://logowik.com/content/uploads/images/java1655.logowik.com.webp"
       />
   
-    <ProjectLeft
+    <Project
         title = "Buckey The Bucket"
         description = "Buckey, The Bucket was a game I made with 3 other friends of mine for the Godot Wild Jam #53. This game used the themes of Rain and Shrines, while successfully incorporating all the wild cards associated with the theme."
         tags={["GDScript", "Aseprite", "Audacity"]}
@@ -176,7 +178,7 @@ function Projects() {
         link="https://nashdashin.itch.io/freddys-escape"
         projectimage="https://i.etsystatic.com/37643300/r/il/15430a/4842016610/il_794xN.4842016610_fefb.jpg"
       />
-    <ProjectLeft 
+    <Project 
         title = "RoboChaos"
         description = "This is a game I made in Godot 4.0 with three friends of mine. This was for the Summer Slow Game Jam 2024 - Portland USA."
         tags={["Godot", "Aseprite", "GDScript"]}
