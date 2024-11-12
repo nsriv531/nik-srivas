@@ -16,7 +16,7 @@ function Project({ title, description, tags, link, projectimage, otherLinks = []
                     {tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"
+                            className="tag-style"
                         >
                             {tag}
                         </span>
@@ -26,38 +26,34 @@ function Project({ title, description, tags, link, projectimage, otherLinks = []
 
             <button
                 onClick={toggleLinks}
-                className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                className={`show-links-button ${showLinks ? "active" : ""}`}
             >
                 {showLinks ? "Hide Links" : "Show Links"}
             </button>
 
             {showLinks && (
-    <div
-    className={`space-y-2 mt-4 transition-all duration-500 ease-in-out transform ${
-        showLinks ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
-    } origin-top`}
->
-    <a
-        className="block text-blue-600 hover:text-blue-800 font-medium"
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Project Link
-    </a>
-    {otherLinks.map((otherLink, index) => (
-        <a
-            key={index}
-            className="block text-blue-600 hover:text-blue-800 font-medium"
-            href={otherLink.url}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            {otherLink.label}
-        </a>
-    ))}
-</div>
-)}
+                <div className="links-section">
+                    <a
+                        className="link-style"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Project Link
+                    </a>
+                    {otherLinks.map((otherLink, index) => (
+                        <a
+                            key={index}
+                            className="link-style"
+                            href={otherLink.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {otherLink.label}
+                        </a>
+                    ))}
+                </div>
+            )}
 
             <div className="image-container mt-4 flex justify-center">
                 <img

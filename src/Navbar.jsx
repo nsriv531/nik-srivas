@@ -3,9 +3,9 @@ import "./App.css";
 function Navbar() {
   return (
     <div className="Navbar bg-gradient-to-r from-lavender-pink to-light-cyan">
-      <div className="Navbarlogo text-5xl font-bold mb-4 text-gray-800">
-        <h4>Nik</h4>
-        <h5>Software Developer</h5>
+      <div className="Navbarlogo text-3xl font-bold mb-4 text-gray-800">
+        <h2>Nik</h2>
+        <h2>Software Developer</h2>
       </div>
       <div className="Navbarlinks text-gray-800">
         <a href="#landing">Home</a>
