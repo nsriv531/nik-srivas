@@ -70,7 +70,7 @@ function Projects() {
         description = "With a team of three others, we participated in the Health Tech Challenge offered by the Institute of Innovation and Entrepreneurship. For this challenge we developed a mobile knee brace that would gather data that health professionals could use for assestments and injuries related to the knee. On my team I was responsible for developing the web companion app."        
         tags={["React.js","Tailwind CSS", "Supabase", "SQLite", "PowerBI", "Tableau"]}
         link="https://htc-2024-team-mobility.vercel.app/"
-        projectimage="https://i.ibb.co/3WS4ZsB/kneeflexlogo.png"
+        projectimage="https://raw.githubusercontent.com/nsriv531/image_hosting/refs/heads/main/kneeflex.png"
       />
 
     <Project 
