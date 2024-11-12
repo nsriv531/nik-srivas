@@ -44,7 +44,7 @@
 /* Show Links button styling */
 .show-links-button {
   margin-top: 1rem;
-  background-color: #3b82f6;
+  background-color: #ea9de3;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -52,10 +52,10 @@
   transition: background-color 0.3s ease;
 }
 .show-links-button:hover {
-  background-color: #2563eb;
+  background-color: #e2aaf0f0;
 }
 .show-links-button.active {
-  background-color: #4caf50;
+  background-color: #aaedf0f0;
 }
 
 /* Links section with slide-down animation */
@@ -155,7 +155,7 @@
 
 /* Volunteering section */
 .Volunteering {
-  background-color: #3f54f7;
+  background-color: #ea9de3;
   color: #000;
   display: flex;
   justify-content: center;
