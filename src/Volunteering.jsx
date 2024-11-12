@@ -13,7 +13,7 @@ function Volunteering() {
     };
 
     return (
-        <div className="bg-white py-10 px-6">
+        <div className="bg-gradient-to-r from-lavender-pink to-light-cyan">
             <h1 className="text-3xl font-bold text-center mb-8" id="volunteering">
                 Volunteering and Extracurricular Activities
             </h1>
