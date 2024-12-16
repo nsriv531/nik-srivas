@@ -56,7 +56,6 @@ function Projects() {
         projectimage="https://static.wixstatic.com/media/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png/v1/fill/w_148,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e3190f_5062511cec4d4033973ff474a91b85c6~mv2.png"
       />
     
-
       <Project 
        title = "Ahinke's Kitchen"
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a IT Developer intern with the task of maintaining Ahinke's site through the POS system Square and WordPress. This got me very familiar with Sqaure as a tool while, allowing me to learn how to work in a dynamic team environment with chefs and graphic designers. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
@@ -81,6 +80,14 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/393/187/datas/gallery.jpg"
       />
       
+      <Project
+        title = "COMP 3512 - Assignment 2 - F1 Dashboard"
+        description = "My second assignment for COMP3512, built purely on JS and HTML to access the F1 Dashboard API's. "
+        tags={["JavaScript", "HTML"]}
+        link="https://github.com/nsriv531/COMP3512-Assignment_2"
+        projectimage="https://images.stockcake.com/public/4/3/8/43851159-a381-428e-a3b6-1a3caf7ed642_large/speeding-race-car-stockcake.jpg"
+      />
+
       <Project
         title = "TensorFlow Project"
         description = "This is a personal project of mine where I got familar with the TensorFlow ML Framework."
