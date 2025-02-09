@@ -36,7 +36,7 @@ function Projects() {
       <Project 
         title = "shelf'd - nwHacks 2025"
         description = "Shelf'd is a gamified way of logging your entire book catalouge. This was my submission for nwHacks 2025. I worked on a team of four for this project, and learned how to use Next.js along with supabase in a team setting."
-        tags={["Next.js","Supabase", "Docker", "Nix", "OpenLibraryAPI"]}
+        tags={["Next.js", "Node.js", "Supabase", "Docker", "Nix", "OpenLibraryAPI"]}
         link="https://devpost.com/software/shelf-d"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/225/719/datas/gallery.jpg"
       />
