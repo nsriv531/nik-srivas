@@ -32,6 +32,15 @@ function Projects() {
         projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
       /> 
 
+      
+      <Project 
+        title = "shelf'd - nwHacks2025"
+        description = "Shelf'd is a gamified way of logging your entire book catalouge. This was my submission for nwHacks 2025. I worked on a team of four for this project, and learned how to use next.js along with supabase in a team setting."
+        tags={["Next.js","Supabase", "Docker", "Nix", "OpenLibraryAPI"]}
+        link="https://devpost.com/software/shelf-d"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/225/719/datas/gallery.jpg"
+      />
+
       <Project 
         title = "DentrisDMS -  Inventory Management System"
         description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps this dental clinic manage their inventory for a catalogue of over 100 items. With some basic Javascript and simple styling with CSS, I was able to build this system. To inspect this application, login with Username: subadmin@admin.com, Password: 123456."
