@@ -1,4 +1,5 @@
 import "./App.css";
+import ResumeButton from "./ResumeButton"; // Importing the ResumeButton component
 
 function Navbar() {
   return (
@@ -10,7 +11,7 @@ function Navbar() {
       <div className="Navbarlinks text-gray-800">
         <a href="#landing">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#hireme">My Resume</a>
+        <ResumeButton /> {/* Using the ResumeButton component */}
       </div>
     </div>
   );
