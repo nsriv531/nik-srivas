@@ -33,7 +33,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <small>2024 © Nik. All rights reserved.</small>
+      <small>2025 © Nik Srivastava. All rights reserved.</small>
     </>
   );
 }
