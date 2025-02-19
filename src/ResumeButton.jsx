@@ -6,7 +6,7 @@ function ResumeButton() {
       rel="noopener noreferrer"
       className="text-blue-600 hover:underline"
     >
-      My Resume
+      Resume
     </a>
   );
 }
