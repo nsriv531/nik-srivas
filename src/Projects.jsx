@@ -23,16 +23,6 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
       /> 
       
-
-      <Project 
-        title = "Handle - Workshop Studios"
-        description = "Handle is a website I worked on primarily on the back-end. This website is responsible for organizing and managing user's art studios around ceramics and other crafts. Through this software, a user admin can manage their kilns, user experience, members, and other aspects of their business. I worked on this project collaboratively with another programmer, and used technologies like Git for collaborative programming."
-        tags={["Django","JavaScript", "React"]}
-        link="https://github.com/nsriv531/Handle-Public-Repository"
-        projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
-      /> 
-
-      
       <Project 
         title = "shelf'd - nwHacks 2025"
         description = "Shelf'd is a gamified way of logging your entire book catalouge. This was my submission for nwHacks 2025. I worked on a team of four for this project, and learned how to use Next.js along with supabase in a team setting."
@@ -49,6 +39,15 @@ function Projects() {
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
   
+      <Project 
+        title = "Handle - Workshop Studios"
+        description = "Handle is a website I worked on primarily on the back-end. This website is responsible for organizing and managing user's art studios around ceramics and other crafts. Through this software, a user admin can manage their kilns, user experience, members, and other aspects of their business. I worked on this project collaboratively with another programmer, and used technologies like Git for collaborative programming."
+        tags={["Django","JavaScript", "React"]}
+        link="https://github.com/nsriv531/Handle-Public-Repository"
+        projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
+      /> 
+
+
       <Project 
         title = "ConQuest"
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
