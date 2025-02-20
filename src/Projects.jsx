@@ -47,7 +47,6 @@ function Projects() {
         projectimage="https://workshopstudios.ca/wp-content/uploads/2020/03/workshop-studios-logo.png"
       /> 
 
-
       <Project 
         title = "ConQuest"
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
