@@ -1,8 +1,12 @@
 import "./App.css";
 import Project from "./Project";
 import ProjectLeft from "./ProjectLeft";
+import { useState } from "react";
+
 
 function Projects() {
+    const [activeTab, setActiveTab] = useState("projects");
+
   return (
     <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen py-10">
       <h1 id="projects" className="text-4xl font-bold text-center text-gray-800 mb-4">
@@ -12,7 +16,30 @@ function Projects() {
         Web Development, Game Development, Data Projects, and Software Engineering.
       </h2>
       
-      {/* ProjectContainer with Tailwind classes */}
+      {/* Toggle Buttons */}
+      <div className="flex justify-center mb-8 space-x-4">
+        <button
+          onClick={() => setActiveTab("projects")}
+          className={`px-5 py-2 rounded-full font-semibold transition ${
+            activeTab === "projects"
+              ? "bg-blue-500 text-white"
+              : "bg-white border border-blue-500 text-blue-500"
+          }`}
+        >
+          Projects
+        </button>
+        <button
+          onClick={() => setActiveTab("blogs")}
+          className={`px-5 py-2 rounded-full font-semibold transition ${
+            activeTab === "blogs"
+              ? "bg-blue-500 text-white"
+              : "bg-white border border-blue-500 text-blue-500"
+          }`}
+        >
+          Coding Blog
+        </button>
+      </div>
+
       <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
         
       <Project 
