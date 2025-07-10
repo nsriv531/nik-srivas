@@ -14,7 +14,6 @@ const languageIcons = {
   default: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
 };
 
-
 function Projects() {
   const [activeTab, setActiveTab] = useState("projects");
   const [blogPosts, setBlogPosts] = useState([]);
