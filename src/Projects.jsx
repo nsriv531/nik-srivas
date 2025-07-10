@@ -1,10 +1,86 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Project from "./Project";
 import Blog from "./Blog";
 
+const languageIcons = {
+  py: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  js: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  ts: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  cpp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  cs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+  rb: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+  default: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+};
+
+
 function Projects() {
   const [activeTab, setActiveTab] = useState("projects");
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    if (activeTab === "blogs") {
+      fetchBlogPosts();
+    }
+  }, [activeTab]);
+
+  const fetchBlogPosts = async () => {
+  const repo = "nsriv531/LCJournal";
+  const base = `https://api.github.com/repos/${repo}/contents`;
+
+
+  try {
+    const foldersRes = await fetch(base);
+    const folders = await foldersRes.json();
+
+    const posts = await Promise.all(
+      folders.map(async (folder) => {
+        if (folder.type !== "dir") return null;
+
+        const folderPath = encodeURIComponent(folder.name);
+
+        try {
+          // ✅ Fetch README.md
+          const readmeRes = await fetch(`${base}/${folderPath}/README.md`);
+          const readmeData = await readmeRes.json();
+          const readmeContent = atob(readmeData.content);
+          const lines = readmeContent.split("\n").filter((l) => l.startsWith("#"));
+
+          const title = lines[0]?.replace(/^#+/, "").trim() ?? folder.name;
+          const description = lines[1]?.replace(/^#+/, "").trim() ?? "No description available.";
+
+          // ✅ Fetch all files in the folder (MUST encode folder name here too)
+          const folderContentsRes = await fetch(`${base}/${folderPath}`);
+          const folderContents = await folderContentsRes.json();
+
+          const codeFile = folderContents.find((f) =>
+            /\.(py|java|cpp|js|ts|cs|rb)$/.test(f.name)
+          );
+          if (!codeFile) return null;
+
+          const codeRaw = await fetch(codeFile.download_url);
+          const code = await codeRaw.text();
+
+          return {
+            title,
+            description,
+            tags: [codeFile.name.split(".").pop()],
+            link: `https://github.com/${repo}/tree/main/${encodeURIComponent(folder.name)}`,
+            codeSnippet: code.slice(0, 300) + "...",
+          };
+        } catch (err) {
+          console.error(`Error loading post from ${folder.name}:`, err);
+          return null;
+        }
+      })
+    );
+
+    setBlogPosts(posts.filter(Boolean));
+  } catch (err) {
+    console.error("Failed to load blog posts:", err);
+  }
+};
 
   const projectItems = (
     <>
@@ -65,26 +141,23 @@ function Projects() {
     </>
   );
 
-  const blogItems = (
-    <>
-      <Blog 
-        title="How I Integrated Supabase Auth"
-        description="A breakdown of how I implemented authentication in my Next.js banking app using Supabase."
-        tags={["Next.js", "Supabase", "Auth", "Security"]}
-        link="https://your-blog-link.com/supabase-auth"
-        image="https://your-blog-thumbnail.com/supabase.png"
-      />
-      <Blog 
-        title="Lessons from My First Hackathon"
-        description="Tips and insights from my HackTheChange experience, including team dynamics and tech stack."
-        tags={["Hackathon", "React", "Firebase", "Teamwork"]}
-        link="https://your-blog-link.com/first-hackathon"
-        image="https://your-blog-thumbnail.com/hackathon.png"
-      />
-    </>
-  );
+const blogItems = blogPosts.map((post, i) => {
+  const lang = post.tags[0]; // e.g. "py"
+  const image = languageIcons[lang] || languageIcons.default;
 
   return (
+    <Blog
+      key={i}
+      title={post.title}
+      description={post.description}
+      tags={post.tags}
+      link={post.link}
+      image={image}
+    />
+  );
+});
+
+ return (
     <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen py-10">
       <h1 id="projects" className="text-4xl font-bold text-center text-gray-800 mb-4">
         Project Highlights

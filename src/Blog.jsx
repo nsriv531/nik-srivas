@@ -1,14 +1,14 @@
-function Blog({ title, description, tags, link, image }) {
+export default function Blog({ title, description, tags, link, image }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <img src={image} alt={title} className="w-full h-40 object-cover rounded-md mb-4" />
-      <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-      <p className="text-gray-600 mt-2">{description}</p>
-      <div className="flex flex-wrap mt-3 gap-2">
-        {tags.map((tag, index) => (
+    <div className="rounded-lg bg-white shadow-md p-6 hover:shadow-lg transition">
+      <img src={image} alt={`${tags[0]} logo`} className="h-12 w-12 mb-4" />
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-700 mb-3">{description}</p>
+      <div className="flex flex-wrap gap-2 mb-3">
+        {tags.map((tag, idx) => (
           <span
-            key={index}
-            className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
+            key={idx}
+            className="bg-blue-100 text-blue-700 text-sm font-medium px-2.5 py-0.5 rounded"
           >
             {tag}
           </span>
@@ -18,12 +18,10 @@ function Blog({ title, description, tags, link, image }) {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block mt-4 text-blue-500 font-medium hover:underline"
+        className="text-blue-500 hover:underline"
       >
         Read more
       </a>
     </div>
   );
 }
-
-export default Blog;
