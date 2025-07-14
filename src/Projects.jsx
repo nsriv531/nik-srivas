@@ -48,6 +48,7 @@ function Projects() {
 
           const title = lines[0]?.replace(/^#+/, "").trim() ?? folder.name;
           const description = lines[1]?.replace(/^#+/, "").trim() ?? "No description available.";
+          const date = lines[2]?.replace(/^#+/, "").trim() ?? "No date available.";
 
           // ✅ Fetch all files in the folder (MUST encode folder name here too)
           const folderContentsRes = await fetch(`${base}/${folderPath}`);
@@ -64,9 +65,10 @@ function Projects() {
           return {
             title,
             description,
+            date,
             tags: [codeFile.name.split(".").pop()],
             link: `https://github.com/${repo}/tree/main/${encodeURIComponent(folder.name)}`,
-            codeSnippet: code.slice(0, 300) + "...",
+            codeSnippet: code,
           };
         } catch (err) {
           console.error(`Error loading post from ${folder.name}:`, err);
@@ -145,14 +147,16 @@ const blogItems = blogPosts.map((post, i) => {
   const image = languageIcons[lang] || languageIcons.default;
 
   return (
-    <Blog
-      key={i}
-      title={post.title}
-      description={post.description}
-      tags={post.tags}
-      link={post.link}
-      image={image}
-    />
+   <Blog
+  key={i}
+  title={post.title}
+  description={post.description}
+  date={post.date}
+  tags={post.tags}
+  link={post.link}
+  image={image}
+  codeSnippet={post.codeSnippet} // ✅ Pass the code
+/>
   );
 });
 
