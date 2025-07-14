@@ -4,6 +4,7 @@ import "./App.css";
 
 function Landing() {
   // State to manage the visibility of the modal
+  //test
   const [isModalOpen, setModalOpen] = useState(false);
 
   // Function to toggle modal visibility
