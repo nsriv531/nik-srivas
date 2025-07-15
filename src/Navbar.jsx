@@ -4,10 +4,11 @@ import ResumeButton from "./ResumeButton"; // Importing the ResumeButton compone
 function Navbar() {
   return (
     <div className="Navbar bg-gradient-to-r from-lavender-pink to-light-cyan">
-      <div className="Navbarlogo text-3xl font-bold mb-1 text-gray-800">
-        <h2>Nik</h2>
-        <h2>Software Developer</h2>
-      </div>
+     <div className="Navbarlogo text-2xl font-semibold text-gray-800 leading-tight">
+  <h4>Nik</h4>
+  <h4> Software + Data Developer</h4>
+</div>
+
       <div className="Navbarlinks text-gray-800">
         <a href="#landing">Home</a>
         <a href="#projects">Projects</a>
