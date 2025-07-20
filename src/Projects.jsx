@@ -92,6 +92,15 @@ function Projects() {
         link="https://devpost.com/software/promenade"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
       /> 
+
+      <Project 
+        title="ARACHNID - Hack The 6ix 2025"
+        description="The ultimate note-taking app! Utilizes OpenAI's GPT-4 to link and identify notes, as well as solutions to those notes. Built using Next.js, this stylisitcally delivers a smooth experience when brainstorming ideas in the form of ideas / problems you may have."
+        tags={["Next.js","Tailwind CSS", "Solution Mapping", "OpenAI-GPT"]}
+        link="https://devpost.com/software/arachnid?ref_content=user-portfolio&ref_feature=in_progress"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/627/080/datas/medium.png"
+      /> 
+
        <Project 
         title = "shelf'd - nwHacks 2025"
         description = "Shelf'd is a gamified way of logging your entire book catalouge. This was my submission for nwHacks 2025. I worked on a team of four for this project, and learned how to use Next.js along with supabase in a team setting."
