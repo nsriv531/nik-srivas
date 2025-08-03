@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import CodeRunner from "./Coderunner"; // Make sure this exists and is correctly imported
+import CodeRunner from "./Coderunner";
 
 export default function Blog({
   title,
@@ -16,7 +16,15 @@ export default function Blog({
   const [showRunner, setShowRunner] = useState(false);
 
   const language = tags[0]?.toLowerCase() || "js";
-  const isRunnable = ["js", "jsx", "react"].includes(language);
+
+  const sandpackSupported = ["js", "jsx", "react"];
+  const pistonSupported = [
+    "python", "py", "java", "c", "cpp", "go", "kotlin", "php", "ruby", "rust"
+  ];
+
+  const isRunnable = sandpackSupported.includes(language) || pistonSupported.includes(language);
+  const useSandpack = sandpackSupported.includes(language);
+  const usePiston = pistonSupported.includes(language);
 
   return (
     <div className="rounded-lg bg-white shadow-md p-6 hover:shadow-lg transition">
@@ -83,9 +91,14 @@ export default function Blog({
         </SyntaxHighlighter>
       )}
 
-      {/* Sandpack runner */}
+      {/* Code Runner */}
       {isRunnable && showRunner && (
-        <CodeRunner code={codeSnippet} language={language} />
+        <CodeRunner
+          code={codeSnippet}
+          language={language}
+          useSandpack={useSandpack}
+          usePiston={usePiston}
+        />
       )}
     </div>
   );
