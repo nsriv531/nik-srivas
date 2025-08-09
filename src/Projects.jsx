@@ -137,8 +137,8 @@ function Projects() {
         title = "Goliath"
         description = "A text-based game built in python, showcasing my skills in object-oriented programming and data structures. This game is a text-based RPG where you can fight monsters, level up, and collect items."
         tags={["Python", "Object-Oriented Programming", "Data Structures"]}
-        link="https://github.com/nsriv531/Goliath"
-        projectimage="https://conquest-nine.vercel.app/static/media/conQuest_logo_with_banner.7cb99635796f1614479a.png"
+        link="https://github.com/nsriv531/Portfolio-Image-Hosting/blob/main/goliath2.png"
+        projectimage=""
       />
 
       <Project 
