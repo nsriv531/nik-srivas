@@ -93,13 +93,13 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
       /> 
 
-      <Project 
+      {/* <Project 
         title="ARACHNID - Hack The 6ix 2025"
         description="The ultimate note-taking app! Utilizes OpenAI's GPT-4 to link and identify notes, as well as solutions to those notes. Built using Next.js, this stylisitcally delivers a smooth experience when brainstorming ideas in the form of ideas / problems you may have."
         tags={["Next.js","Tailwind CSS", "Solution Mapping", "OpenAI-GPT"]}
         link="https://devpost.com/software/arachnid?ref_content=user-portfolio&ref_feature=in_progress"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/627/080/datas/medium.png"
-      /> 
+      />  */}
 
        <Project 
         title = "shelf'd - nwHacks 2025"
@@ -130,9 +130,17 @@ function Projects() {
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
         tags={["React.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL"]}
         link="https://conquest-nine.vercel.app/"
+        projectimage="https://github.com/nsriv531/Portfolio-Image-Hosting/blob/main/goliath2.png"
+      />
+
+      <Project 
+        title = "Goliath"
+        description = "A text-based game built in python, showcasing my skills in object-oriented programming and data structures. This game is a text-based RPG where you can fight monsters, level up, and collect items."
+        tags={["Python", "Object-Oriented Programming", "Data Structures"]}
+        link="https://github.com/nsriv531/Goliath"
         projectimage="https://conquest-nine.vercel.app/static/media/conQuest_logo_with_banner.7cb99635796f1614479a.png"
       />
-    
+  
       <Project 
        title = "Ahinke's Kitchen"
         description = "Ahinkes' Kitchen is a local business that runs in the Forest Lawn area of Calgary. During the period of September 2023 and December 2023, I was hired as a IT Developer intern with the task of maintaining Ahinke's site through the POS system Square and WordPress. This got me very familiar with Sqaure as a tool while, allowing me to learn how to work in a dynamic team environment with chefs and graphic designers. Through this process I also learned various plugins that are used in a business setting for websites, such as google plugins and others."  
