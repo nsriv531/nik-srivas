@@ -130,15 +130,7 @@ function Projects() {
         description = "A gamified way of completing tasks, built with a React.js front end and a Postgres back end. Art done all with Aseprite."
         tags={["React.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL"]}
         link="https://conquest-nine.vercel.app/"
-        projectimage="https://github.com/nsriv531/Portfolio-Image-Hosting/blob/main/goliath2.png"
-      />
-
-      <Project 
-        title = "Goliath"
-        description = "A text-based game built in python, showcasing my skills in object-oriented programming and data structures. This game is a text-based RPG where you can fight monsters, level up, and collect items."
-        tags={["Python", "Object-Oriented Programming", "Data Structures"]}
-        link="https://github.com/nsriv531/Portfolio-Image-Hosting/blob/main/goliath2.png"
-        projectimage=""
+        projectimage="https://conquest-nine.vercel.app/static/media/conQuest_logo_with_banner.7cb99635796f1614479a.png"
       />
 
       <Project 
@@ -156,6 +148,16 @@ function Projects() {
         link="https://htc-2024-team-mobility.vercel.app/"
         projectimage="https://raw.githubusercontent.com/nsriv531/image_hosting/refs/heads/main/kneeflex.png?token=GHSAT0AAAAAACZR67HZJWE7TODYDWTRBXMIZZTVIVA"
       />
+
+
+       <Project 
+        title = "Goliath"
+        description = "A text-based game built in python, showcasing my skills in object-oriented programming and data structures. This game is a text-based RPG where you can fight monsters, level up, and collect items."
+        tags={["Python", "Object-Oriented Programming", "Data Structures"]}
+        link="https://github.com/nsriv531/Goliath"
+        projectimage="https://raw.githubusercontent.com/nsriv531/Portfolio-Image-Hosting/refs/heads/main/goliath2.png"
+      />
+
     </>
   );
 
