@@ -2,6 +2,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Project from "./Project";
 import Blog from "./Blog";
+import Certifications from "./Certifications";
+
 
 const languageIcons = {
   py: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -18,12 +20,13 @@ function Projects() {
   const [activeTab, setActiveTab] = useState("projects");
   const [blogPosts, setBlogPosts] = useState([]);
 
-  useEffect(() => {
-    if (activeTab === "blogs") {
-      fetchBlogPosts();
-    }
-  }, [activeTab]);
-
+ useEffect(() => {
+  if (activeTab === "certifications") {
+    // fetchCerts();
+  } else if (activeTab === "blogs") {
+    fetchBlogPosts();
+  }
+}, [activeTab]);
   const fetchBlogPosts = async () => {
   const repo = "nsriv531/LCJournal";
   const base = `https://api.github.com/repos/${repo}/contents`;
@@ -161,6 +164,30 @@ function Projects() {
     </>
   );
 
+    const certifications = [
+    {
+      title: "freeCodeCamp C# Certification",
+      issuer: "freeCodeCamp",
+      issueDate: "August 2025",
+      credentialId: null,
+      verificationUrl: "https://www.freecodecamp.org/<your-username>",
+      skills: ["C#", ".NET", "OOP", "LINQ", "Collections", "File I/O", "Unit Testing"],
+      summary:
+        "Completed freeCodeCamp’s C# curriculum covering C# syntax, OOP design, LINQ, collections, file operations, and testing workflows in .NET.",
+      badgeImage:
+        "https://design-style-guide.freecodecamp.org/downloads/fcc_primary_large.jpg",
+      otherLinks: [
+        { label: "Curriculum", url: "https://www.freecodecamp.org/learn" },
+        { label: "Practice Repo", url: "https://github.com/<you>/fcc-csharp-practice" },
+      ],
+    },
+  ];
+
+  const certificationItems = certifications.map((c, i) => (
+    <Certifications key={i} {...c} />
+  ));
+
+
 const blogItems = blogPosts.map((post, i) => {
   const lang = post.tags[0]; // e.g. "py"
   const image = languageIcons[lang] || languageIcons.default;
@@ -200,16 +227,7 @@ const blogItems = blogPosts.map((post, i) => {
           Projects
         </button>
 
-        <button
-          onClick={() => setActiveTab("certifications")}
-          className={`px-5 py-2 rounded-full font-semibold transition ${
-            activeTab === "blogs"
-              ? "bg-blue-500 text-white"
-              : "bg-white border border-blue-500 text-blue-500"
-          }`}
-        >
-          Certifications
-        </button>
+       
         <button
           onClick={() => setActiveTab("blogs")}
           className={`px-5 py-2 rounded-full font-semibold transition ${
@@ -220,12 +238,28 @@ const blogItems = blogPosts.map((post, i) => {
         >
           Coding Blog
         </button>
+
+
+         <button
+          onClick={() => setActiveTab("certifications")}
+          className={`px-5 py-2 rounded-full font-semibold transition ${
+            activeTab === "certifications"
+              ? "bg-blue-500 text-white"
+              : "bg-white border border-blue-500 text-blue-500"
+          }`}
+        >
+          Certifications
+        </button>
       
       </div>
 
       <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
-        {activeTab === "projects" ? projectItems : blogItems}
-      </div>
+  {activeTab === "projects"
+    ? projectItems
+    : activeTab === "certifications"
+    ? certificationItems
+    : blogItems}
+</div>
     </div>
   );
 }
