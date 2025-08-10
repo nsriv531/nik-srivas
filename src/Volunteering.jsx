@@ -19,10 +19,51 @@ function Volunteering() {
             </h1>
             <div className="max-w-3xl mx-auto space-y-8">
 
+                  {/* CAMRU Section */}
+                <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div onClick={() => toggleLinks('camru')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">President - CAMRU (April 2024 - May 2025)</h2>
+                        <p className="text-gray-700 mb-4">
+                            As President of CAMRU, I led my team in various events and intiatives, including technical workshops for students, and our Annual Networking Event with 200 attendees. This networking event featured companies like ATB, Arcurve, CNRL, and Keyera.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {["Leadership", "Project Management", "Teamwork"].map((tag, index) => (
+                                <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => toggleLinks('camru')}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                    >
+                        {showLinks.camru ? "Hide Links" : "Show Links"}
+                    </button>
+
+                    {showLinks.camru && (
+                        <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
+                            <a
+                                className="block text-blue-600 hover:text-blue-800 font-medium"
+                                href="https://www.camru.ca/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    )}
+
+                    <div className="image-container mt-4 flex justify-center">
+                        <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="CAMRU" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                    </div>
+                </div>
+
                 {/* AC Robotics Section */}
                 <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
                     <div onClick={() => toggleLinks('acRobotics')} className="cursor-pointer">
-                        <h2 className="text-2xl font-semibold mb-2">Director of Education for AC Robotics</h2>
+                        <h2 className="text-2xl font-semibold mb-2">Director of Education for AC Robotics (March 2023 - May 2024)</h2>
                         <p className="text-gray-700 mb-4">
                             I'm a board member at AC Robotics, a non-profit organization focused on teaching youth and post-secondary students about robotics. I lead the education team, consisting of students, overseeing three FIRST Robotics teams under the 'The Hive' branch. Our team, Neo Robotics, reached the provincial championships in Red Deer in 2023, placing 20th out of 50 teams. I also help organize STEM challenges and competitions.
                         </p>
@@ -143,16 +184,14 @@ function Volunteering() {
                     </div>
                 </div>
 
-
-                {/* CAMRU Section */}
                 <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
-                    <div onClick={() => toggleLinks('camru')} className="cursor-pointer">
-                        <h2 className="text-2xl font-semibold mb-2">President - CAMRU</h2>
+                    <div onClick={() => toggleLinks('mruGddc')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">Game Pop 2025</h2>
                         <p className="text-gray-700 mb-4">
-                            As President of CAMRU, I led my team in various projects, including technical workshops for students and our Annual Networking Event with companies like ATB, Lockheed Martin, CNRL, and Keyera.
+                        The Alberta Wide Game Jam for Students! 14 teams particpated in this game jam across the GDDC Club @ MRU, GDC Club @ U of C, Games Den @ U of A (Edmonton), and the the Game Creator Space @ NAIT (Edmonton)
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
-                            {["Leadership", "Project Management", "Teamwork"].map((tag, index) => (
+                            {["Leadership", "Game Development", "Project Management", "Teamwork"].map((tag, index) => (
                                 <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
                                     {tag}
                                 </span>
@@ -161,17 +200,17 @@ function Volunteering() {
                     </div>
 
                     <button
-                        onClick={() => toggleLinks('camru')}
+                        onClick={() => toggleLinks('mruGddc')}
                         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
                     >
-                        {showLinks.camru ? "Hide Links" : "Show Links"}
+                        {showLinks.mruGddc ? "Hide Links" : "Show Links"}
                     </button>
 
-                    {showLinks.camru && (
+                    {showLinks.mruGddc && (
                         <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
                             <a
                                 className="block text-blue-600 hover:text-blue-800 font-medium"
-                                href="https://www.camru.ca/"
+                                href="https://itch.io/jam/gamepop-2025"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -181,9 +220,11 @@ function Volunteering() {
                     )}
 
                     <div className="image-container mt-4 flex justify-center">
-                        <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="CAMRU" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                        <img src="https://img.itch.zone/aW1hZ2UyL2phbS80MDI3NTMvMTkzNTY0MDgucG5n/original/fgJuGW.png" alt="MRU GDDC" className="w-full h-48 object-cover rounded-lg max-w-full" />
                     </div>
                 </div>
+
+              
             </div>
         </div>
     );
