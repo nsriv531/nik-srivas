@@ -199,6 +199,17 @@ const blogItems = blogPosts.map((post, i) => {
         >
           Projects
         </button>
+
+        <button
+          onClick={() => setActiveTab("certifications")}
+          className={`px-5 py-2 rounded-full font-semibold transition ${
+            activeTab === "blogs"
+              ? "bg-blue-500 text-white"
+              : "bg-white border border-blue-500 text-blue-500"
+          }`}
+        >
+          Certifications
+        </button>
         <button
           onClick={() => setActiveTab("blogs")}
           className={`px-5 py-2 rounded-full font-semibold transition ${
@@ -209,6 +220,7 @@ const blogItems = blogPosts.map((post, i) => {
         >
           Coding Blog
         </button>
+      
       </div>
 
       <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
