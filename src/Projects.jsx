@@ -209,10 +209,10 @@ const blogItems = blogPosts.map((post, i) => {
  return (
     <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen py-10">
       <h1 id="projects" className="text-4xl font-bold text-center text-gray-800 mb-4">
-        Project Highlights, Coding Blog, and Certifications
+        Project Highlights and Certifications
       </h1>
       <h2 className="text-lg text-center text-gray-600 mb-8">
-        Web Development, Game Development, Data Projects, and Software Engineering.
+        Showcasing hackathon projects, personal projects, leetcode solutions, and certifcations.
       </h2>
 
       <div className="flex justify-center mb-8 space-x-4">
