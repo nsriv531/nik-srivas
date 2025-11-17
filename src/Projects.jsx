@@ -90,7 +90,7 @@ function Projects() {
     <>
       <Project 
         title="Promenade - Hack The Change 2024"
-        description="This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safely at night and connect them users based on a matching algorithm. This applications helps with safety as well as connecting like-minded individuals to promote peace and inclusion."
+        description="This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safely at night and connect users based on a matching algorithm. This applications helps with safety as well as connecting like-minded individuals to promote peace and inclusion."
         tags={["React.js","Tailwind CSS", "Swift", "Vercel", "Google Firebase"]}
         link="https://devpost.com/software/promenade"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/123/813/datas/medium.png"
@@ -114,8 +114,8 @@ function Projects() {
 
       <Project 
         title = "DentrisDMS -  Inventory Management System"
-        description = "DentrisDMS is an Inventory Management System I built using the CodeIgnitor framework in PHP. This website helps this dental clinic manage their inventory for a catalogue of over 100 items. With some basic Javascript and simple styling with CSS, I was able to build this system. To inspect this application, login with Username: subadmin@admin.com, Password: 123456."
-        tags={["HTML","CodeIgnitor PHP Framework", "MySQL"]}
+        description = "DentrisDMS is an Inventory Management System I built using the CodeIgniter framework in PHP. This website helps this dental clinic manage their inventory for a catalogue of over 100 items. With some basic Javascript and simple styling with CSS, I was able to build this system. To inspect this application, login with Username: subadmin@admin.com, Password: 123456."
+        tags={["HTML","CodeIgniter PHP Framework", "MySQL"]}
         link="http://dentrisdms.com/"
         projectimage="https://i.ibb.co/M6CRSy9/dentris-square-ver2.png"
       />
