@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Project from "./Project";
 import Blog from "./Blog";
 import Certifications from "./Certifications";
+import Wordle from "./Wordle";
 
 
 const languageIcons = {
@@ -227,6 +228,17 @@ const blogItems = blogPosts.map((post, i) => {
           Projects
         </button>
 
+  
+        <button
+  onClick={() => setActiveTab("wordle")}
+  className={`px-5 py-2 rounded-full font-semibold transition ${
+    activeTab === "wordle"
+      ? "bg-blue-500 text-white"
+      : "bg-white border border-blue-500 text-blue-500"
+  }`}
+>
+  Wordle
+</button>
        
         <button
           onClick={() => setActiveTab("blogs")}
@@ -253,12 +265,18 @@ const blogItems = blogPosts.map((post, i) => {
       
       </div>
 
-      <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
-  {activeTab === "projects"
-    ? projectItems
-    : activeTab === "certifications"
-    ? certificationItems
-    : blogItems}
+     <div className="ProjectContainer max-w-6xl mx-auto space-y-8 px-4">
+  {activeTab === "projects" && projectItems}
+
+  {activeTab === "certifications" && certificationItems}
+
+  {activeTab === "blogs" && blogItems}
+
+  {activeTab === "wordle" && <Wordle />}
+
+  {/* Fallback if somehow activeTab is something else */}
+  {["projects", "certifications", "blogs", "wordle"].indexOf(activeTab) === -1 &&
+    projectItems}
 </div>
     </div>
   );
