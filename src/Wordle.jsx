@@ -1,22 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
-// A decent-sized pool of 5-letter words.
-// You can add/remove words as you like.
-const WORD_LIST = [
-  "apple", "grape", "train", "crane", "chair", "house", "mouse", "brick",
-  "light", "night", "sound", "storm", "pride", "plane", "sweet", "flesh",
-  "bound", "cable", "flame", "ghost", "magic", "novel", "piano", "river",
-  "shore", "tiger", "vivid", "whale", "youth", "zesty", "adobe", "angle",
-  "badge", "blast", "bloom", "blush", "brave", "charm", "climb", "creek",
-  "dance", "draft", "elite", "faith", "focus", "globe", "grain", "harsh",
-  "inner", "jelly", "karma", "laser", "lucky", "metal", "micro", "nerdy",
-  "ocean", "olive", "phase", "quest", "quick", "radio", "roast", "scale",
-  "scope", "sheep", "skill", "smile", "spice", "spike", "spire", "sport",
-  "stack", "steel", "stone", "story", "table", "toast", "trace", "trend",
-  "tribe", "trust", "value", "vital", "voice", "waltz", "woven", "xenon",
-  "yield", "zonal"
-];
-
+const WORDS_URL = "https://www.avinashdashin.com/nordle.json";
 const MAX_GUESSES = 5;
 
 // Compute Wordle-style result for a guess
@@ -25,14 +9,12 @@ function getGuessResult(guess, target) {
   const targetLetters = target.split("");
   const letterCounts = {};
 
-  // Count target letters
   for (const ch of targetLetters) {
     letterCounts[ch] = (letterCounts[ch] || 0) + 1;
   }
 
   const guessLetters = guess.split("");
 
-  // First pass: correct positions
   for (let i = 0; i < 5; i++) {
     if (guessLetters[i] === targetLetters[i]) {
       result[i] = "correct";
@@ -40,7 +22,6 @@ function getGuessResult(guess, target) {
     }
   }
 
-  // Second pass: present but wrong position
   for (let i = 0; i < 5; i++) {
     const ch = guessLetters[i];
     if (result[i] === "correct") continue;
@@ -53,16 +34,47 @@ function getGuessResult(guess, target) {
   return result;
 }
 
-function getRandomWord() {
-  const idx = Math.floor(Math.random() * WORD_LIST.length);
-  return WORD_LIST[idx];
+function normalizeWords(raw) {
+  // Supports either:
+  // 1) ["apple", "grape", ...]
+  // 2) { words: ["apple", ...] }
+  const arr = Array.isArray(raw) ? raw : Array.isArray(raw?.words) ? raw.words : [];
+  return arr
+    .map((w) => String(w).toLowerCase().trim())
+    .filter((w) => /^[a-z]{5}$/.test(w));
+}
+
+// PURE URL VERSION: always fetches nordle.json
+async function getRandomWord() {
+  const res = await fetch(WORDS_URL, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch word list: ${res.status}`);
+
+  const data = await res.json();
+  const words = normalizeWords(data);
+
+  if (words.length === 0) throw new Error("No valid 5-letter words found in nordle.json");
+
+  const idx = Math.floor(Math.random() * words.length);
+  return words[idx];
 }
 
 export default function Wordle() {
-  const [secretWord, setSecretWord] = useState(getRandomWord);
-  const [guesses, setGuesses] = useState([]); // array of strings
+  const [secretWord, setSecretWord] = useState("");
+  const [guesses, setGuesses] = useState([]);
   const [currentGuess, setCurrentGuess] = useState("");
   const [message, setMessage] = useState("");
+
+  // Load the first word from the URL on mount
+  useEffect(() => {
+    (async () => {
+      try {
+        const word = await getRandomWord();
+        setSecretWord(word);
+      } catch (e) {
+        setMessage("Could not load word list from nordle.json.");
+      }
+    })();
+  }, []);
 
   const rows = useMemo(() => {
     const allRows = [];
@@ -74,18 +86,22 @@ export default function Wordle() {
 
   const handleChange = (e) => {
     const value = e.target.value.replace(/[^a-zA-Z]/g, "").toLowerCase();
-    if (value.length <= 5) {
-      setCurrentGuess(value);
+    if (value.length <= 5) setCurrentGuess(value);
+  };
+
+  // Reset game: fetch a new word from the URL
+  const resetGame = async () => {
+    try {
+      const word = await getRandomWord();
+      setSecretWord(word);
+      setGuesses([]);
+      setCurrentGuess("");
+    } catch (e) {
+      setMessage("Could not load a new word from nordle.json.");
     }
   };
 
-  const resetGame = () => {
-    setSecretWord(getRandomWord());
-    setGuesses([]);
-    setCurrentGuess("");
-  };
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (currentGuess.length !== 5) {
       setMessage("Guess must be exactly 5 letters.");
       return;
@@ -97,18 +113,14 @@ export default function Wordle() {
     const isCorrect = currentGuess === secretWord;
 
     if (isCorrect) {
-      setMessage(
-        `🎉 Congrats! You got it: ${secretWord.toUpperCase()}. New word loaded.`
-      );
-      resetGame();
+      setMessage(`🎉 Congrats! You got it: ${secretWord.toUpperCase()}. New word loaded.`);
+      await resetGame();
       return;
     }
 
     if (nextGuesses.length >= MAX_GUESSES) {
-      setMessage(
-        `❌ Out of guesses! The word was ${secretWord.toUpperCase()}. New word loaded.`
-      );
-      resetGame();
+      setMessage(`❌ Out of guesses! The word was ${secretWord.toUpperCase()}. New word loaded.`);
+      await resetGame();
       return;
     }
 
@@ -117,19 +129,17 @@ export default function Wordle() {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit();
-    }
+    if (e.key === "Enter") handleSubmit();
   };
+
+  // If the word hasn't loaded yet, you can show a simple loading state
+  if (!secretWord) {
+    return <div className="p-6 text-gray-700">Loading word list…</div>;
+  }
 
   return (
     <div className="flex flex-col items-center space-y-6 pb-10">
       <h2 className="text-2xl font-bold text-gray-800">Wordle-Style Game</h2>
-      <p className="text-gray-700 text-center max-w-xl">
-        Guess the hidden 5-letter word. You have {MAX_GUESSES} attempts.
-        Green = correct letter & position, yellow = letter in the word but wrong
-        position, gray = not in the word.
-      </p>
 
       {/* Grid */}
       <div className="space-y-2">
@@ -149,7 +159,6 @@ export default function Wordle() {
                 } else if (status === "present") {
                   extraClasses = "bg-yellow-400 border-yellow-400 text-white";
                 } else if (letter && !status) {
-                  // a filled but un-scored cell (current row before submit)
                   extraClasses = "bg-gray-300 border-gray-300 text-white";
                 }
 
