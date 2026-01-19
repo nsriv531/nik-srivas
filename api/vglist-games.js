@@ -4,10 +4,7 @@ export default async function handler(req, res) {
     const url = `https://vglist.co/game_purchases.json?user_id=${userId}`;
 
     const r = await fetch(url, {
-      headers: {
-        Accept: "application/json",
-        "User-Agent": "Mozilla/5.0",
-      },
+      headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0" },
     });
 
     if (!r.ok) {
@@ -16,16 +13,15 @@ export default async function handler(req, res) {
 
     const purchases = await r.json();
 
-    // Map by game name to de-dupe + merge
-    const map = new Map();
+    // If the same game appears multiple times, keep the one that has comments (or latest non-empty)
+    const byName = new Map();
 
-    for (const p of Array.isArray(purchases) ? purchases : []) {
+    for (const p of purchases) {
       const name = p?.game?.name;
       if (typeof name !== "string" || !name.trim()) continue;
 
       const cleanName = name.trim();
-      const rating =
-        typeof p?.rating === "number" ? p.rating : null;
+      const rating = typeof p?.rating === "number" ? p.rating : null;
 
       const platforms = Array.isArray(p?.platforms)
         ? p.platforms
@@ -34,31 +30,25 @@ export default async function handler(req, res) {
             .map((n) => n.trim())
         : [];
 
-      if (!map.has(cleanName)) {
-        map.set(cleanName, {
-          name: cleanName,
-          rating,
-          platforms: [...new Set(platforms)],
-        });
-      } else {
-        const existing = map.get(cleanName);
+      const comments =
+        typeof p?.comments === "string" && p.comments.trim().length > 0
+          ? p.comments.trim()
+          : "";
 
-        // keep the highest rating (or the non-null one)
-        const existingRating = existing.rating;
-        if (typeof rating === "number") {
-          if (typeof existingRating !== "number" || rating > existingRating) {
-            existing.rating = rating;
-          }
-        }
+      const existing = byName.get(cleanName);
 
-        // merge platforms
-        existing.platforms = Array.from(
-          new Set([...(existing.platforms || []), ...platforms])
-        );
+      // Prefer entry with comments; otherwise keep existing
+      if (!existing) {
+        byName.set(cleanName, { name: cleanName, rating, platforms, comments });
+      } else if (!existing.comments && comments) {
+        byName.set(cleanName, { ...existing, rating, platforms, comments });
+      } else if (existing.comments && comments) {
+        // both have comments - keep existing (or swap if you want)
+        // no-op
       }
     }
 
-    const games = Array.from(map.values());
+    const games = Array.from(byName.values());
 
     return res.status(200).json({ userId, count: games.length, games });
   } catch (err) {
