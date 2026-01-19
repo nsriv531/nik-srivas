@@ -8,6 +8,8 @@ export default function GameCollec() {
   const [sort, setSort] = useState("az"); // "az" | "za" | "rating_desc"
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [openGame, setOpenGame] = useState(null); // store g.name of the flipped card
+
 
   useEffect(() => {
     let cancelled = false;
@@ -101,36 +103,86 @@ export default function GameCollec() {
   const hasComments =
     typeof g?.comments === "string" && g.comments.trim().length > 0;
 
-  return (
-    <li
-      key={g.name}
-      className="relative px-4 py-2 rounded-xl bg-white border border-gray-200"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="font-medium text-gray-900">{g.name}</div>
+  const isOpen = openGame === g.name;
 
-        <div className="shrink-0 text-sm font-semibold text-gray-700">
-          {typeof g.rating === "number" ? `${g.rating}` : "—"}
+  const toggle = () => {
+    if (!hasComments) return;
+    setOpenGame((cur) => (cur === g.name ? null : g.name));
+  };
+
+  return (
+    <li key={g.name} className="w-full">
+      <div
+        className="relative h-[84px] md:h-[84px] [perspective:1200px]"
+        onClick={toggle}
+        role={hasComments ? "button" : undefined}
+        tabIndex={hasComments ? 0 : -1}
+        onKeyDown={(e) => {
+          if (!hasComments) return;
+          if (e.key === "Enter" || e.key === " ") toggle();
+        }}
+        aria-label={hasComments ? `View comment for ${g.name}` : undefined}
+      >
+        {/* FLIP WRAPPER */}
+        <div
+          className={[
+            "absolute inset-0 transition-transform duration-500 [transform-style:preserve-3d]",
+            isOpen ? "[transform:rotateY(180deg)]" : "",
+            hasComments ? "cursor-pointer" : "cursor-default",
+          ].join(" ")}
+        >
+          {/* FRONT */}
+          <div className="absolute inset-0 [backface-visibility:hidden] px-4 py-2 rounded-xl bg-white border border-gray-200">
+            <div className="flex items-start justify-between gap-3">
+              <div className="font-medium text-gray-900">{g.name}</div>
+
+              <div className="shrink-0 text-sm font-semibold text-gray-700">
+                {typeof g.rating === "number" ? `${g.rating}` : "—"}
+              </div>
+            </div>
+
+            <div className="mt-1 text-sm text-gray-600">
+              {Array.isArray(g.platforms) && g.platforms.length > 0
+                ? g.platforms.join(", ")
+                : "Unknown platform"}
+            </div>
+
+            {hasComments && (
+              <img
+                src="https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif"
+                alt="Has comments"
+                className="absolute bottom-2 right-2 w-4 h-4 opacity-90 pointer-events-none"
+                loading="lazy"
+              />
+            )}
+          </div>
+
+          {/* BACK */}
+          <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] px-4 py-2 rounded-xl bg-white border border-gray-200">
+            <div className="flex items-start justify-between gap-3">
+              <div className="font-semibold text-gray-900 truncate">{g.name}</div>
+
+              {/* <button
+                className="text-sm px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50"
+                onClick={(e) => {
+                  e.stopPropagation(); // don’t re-trigger the parent click
+                  setOpenGame(null);
+                }}
+              >
+                Back
+              </button> */}
+            </div>
+
+            <p className="mt-2 text-sm text-gray-700 line-clamp-3">
+              {g.comments}
+            </p>
+          </div>
         </div>
       </div>
-
-      <div className="mt-1 text-sm text-gray-600">
-        {Array.isArray(g.platforms) && g.platforms.length > 0
-          ? g.platforms.join(", ")
-          : "Unknown platform"}
-      </div>
-
-      {hasComments && (
-        <img
-          src="https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif"
-          alt="Has comments"
-          className="absolute bottom-2 right-2 w-4 h-4 opacity-90 pointer-events-none"
-          loading="lazy"
-        />
-      )}
     </li>
   );
 })}
+
         </ul>
       )}
     </div>
