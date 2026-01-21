@@ -44,16 +44,7 @@ function normalizeWords(raw) {
     .filter((w) => /^[a-z]{5}$/.test(w));
 }
 
-// PURE URL VERSION: always fetches nordle.json
-async function getRandomWord() {
-  const res = await fetch(WORDS_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to fetch word list: ${res.status}`);
-
-  const data = await res.json();
-  const words = normalizeWords(data);
-
-  if (words.length === 0) throw new Error("No valid 5-letter words found in nordle.json");
-
+function pickRandomWord(words) {
   const idx = Math.floor(Math.random() * words.length);
   return words[idx];
 }
@@ -64,12 +55,25 @@ export default function Wordle() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [message, setMessage] = useState("");
 
-  // Load the first word from the URL on mount
+  // NEW: store word list + set for validation
+  const [wordList, setWordList] = useState([]); // array of valid 5-letter words
+  const [wordSet, setWordSet] = useState(null); // Set for fast membership check
+
+  // Load the word list once on mount, then choose secret word from it
   useEffect(() => {
     (async () => {
       try {
-        const word = await getRandomWord();
-        setSecretWord(word);
+        const res = await fetch(WORDS_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to fetch word list: ${res.status}`);
+
+        const data = await res.json();
+        const words = normalizeWords(data);
+
+        if (words.length === 0) throw new Error("No valid 5-letter words found in nordle.json");
+
+        setWordList(words);
+        setWordSet(new Set(words));
+        setSecretWord(pickRandomWord(words));
       } catch (e) {
         setMessage("Could not load word list from nordle.json.");
       }
@@ -89,22 +93,25 @@ export default function Wordle() {
     if (value.length <= 5) setCurrentGuess(value);
   };
 
-  // Reset game: fetch a new word from the URL
-  const resetGame = async () => {
-    try {
-      const word = await getRandomWord();
-      setSecretWord(word);
-      setGuesses([]);
-      setCurrentGuess("");
-    } catch (e) {
-      setMessage("Could not load a new word from nordle.json.");
-    }
+  // Reset game: reuse loaded list (no refetch)
+  const resetGame = () => {
+    if (!wordList.length) return;
+    setSecretWord(pickRandomWord(wordList));
+    setGuesses([]);
+    setCurrentGuess("");
+    setMessage("");
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (currentGuess.length !== 5) {
       setMessage("Guess must be exactly 5 letters.");
       return;
+    }
+
+    // NEW: validate against the word list
+    if (!wordSet || !wordSet.has(currentGuess)) {
+      setMessage("Not a valid word");
+      return; // IMPORTANT: do NOT consume a guess
     }
 
     const nextGuesses = [...guesses, currentGuess];
@@ -114,13 +121,13 @@ export default function Wordle() {
 
     if (isCorrect) {
       setMessage(`🎉 Congrats! You got it: ${secretWord.toUpperCase()}. New word loaded.`);
-      await resetGame();
+      resetGame();
       return;
     }
 
     if (nextGuesses.length >= MAX_GUESSES) {
       setMessage(`❌ Out of guesses! The word was ${secretWord.toUpperCase()}. New word loaded.`);
-      await resetGame();
+      resetGame();
       return;
     }
 
@@ -132,7 +139,7 @@ export default function Wordle() {
     if (e.key === "Enter") handleSubmit();
   };
 
-  // If the word hasn't loaded yet, you can show a simple loading state
+  // If the word list hasn't loaded yet, show loading
   if (!secretWord) {
     return <div className="p-6 text-gray-700">Loading word list…</div>;
   }
