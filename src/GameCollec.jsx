@@ -1,16 +1,50 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
 const COMMENT_GIF = "https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif";
 const UNKNOWN_PLATFORM = "Unknown platform";
+
+/**
+ * SIMPLE: if comments length > THRESHOLD, show a button that opens the modal.
+ * No measuring / no refs.
+ */
+function CommentPreview({ name, comments, onOpen }) {
+  const text = typeof comments === "string" ? comments.trim() : "";
+  const THRESHOLD = 140; // tweak as needed
+
+  const isLong = text.length > THRESHOLD;
+
+  return (
+    <div className="mt-2">
+      <p className="text-sm text-gray-700 line-clamp-3">{text}</p>
+
+      {isLong && (
+        <button
+          type="button"
+          className="mt-2 text-xs underline"
+          onClick={(e) => {
+            e.stopPropagation(); // don't flip card again
+            onOpen({ name, comments: text });
+          }}
+        >
+          Open modal
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function GameCollec() {
   const [games, setGames] = useState([]); // [{name,rating,platforms,comments}]
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("az"); // "az" | "za" | "rating_desc"
-  const [platformFilter, setPlatformFilter] = useState("all"); // ✅ NEW
+  const [platformFilter, setPlatformFilter] = useState("all");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [openGame, setOpenGame] = useState(null);
+
+  // modal state
+  const [modalGame, setModalGame] = useState(null); // { name, comments } | null
 
   useEffect(() => {
     let cancelled = false;
@@ -38,7 +72,27 @@ export default function GameCollec() {
     };
   }, []);
 
-  // ✅ NEW: build platform dropdown options from the loaded games
+  // close modal with Esc
+  useEffect(() => {
+    if (!modalGame) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setModalGame(null);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [modalGame]);
+
+  // lock background scroll while modal open
+  useEffect(() => {
+    document.body.style.overflow = modalGame ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalGame]);
+
+  // platform dropdown options
   const platformOptions = useMemo(() => {
     const set = new Set();
 
@@ -60,11 +114,11 @@ export default function GameCollec() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const pf = platformFilter; // "all" or platform string
+    const pf = platformFilter;
 
     let list = games;
 
-    // ✅ NEW: apply platform filter first
+    // platform filter
     if (pf !== "all") {
       list = list.filter((g) => {
         const pls = Array.isArray(g?.platforms) ? g.platforms : [];
@@ -109,7 +163,6 @@ export default function GameCollec() {
         </h3>
 
         <div className="flex items-center gap-3 flex-wrap">
-          {/* ✅ NEW: platform filter */}
           <select
             value={platformFilter}
             onChange={(e) => setPlatformFilter(e.target.value)}
@@ -150,8 +203,9 @@ export default function GameCollec() {
       {!loading && !error && (
         <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
           {filtered.map((g) => {
-            const hasComments =
-              typeof g?.comments === "string" && g.comments.trim().length > 0;
+            const commentText =
+              typeof g?.comments === "string" ? g.comments.trim() : "";
+            const hasComments = commentText.length > 0;
 
             const isOpen = openGame === g.name;
 
@@ -171,7 +225,6 @@ export default function GameCollec() {
                     if (!hasComments) return;
                     if (e.key === "Enter" || e.key === " ") toggle();
                   }}
-                  aria-label={hasComments ? `View comment for ${g.name}` : undefined}
                 >
                   <div
                     className={[
@@ -214,9 +267,17 @@ export default function GameCollec() {
                         </div>
                       </div>
 
-                      <p className="mt-2 text-sm text-gray-700 line-clamp-3">
-                        {g.comments}
-                      </p>
+                      {hasComments ? (
+                        <CommentPreview
+                          name={g.name}
+                          comments={commentText}
+                          onOpen={(payload) => setModalGame(payload)}
+                        />
+                      ) : (
+                        <p className="mt-2 text-sm text-gray-500 italic">
+                          No comments
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -225,6 +286,32 @@ export default function GameCollec() {
           })}
         </ul>
       )}
+
+      {/* SIMPLE MODAL (Portal) */}
+      {modalGame &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            onClick={() => setModalGame(null)}
+          >
+            <div className="bg-white p-4 rounded border max-w-lg w-full">
+              <div className="flex items-center justify-between gap-3">
+                <div className="font-bold">{modalGame.name}</div>
+                <button
+                  className="border px-2 py-1 rounded"
+                  onClick={() => setModalGame(null)}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="mt-3 whitespace-pre-wrap text-sm">
+                {modalGame.comments}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
