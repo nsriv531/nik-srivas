@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 
 const COMMENT_GIF = "https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif";
+const UNKNOWN_PLATFORM = "Unknown platform";
 
 export default function GameCollec() {
   const [games, setGames] = useState([]); // [{name,rating,platforms,comments}]
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("az"); // "az" | "za" | "rating_desc"
+  const [platformFilter, setPlatformFilter] = useState("all"); // ✅ NEW
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [openGame, setOpenGame] = useState(null); // store g.name of the flipped card
-
+  const [openGame, setOpenGame] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -37,13 +38,47 @@ export default function GameCollec() {
     };
   }, []);
 
+  // ✅ NEW: build platform dropdown options from the loaded games
+  const platformOptions = useMemo(() => {
+    const set = new Set();
+
+    for (const g of games) {
+      const pls = Array.isArray(g?.platforms) ? g.platforms : [];
+      if (pls.length === 0) {
+        set.add(UNKNOWN_PLATFORM);
+        continue;
+      }
+      for (const p of pls) {
+        if (typeof p === "string" && p.trim()) set.add(p.trim());
+      }
+    }
+
+    return Array.from(set).sort((a, b) =>
+      a.localeCompare(b, undefined, { sensitivity: "base" })
+    );
+  }, [games]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const pf = platformFilter; // "all" or platform string
 
-    let list = !q
-      ? games
-      : games.filter((g) => (g?.name || "").toLowerCase().includes(q));
+    let list = games;
 
+    // ✅ NEW: apply platform filter first
+    if (pf !== "all") {
+      list = list.filter((g) => {
+        const pls = Array.isArray(g?.platforms) ? g.platforms : [];
+        const normalized = pls.length ? pls : [UNKNOWN_PLATFORM];
+        return normalized.some((p) => (p || "").trim() === pf);
+      });
+    }
+
+    // search
+    if (q) {
+      list = list.filter((g) => (g?.name || "").toLowerCase().includes(q));
+    }
+
+    // sort
     if (sort === "rating_desc") {
       list = [...list].sort((a, b) => {
         const ar = typeof a?.rating === "number" ? a.rating : -1;
@@ -64,7 +99,7 @@ export default function GameCollec() {
     }
 
     return list;
-  }, [games, query, sort]);
+  }, [games, query, sort, platformFilter]);
 
   return (
     <div className="bg-white/80 rounded-2xl p-6 shadow">
@@ -73,7 +108,22 @@ export default function GameCollec() {
           Game Collection ({filtered.length})
         </h3>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          {/* ✅ NEW: platform filter */}
+          <select
+            value={platformFilter}
+            onChange={(e) => setPlatformFilter(e.target.value)}
+            className="px-4 py-2 rounded-full border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-300"
+            aria-label="Filter by platform"
+          >
+            <option value="all">All platforms</option>
+            {platformOptions.map((p) => (
+              <option key={p} value={p}>
+                {p}
+              </option>
+            ))}
+          </select>
+
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
@@ -100,89 +150,79 @@ export default function GameCollec() {
       {!loading && !error && (
         <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
           {filtered.map((g) => {
-  const hasComments =
-    typeof g?.comments === "string" && g.comments.trim().length > 0;
+            const hasComments =
+              typeof g?.comments === "string" && g.comments.trim().length > 0;
 
-  const isOpen = openGame === g.name;
+            const isOpen = openGame === g.name;
 
-  const toggle = () => {
-    if (!hasComments) return;
-    setOpenGame((cur) => (cur === g.name ? null : g.name));
-  };
+            const toggle = () => {
+              if (!hasComments) return;
+              setOpenGame((cur) => (cur === g.name ? null : g.name));
+            };
 
-  return (
-    <li key={g.name} className="w-full">
-      <div
-        className="relative h-[84px] md:h-[84px] [perspective:1200px]"
-        onClick={toggle}
-        role={hasComments ? "button" : undefined}
-        tabIndex={hasComments ? 0 : -1}
-        onKeyDown={(e) => {
-          if (!hasComments) return;
-          if (e.key === "Enter" || e.key === " ") toggle();
-        }}
-        aria-label={hasComments ? `View comment for ${g.name}` : undefined}
-      >
-        {/* FLIP WRAPPER */}
-        <div
-          className={[
-            "absolute inset-0 transition-transform duration-500 [transform-style:preserve-3d]",
-            isOpen ? "[transform:rotateY(180deg)]" : "",
-            hasComments ? "cursor-pointer" : "cursor-default",
-          ].join(" ")}
-        >
-          {/* FRONT */}
-          <div className="absolute inset-0 [backface-visibility:hidden] px-4 py-2 rounded-xl bg-white border border-gray-200">
-            <div className="flex items-start justify-between gap-3">
-              <div className="font-medium text-gray-900">{g.name}</div>
+            return (
+              <li key={g.name} className="w-full">
+                <div
+                  className="relative h-[84px] md:h-[84px] [perspective:1200px]"
+                  onClick={toggle}
+                  role={hasComments ? "button" : undefined}
+                  tabIndex={hasComments ? 0 : -1}
+                  onKeyDown={(e) => {
+                    if (!hasComments) return;
+                    if (e.key === "Enter" || e.key === " ") toggle();
+                  }}
+                  aria-label={hasComments ? `View comment for ${g.name}` : undefined}
+                >
+                  <div
+                    className={[
+                      "absolute inset-0 transition-transform duration-500 [transform-style:preserve-3d]",
+                      isOpen ? "[transform:rotateY(180deg)]" : "",
+                      hasComments ? "cursor-pointer" : "cursor-default",
+                    ].join(" ")}
+                  >
+                    {/* FRONT */}
+                    <div className="absolute inset-0 [backface-visibility:hidden] px-4 py-2 rounded-xl bg-white border border-gray-200">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="font-medium text-gray-900">{g.name}</div>
 
-              <div className="shrink-0 text-sm font-semibold text-gray-700">
-                {typeof g.rating === "number" ? `${g.rating}` : "—"}
-              </div>
-            </div>
+                        <div className="shrink-0 text-sm font-semibold text-gray-700">
+                          {typeof g.rating === "number" ? `${g.rating}` : "—"}
+                        </div>
+                      </div>
 
-            <div className="mt-1 text-sm text-gray-600">
-              {Array.isArray(g.platforms) && g.platforms.length > 0
-                ? g.platforms.join(", ")
-                : "Unknown platform"}
-            </div>
+                      <div className="mt-1 text-sm text-gray-600">
+                        {Array.isArray(g.platforms) && g.platforms.length > 0
+                          ? g.platforms.join(", ")
+                          : UNKNOWN_PLATFORM}
+                      </div>
 
-            {hasComments && (
-              <img
-                src="https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif"
-                alt="Has comments"
-                className="absolute bottom-2 right-2 w-4 h-4 opacity-90 pointer-events-none"
-                loading="lazy"
-              />
-            )}
-          </div>
+                      {hasComments && (
+                        <img
+                          src={COMMENT_GIF}
+                          alt="Has comments"
+                          className="absolute bottom-2 right-2 w-4 h-4 opacity-90 pointer-events-none"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
 
-          {/* BACK */}
-          <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] px-4 py-2 rounded-xl bg-white border border-gray-200">
-            <div className="flex items-start justify-between gap-3">
-              <div className="font-semibold text-gray-900 truncate">{g.name}</div>
+                    {/* BACK */}
+                    <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] px-4 py-2 rounded-xl bg-white border border-gray-200">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="font-semibold text-gray-900 truncate">
+                          {g.name}
+                        </div>
+                      </div>
 
-              {/* <button
-                className="text-sm px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50"
-                onClick={(e) => {
-                  e.stopPropagation(); // don’t re-trigger the parent click
-                  setOpenGame(null);
-                }}
-              >
-                Back
-              </button> */}
-            </div>
-
-            <p className="mt-2 text-sm text-gray-700 line-clamp-3">
-              {g.comments}
-            </p>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-})}
-
+                      <p className="mt-2 text-sm text-gray-700 line-clamp-3">
+                        {g.comments}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
