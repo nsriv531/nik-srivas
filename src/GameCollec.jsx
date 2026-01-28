@@ -146,7 +146,7 @@ export default function GameCollec() {
                 ? g.platforms.join(", ")
                 : "Unknown platform"}
             </div>
-
+//test
             {hasComments && (
               <img
                 src="https://media.tenor.com/yjeq2j32A0gAAAAj/hmm-rotating.gif"
