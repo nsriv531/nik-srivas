@@ -106,6 +106,14 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/627/080/datas/medium.png"
       />  */}
 
+    <Project 
+        title = "Memora - CalgaryHacks 2026"
+        description = "Memora is a collaborative collage maker built with Next.js and Convex. This allows a user to create collages using tags, with these collages being collections of images and / or audio files. This was built in a team of 4 and I primarily worked on the front-end for this project."
+        tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript"]}
+        link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
+        projectimage="https://raw.githubusercontent.com/CalgaryHacks2026/Image_Hosting/refs/heads/main/Collagio_With_Logo.png?token=GHSAT0AAAAAADSN554TFPINTFIO5AQS7EUY2MRJZAA"
+      />
+
        <Project 
         title = "shelf'd - nwHacks 2025"
         description = "Shelf'd is a gamified way of logging your entire book catalouge. This was my submission for nwHacks 2025. I worked on a team of four for this project, and learned how to use Next.js along with supabase in a team setting."
