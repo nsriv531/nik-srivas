@@ -90,6 +90,15 @@ function Projects() {
 
   const projectItems = (
     <>
+
+      <Project 
+        title = "Memora - CalgaryHacks 2026"
+        description = "Memora is a collaborative collage maker built with Next.js and Convex. This allows a user to create collages using tags, with these collages being collections of images and / or audio files. This was built in a team of 4 and I primarily worked on the front-end for this project."
+        tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript", "LLava13b"]}
+        link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/326/041/datas/gallery.jpg"
+      />
+      
       <Project 
         title="Promenade - Hack The Change 2024"
         description="This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safely at night and connect them users based on a matching algorithm. This applications helps with safety as well as connecting like-minded individuals to promote peace and inclusion."
@@ -106,13 +115,6 @@ function Projects() {
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/627/080/datas/medium.png"
       />  */}
 
-    <Project 
-        title = "Memora - CalgaryHacks 2026"
-        description = "Memora is a collaborative collage maker built with Next.js and Convex. This allows a user to create collages using tags, with these collages being collections of images and / or audio files. This was built in a team of 4 and I primarily worked on the front-end for this project."
-        tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript", "LLava13b"]}
-        link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
-        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/326/041/datas/gallery.jpg"
-      />
 
        <Project 
         title = "shelf'd - nwHacks 2025"
