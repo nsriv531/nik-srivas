@@ -109,9 +109,9 @@ function Projects() {
     <Project 
         title = "Memora - CalgaryHacks 2026"
         description = "Memora is a collaborative collage maker built with Next.js and Convex. This allows a user to create collages using tags, with these collages being collections of images and / or audio files. This was built in a team of 4 and I primarily worked on the front-end for this project."
-        tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript"]}
+        tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript", "LLava13b"]}
         link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
-        projectimage="https://raw.githubusercontent.com/CalgaryHacks2026/Image_Hosting/refs/heads/main/Collagio_With_Logo.png?token=GHSAT0AAAAAADSN554TFPINTFIO5AQS7EUY2MRJZAA"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/326/041/datas/gallery.jpg"
       />
 
        <Project 
