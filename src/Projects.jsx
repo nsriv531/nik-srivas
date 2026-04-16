@@ -98,7 +98,15 @@ function Projects() {
         link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
         projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/326/041/datas/gallery.jpg"
       />
-      
+
+      {/* <Project 
+        title = "Glacier"
+        description = "Glacier is a Java / C++ "
+        tags={["Java", "Spring", "SpringBoot", "C++"]}
+        link="https://devpost.com/software/collagio?ref_content=user-portfolio&ref_feature=in_progress"
+        projectimage="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/326/041/datas/gallery.jpg"
+      />
+       */}
       <Project 
         title="Promenade - Hack The Change 2024"
         description="This was a hackathon project I did with 4 others. Promenade is a real time App made for any mobile phone, with a React.js prototype as well as a Swift IOS Prototype. This app allows anyone to walk safely at night and connect them users based on a matching algorithm. This applications helps with safety as well as connecting like-minded individuals to promote peace and inclusion."
