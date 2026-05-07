@@ -1,23 +1,36 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import Landing from "./Landing";
 import Projects from "./Projects";
-import HackProjects from "./HackProjects";
-import HireMe from "./HireMe";
 import Volunteering from "./Volunteering";
 import Footer from "./Footer";
+import GameDev from "./GameDev";
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Landing />
       <Projects />
       <Volunteering />
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gamedev" element={<GameDev />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
