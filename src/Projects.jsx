@@ -93,7 +93,7 @@ function Projects() {
 
       <Project
         title = "Attune"
-        description = "Attune is a mobile focus session app built on the Cue → Focus → Reward → Reflection → Smart Suggestion loop. It features an avatar companion named Sage, distraction detection, flash cards, and AI-powered study cycle insights, along with Spotify integration for background playback during focus sessions. Built with a team of 4 using React Native (Expo) with a Convex backend. The repository is currently private while in development."
+        description = "Attune is a mobile focus session app built on the Cue → Focus → Reward → Reflection → Smart Suggestion loop. It features an avatar companion named Sage, distraction detection, flash cards, and AI-powered study cycle insights, along with Spotify integration for background playback during focus sessions. Built with a team of 4 using React Native (Expo) with a Convex backend."
         tags={["React Native", "Expo", "TypeScript", "Convex", "NativeWind", "Rive", "Spotify API"]}
         link="https://attune-landing-page.vercel.app/"
         projectimage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
