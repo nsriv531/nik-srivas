@@ -100,6 +100,14 @@ function Projects() {
       />
 
       <Project
+        title = "Gang Tokyo - Custom Visual Novel Engine"
+        description = "Gang Tokyo is a data-driven narrative game engine I built with C# on .NET 8 and MonoGame, as an alternative to Ren'Py or Unity for visual novels and narrative RPGs. The engine separates code from content, so scenes, characters, items, and activities are all authored in JSON. It supports branching dialogue and choices, character relationships and stats, inventory and flag systems, day/night phase scheduling, save/load with dialogue logging, and a condition parser for complex logic expressions."
+        tags={["C#", ".NET 8", "MonoGame", "JSON", "Game Engine"]}
+        link="https://github.com/nsriv531/gang-tokyo"
+        projectimage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+      />
+
+      <Project
         title = "Memora - CalgaryHacks 2026"
         description = "Memora is a collaborative collage maker built with Next.js and Convex. This allows a user to create collages using tags, with these collages being collections of images and / or audio files. This was built in a team of 4 and I primarily worked on the front-end for this project."
         tags={["Next.js", "Convex", "Python", "Clerk", "TypeScript", "LLava13b"]}
