@@ -13,11 +13,11 @@ function Landing() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-screen flex flex-col justify-center items-center text-white text-center py-10">
-      <h1 className="text-5xl font-bold mb-4 text-gray-800">
+    <div className="bg-gradient-to-r from-lavender-pink to-light-cyan min-h-[60vh] md:min-h-screen flex flex-col justify-center items-center text-white text-center py-16 px-6">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
         Hi, I'm Nik!
       </h1>
-      <h2 className="text-xl font-light text-gray-800">
+      <h2 className="text-lg md:text-xl font-light text-gray-800">
         I'm a Software + Data Developer, and a leader in STEM education.
       </h2>
       {/* Conditional rendering of the Modal component */}

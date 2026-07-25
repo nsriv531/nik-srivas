@@ -90,12 +90,14 @@
 
 /* Navbar styling */
 .Navbar {
-  height: 80px;
+  min-height: 80px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 16px 260px;
+  padding: 16px 24px;
   align-items: center;
+  gap: 8px 16px;
   background-color: #3f54f7;
 }
 .Navbarlinks {
@@ -161,7 +163,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 260px 100px;
+  padding: 50px 24px 100px;
 }
 .VolunteeringTags div {
   text-decoration: none;
@@ -183,11 +185,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 260px 100px;
+  padding: 50px 24px 100px;
 }
 .Project {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   padding: 20px;
   gap: 20px;
 }
@@ -208,7 +210,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   gap: 12px;
-  margin: 50px 260px;
+  margin: 50px 24px;
   margin-bottom: 0;
   padding-bottom: 12px;
   border-bottom: 1px solid #000;
@@ -231,7 +233,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 100px 260px;
+  padding: 100px 24px;
 }
 .HireMe form input[type="submit"] {
   width: 100%;
@@ -253,5 +255,30 @@
 
 /* Misc */
 small {
-  padding-left: 260px;
+  padding-left: 24px;
+}
+
+/* Restore wide gutters on large screens */
+@media (min-width: 1280px) {
+  .Navbar {
+    padding: 16px 260px;
+  }
+  .Volunteering,
+  .Projects {
+    padding-left: 260px;
+    padding-right: 260px;
+  }
+  .Project {
+    grid-template-columns: 1fr 1fr;
+  }
+  .Footer {
+    margin-left: 260px;
+    margin-right: 260px;
+  }
+  .HireMe {
+    padding: 100px 260px;
+  }
+  small {
+    padding-left: 260px;
+  }
 }

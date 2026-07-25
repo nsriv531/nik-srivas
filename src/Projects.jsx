@@ -251,7 +251,7 @@ const blogItems = blogPosts.map((post, i) => {
         Showcasing hackathon projects, personal projects, leetcode solutions, and certifcations.
       </h2>
 
-      <div className="flex justify-center mb-8 space-x-4">
+      <div className="flex flex-wrap justify-center gap-3 mb-8 px-4">
         <button
           onClick={() => setActiveTab("projects")}
           className={`px-5 py-2 rounded-full font-semibold transition ${
