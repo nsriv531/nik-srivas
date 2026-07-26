@@ -17,7 +17,8 @@ export default async function handler(req, res) {
     'User-Agent': 'proj-dive',
     Accept: 'application/vnd.github+json',
   };
-  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const token = (process.env.GITHUB_TOKEN || '').trim();
+  if (token) headers.Authorization = `Bearer ${token}`;
 
   try {
     const r = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/commits?per_page=1`, { headers });
