@@ -264,7 +264,7 @@ const blogItems = blogPosts.map((post, i) => {
         </button>
 
   
-        <button
+        {/* <button
   onClick={() => setActiveTab("wordle")}
   className={`px-5 py-2 rounded-full font-semibold transition ${
     activeTab === "wordle"
@@ -273,7 +273,7 @@ const blogItems = blogPosts.map((post, i) => {
   }`}
 >
   Wordle
-</button>
+</button> */}
        
         <button
           onClick={() => setActiveTab("blogs")}
@@ -299,7 +299,7 @@ const blogItems = blogPosts.map((post, i) => {
         </button>
 
 
-        <button
+        {/* <button
           onClick={() => setActiveTab("game-collection")}
           className={`px-5 py-2 rounded-full font-semibold transition ${
             activeTab === "game-collection"
@@ -308,7 +308,7 @@ const blogItems = blogPosts.map((post, i) => {
           }`}
         >
           Game Collection
-        </button>
+        </button> */}
       
       </div>
 
@@ -319,9 +319,9 @@ const blogItems = blogPosts.map((post, i) => {
 
   {activeTab === "blogs" && blogItems}
 
-  {activeTab === "wordle" && <Wordle />}
+  {/* {activeTab === "wordle" && <Wordle />} */}
 
-  {activeTab === "game-collection" && <GameCollection username="nashdashin" />}
+  {/* {activeTab === "game-collection" && <GameCollection username="nashdashin" />} */}
 
 
   {/* Fallback if somehow activeTab is something else */}
