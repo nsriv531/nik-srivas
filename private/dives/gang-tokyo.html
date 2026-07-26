@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>PROJ-DIVE #73921</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #E4E4E1; }
+  body { color: #191919; font-family: 'Space Grotesk', sans-serif; font-size: 17px; line-height: 1.55; }
+  a { color: #191919; text-decoration-thickness: 2px; }
+  a:hover { color: #4a4a47; }
+  ::selection { background: #191919; color: #F8F8F6; }
+
+  .grain { position: fixed; inset: 0; z-index: 200; pointer-events: none; opacity: 0.5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.14'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .urlbar { position: sticky; top: 0; z-index: 50; background: #191919; color: #F8F8F6; display: flex; align-items: center; gap: 16px; padding: 10px 24px; font-family: 'Space Mono', monospace; font-size: 13px; border-bottom: 3px solid #191919; }
+  .dots { display: flex; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .pill { background: #2b2b29; border: 1px solid #55555299; padding: 4px 14px; border-radius: 999px; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .keynote { margin-left: auto; display: flex; align-items: center; gap: 8px; color: #b5b5b0; white-space: nowrap; }
+  .keynote i { display: inline-block; width: 9px; height: 9px; background: #b5b5b0; transform: rotate(45deg); }
+
+  .wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .card { background: #F8F8F6; border: 3px solid #191919; box-shadow: 7px 7px 0 #191919; }
+  .mono-label { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #6d6d69; }
+
+  .hero { position: relative; background: #F8F8F6; border: 3px solid #191919; box-shadow: 10px 10px 0 #191919; padding: 56px 56px 48px; overflow: hidden; margin-top: 48px; }
+  .halftone { position: absolute; top: -20px; right: -20px; width: 340px; height: 340px; border-radius: 50%;
+    background-image: radial-gradient(circle, rgba(25,25,25,0.22) 1.4px, transparent 1.5px); background-size: 9px 9px; pointer-events: none; }
+  .hero h1 { position: relative; font-family: 'Bangers', cursive; font-size: clamp(64px, 11vw, 150px); line-height: 0.9; margin: 24px 0 8px; letter-spacing: 0.02em; text-shadow: 5px 5px 0 #c9c9c5; }
+  .hero p.sub { position: relative; font-size: 20px; max-width: 640px; margin: 8px 0 28px; font-weight: 500; }
+  .tagrow { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Space Mono', monospace; font-size: 13px; }
+  .tag-solid { background: #191919; color: #F8F8F6; padding: 3px 10px; }
+  .tag-tilt { border: 2px solid #191919; padding: 2px 10px; background: #F8F8F6; transform: rotate(-2deg); font-weight: 700; }
+  .chiprow { position: relative; display: flex; flex-wrap: wrap; gap: 10px; font-family: 'Space Mono', monospace; font-size: 13px; }
+  .chip { border: 2px solid #191919; padding: 5px 12px; box-shadow: 3px 3px 0 #191919; background: #EDEDEA; }
+
+  nav.secnav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; }
+  nav.secnav a { text-decoration: none; border: 2px solid #191919; background: #F8F8F6; padding: 7px 16px; box-shadow: 4px 4px 0 #191919; }
+  nav.secnav a:hover { background: #191919; color: #F8F8F6; }
+
+  .sechead { display: flex; align-items: center; gap: 18px; margin: 0 0 28px; }
+  .diamond { width: 52px; height: 52px; background: #191919; color: #F8F8F6; transform: rotate(45deg); display: flex; align-items: center; justify-content: center; flex: none; }
+  .diamond b { transform: rotate(-45deg); font-family: 'Bangers', cursive; font-size: 26px; }
+  .sechead h2 { font-family: 'Bangers', cursive; font-size: 56px; margin: 0; letter-spacing: 0.03em; }
+  .sechead .slash { font-family: 'Space Mono', monospace; font-size: 13px; color: #6d6d69; margin-top: 10px; }
+  section { margin-top: 88px; }
+
+  .grid2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+  .grid2eq { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .stack { display: grid; gap: 24px; }
+  .stack-sm { display: grid; gap: 20px; }
+
+  .speech { position: relative; padding: 28px 32px; }
+  .speech .tail { position: absolute; bottom: -12px; left: 44px; width: 18px; height: 18px; background: #F8F8F6; border-right: 3px solid #191919; border-bottom: 3px solid #191919; transform: rotate(45deg); }
+  .speech p { margin: 0; font-size: 19px; font-weight: 500; }
+
+  .list-plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-family: 'Space Mono', monospace; font-size: 14px; }
+  .list-plain li { display: flex; gap: 10px; }
+
+  .dump { background: #EDEDEA; border: 3px solid #191919; box-shadow: 7px 7px 0 #191919; padding: 20px 24px; }
+  .dump h3, .inkcard h3 { font-family: 'Bangers', cursive; font-size: 22px; letter-spacing: 0.04em; margin: 0; }
+  .dump p { margin: 6px 0 0; font-size: 15px; }
+  .inkcard { background: #191919; color: #F8F8F6; border: 3px solid #191919; box-shadow: 7px 7px 0 #8a8a86; padding: 20px 24px; }
+  .inkcard ul { margin: 8px 0 0; padding-left: 18px; font-size: 15px; display: grid; gap: 4px; }
+
+  .tablehead { border-bottom: 3px solid #191919; padding: 12px 20px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; background: #EDEDEA; }
+  .trow { display: grid; grid-template-columns: 96px 130px 1fr; gap: 14px; padding: 14px 20px; border-bottom: 2px dashed #c9c9c5; font-size: 15px; }
+  .trow:last-child { border-bottom: none; }
+  .trow .k { font-family: 'Space Mono', monospace; font-size: 12px; color: #6d6d69; padding-top: 2px; font-weight: 700; }
+
+  .terminal { background: #191919; color: #d8d8d4; border: 3px solid #191919; box-shadow: 7px 7px 0 #8a8a86; }
+  .termbar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 2px solid #3a3a38; font-family: 'Space Mono', monospace; font-size: 12px; color: #8a8a86; }
+  .termbar .dot { width: 9px; height: 9px; background: #55555299; }
+  .terminal pre { margin: 0; padding: 18px 20px; font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.7; overflow-x: auto; }
+
+  .decision { padding: 20px 24px; }
+  .decision .stamp { font-family: 'Bangers', cursive; font-size: 24px; background: #191919; color: #F8F8F6; padding: 2px 12px; display: inline-block; }
+  .decision .head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .decision p { margin: 0; font-size: 15px; }
+
+  .feat .shot { height: 300px; border-bottom: 3px solid #191919; display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(-45deg, #EDEDEA 0 14px, #F1F1EE 14px 28px); color: #8a8a86; font-family: 'Space Mono', monospace; font-size: 13px; text-align: center; padding: 0 16px; }
+  .feat .shot.short { height: 240px; }
+  .feat .body { padding: 20px 24px; }
+  .feat .title { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .feat .title .name { font-family: 'Bangers', cursive; font-size: 30px; }
+  .feat .title .id { font-family: 'Space Mono', monospace; font-size: 12px; color: #6d6d69; }
+  .feat p { margin: 6px 0 0; font-size: 15px; }
+  .span2 { grid-column: span 2; }
+
+  .lesson { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 24px 28px; align-items: start; }
+  .lesson .num { font-family: 'Bangers', cursive; font-size: 64px; line-height: 1; text-shadow: 3px 3px 0 #c9c9c5; }
+  .lesson b.t { font-size: 18px; }
+  .lesson p { margin: 6px 0 0; font-size: 15px; }
+  .lesson.ink { background: #191919; color: #F8F8F6; border: 3px solid #191919; box-shadow: 7px 7px 0 #8a8a86; position: relative; }
+  .lesson.ink .num { text-shadow: none; }
+  .lesson.ink p { color: #d8d8d4; }
+  .oof { position: absolute; top: -14px; right: 24px; font-family: 'Bangers', cursive; font-size: 22px; background: #F8F8F6; color: #191919; border: 3px solid #191919; padding: 2px 14px; transform: rotate(3deg); letter-spacing: 0.06em; }
+
+  .roadmap { padding: 24px 28px; }
+  .roadhead { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .bar { height: 18px; border: 2px solid #191919; background: #EDEDEA; margin-bottom: 20px; }
+  .bar .fill { height: 100%; background: repeating-linear-gradient(-45deg, #191919 0 6px, #4a4a47 6px 12px); }
+  .todo { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; font-size: 15px; }
+  .todo li { display: flex; gap: 12px; align-items: baseline; }
+  .box { width: 16px; height: 16px; border: 2px solid #191919; flex: none; transform: translateY(2px); }
+  .box.done { background: #191919; }
+  .strike { text-decoration: line-through; color: #8a8a86; }
+  .wishlist { border: 3px dashed #191919; padding: 24px 28px; }
+  .wishlist h3 { font-family: 'Bangers', cursive; font-size: 26px; letter-spacing: 0.04em; margin: 0 0 10px; }
+  .wishlist ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 15px; color: #4a4a47; }
+  .wishlist .fine { margin: 16px 0 0; font-family: 'Space Mono', monospace; font-size: 12px; color: #8a8a86; }
+
+  footer { position: relative; z-index: 1; background: #191919; color: #b5b5b0; font-family: 'Space Mono', monospace; font-size: 13px; margin-top: 96px; }
+  footer .inner { max-width: 1120px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+  footer a { color: #F8F8F6; text-decoration: none; border-bottom: 2px solid #F8F8F6; }
+
+  @media (max-width: 860px) {
+    .grid2, .grid2eq, .grid3 { grid-template-columns: 1fr; }
+    .span2 { grid-column: span 1; }
+    .hero { padding: 36px 28px 32px; }
+    .sechead h2 { font-size: 42px; }
+    .keynote { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- top url bar -->
+<div class="urlbar">
+  <span class="dots">
+    <span class="dot" style="background:#F8F8F6;"></span>
+    <span class="dot" style="background:#8a8a86;"></span>
+    <span class="dot" style="background:#55555299;"></span>
+  </span>
+  <span class="pill">www.avinashdashin.com/<b style="color:#fff;">proj-dive-73921</b></span>
+  <span class="keynote" title="Access codes live in a local .env — never committed, never rendered."><i></i> key lives in .env — not in this repo</span>
+</div>
+
+<!-- hero -->
+<header class="wrap">
+  <div class="hero">
+    <div class="halftone"></div>
+    <div class="tagrow">
+      <span class="tag-solid">PROJ-DIVE #73921</span>
+      <span class="tag-tilt">WORK IN PROGRESS</span>
+      <span style="color:#6d6d69;">// issue no. 004 in the dive series</span>
+    </div>
+    <h1>GANG TOKYO</h1>
+    <p class="sub">A custom visual-novel / narrative-RPG engine where the engine is code and the <em>game</em> is JSON &mdash; built from scratch because Ren'Py fights you and Unity is a cannon for a fly.</p>
+    <div class="chiprow">
+      <span class="chip">STACK: .NET 8 + MonoGame (DesktopGL)</span>
+      <span class="chip">TIMELINE: Jun 2026 &rarr; present</span>
+      <span class="chip">ROLE: engine, content schema, everything</span>
+    </div>
+  </div>
+
+  <nav class="secnav">
+    <a href="#planning">01 PLANNING</a>
+    <a href="#development">02 DEVELOPMENT</a>
+    <a href="#features">03 FEATURES</a>
+    <a href="#lessons">04 LESSONS</a>
+    <a href="#future">05 FUTURE</a>
+  </nav>
+</header>
+
+<!-- 01 PLANNING -->
+<section id="planning" class="wrap">
+  <div class="sechead">
+    <span class="diamond"><b>01</b></span>
+    <h2>PLANNING</h2>
+    <span class="slash">/ the brainstorm &amp; the research</span>
+  </div>
+
+  <div class="grid2">
+    <div class="stack">
+      <div class="card speech">
+        <div class="mono-label" style="margin-bottom:10px;">THE ITCH</div>
+        <p>"Every VN tool makes you write the story <em>inside</em> the engine. I wanted the opposite: a tiny C# core I fully own, and a game that's just data files I can diff, edit, and regenerate."</p>
+        <span class="tail"></span>
+      </div>
+      <div class="card" style="padding:24px 32px;">
+        <div class="mono-label" style="margin-bottom:14px;">RESEARCH TRAIL</div>
+        <ul class="list-plain">
+          <li><b>&rarr;</b> Ren'Py teardown &mdash; great until you need a mechanic it doesn't have</li>
+          <li><b>&rarr;</b> Unity dialogue assets &mdash; editor lock-in, 3 packages deep before "hello"</li>
+          <li><b>&rarr;</b> Data-driven engine design &mdash; commands as data, interpreter as code</li>
+          <li><b>&rarr;</b> MonoGame DesktopGL &mdash; the boring, stable, cross-platform choice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stack-sm">
+      <div class="dump" style="transform:rotate(1.2deg);">
+        <h3>BRAIN DUMP #1</h3>
+        <p>The engine is code. The game is JSON. You only touch C# for a brand-new <em>kind</em> of command.</p>
+      </div>
+      <div class="dump" style="transform:rotate(-1.4deg);">
+        <h3>BRAIN DUMP #2</h3>
+        <p>Scenes, characters, items, activities, branching logic &mdash; all editable data files. Writers shouldn't need a compiler.</p>
+      </div>
+      <div class="inkcard" style="transform:rotate(0.8deg);">
+        <h3>CONSTRAINTS</h3>
+        <ul>
+          <li>.NET 8 SDK is the only prerequisite. No content pipeline.</li>
+          <li>Small, ownable codebase &mdash; readable in one sitting.</li>
+          <li>Combat ships as a hook first; card battles are Phase 2.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 DEVELOPMENT -->
+<section id="development" class="wrap">
+  <div class="sechead">
+    <span class="diamond"><b>02</b></span>
+    <h2>DEVELOPMENT</h2>
+    <span class="slash">/ the stack, the plumbing, the fights</span>
+  </div>
+
+  <div class="grid2eq">
+    <div class="card">
+      <div class="tablehead">THE STACK, LAYER BY LAYER</div>
+      <div>
+        <div class="trow"><b class="k">RENDER</b><b>MonoGame</b><span>DesktopGL window, draw loop, input. Cross-platform for free.</span></div>
+        <div class="trow"><b class="k">ENGINE</b><b>C# / .NET 8</b><span>Scene player, command interpreter, condition parser, state.</span></div>
+        <div class="trow"><b class="k">CONTENT</b><b>JSON files</b><span>Scenes, characters, items, activities, branching logic in <code>Content/</code>.</span></div>
+        <div class="trow"><b class="k">DEBUG</b><b>Console log</b><span>Colour-coded engine log runs beside the game window: transitions, commands, state changes, condition results.</span></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="terminal">
+        <div class="termbar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span style="margin-left:8px;">gang-tokyo/pipeline.txt</span>
+        </div>
+        <pre>
+scenes.json ────┐
+characters ─────┼─▶ [loader] ─▶ scene graph
+items/flags ────┘        │
+                         ▼
+              [command interpreter]
+  dialogue ── choices ── conditions ── stats
+                         │
+                         ▼
+        [MonoGame renderer] + [console log]</pre>
+      </div>
+      <div class="card decision">
+        <div class="head">
+          <span class="stamp" style="transform:rotate(-2deg);">DECISION!</span>
+          <b style="font-size:16px;">JSON over a custom scripting language</b>
+        </div>
+        <p>Almost wrote a DSL. Then remembered every dead engine that started with "first, I invented a language." Commands-as-data means the interpreter stays a switch statement, and content is diffable in git.</p>
+      </div>
+      <div class="card decision">
+        <div class="head">
+          <span class="stamp" style="transform:rotate(1.5deg);">DECISION!</span>
+          <b style="font-size:16px;">Ship combat as a hook, not a system</b>
+        </div>
+        <p>A working battle hook you resolve with W/L keeps the narrative loop testable end-to-end today. The full card-battle system waits for Phase 2 instead of blocking everything else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 FEATURES -->
+<section id="features" class="wrap">
+  <div class="sechead">
+    <span class="diamond"><b>03</b></span>
+    <h2>FEATURES</h2>
+    <span class="slash">/ what the engine covers today</span>
+  </div>
+
+  <div class="grid3">
+    <div class="card feat span2">
+      <div class="shot">Drop screenshot: scene playback + branching choice</div>
+      <div class="body">
+        <div class="title"><span class="name">SCENES &amp; BRANCHES</span><span class="id">feat/01</span></div>
+        <p>Scene playback with dialogue, branching choices, and a condition parser that supports full logic expressions &mdash; a choice can check any stat, flag, item, or relationship rank before it even appears.</p>
+      </div>
+    </div>
+    <div class="card feat">
+      <div class="shot">Drop screenshot: stats / relationship panel</div>
+      <div class="body">
+        <div class="title"><span class="name">STATS &amp; RANKS</span><span class="id">feat/02</span></div>
+        <p>Character relationships, ranks, stats, inventory, and flags &mdash; all mutated by scene commands, all persisted.</p>
+      </div>
+    </div>
+    <div class="card feat">
+      <div class="shot short">Drop screenshot: day/night activity select</div>
+      <div class="body">
+        <div class="title"><span class="name">DAY / NIGHT LOOP</span><span class="id">feat/03</span></div>
+        <p>Phase management and activity scheduling &mdash; the persona-style "what do you do tonight?" loop, defined entirely in data.</p>
+      </div>
+    </div>
+    <div class="card feat span2">
+      <div class="shot short">Drop screenshot: colour-coded engine log beside game window</div>
+      <div class="body">
+        <div class="title"><span class="name">SAVE / LOAD + LIVE ENGINE LOG</span><span class="id">feat/04</span></div>
+        <p>Save/load with a full dialogue log, plus a colour-coded console that narrates everything the engine does in real time &mdash; scene transitions, commands, state changes, condition results. Debugging a branch takes seconds, not print statements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LESSONS -->
+<section id="lessons" class="wrap">
+  <div class="sechead">
+    <span class="diamond"><b>04</b></span>
+    <h2>LESSONS LEARNED</h2>
+    <span class="slash">/ scars, itemized</span>
+  </div>
+
+  <div class="stack-sm">
+    <div class="card lesson">
+      <span class="num">#1</span>
+      <div>
+        <b class="t">Schema first, engine second.</b>
+        <p>The two "reformatted how scenes work" commits exist because I wrote the interpreter before deciding what a scene file looks like. Rewriting content hurts way more than rewriting code.</p>
+      </div>
+    </div>
+    <div class="card lesson">
+      <span class="num">#2</span>
+      <div>
+        <b class="t">A console log is a debugger you get for free.</b>
+        <p>Streaming every command and condition result to a colour-coded console turned "why did this branch fire?" from an hour of guessing into ten seconds of reading.</p>
+      </div>
+    </div>
+    <div class="lesson ink">
+      <span class="num">#3</span>
+      <div>
+        <b class="t">Engines are 20% features, 80% resisting features.</b>
+        <p>The card-battle system, settings screens, and sprite animation all begged to be built first. Cutting them to Phase 2 is the only reason a playable narrative loop exists at all.</p>
+      </div>
+      <span class="oof">OOF.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 FUTURE -->
+<section id="future" class="wrap">
+  <div class="sechead">
+    <span class="diamond"><b>05</b></span>
+    <h2>FUTURE</h2>
+    <span class="slash">/ the roadmap, loosely held</span>
+  </div>
+
+  <div class="grid2">
+    <div class="card roadmap">
+      <div class="roadhead mono-label"><span>PHASE 2 &mdash; IN FLIGHT</span><span>20% done</span></div>
+      <div class="bar"><div class="fill" style="width:20%;"></div></div>
+      <ul class="todo">
+        <li><span class="box done"></span><span class="strike">Combat hook wired into scenes (placeholder W/L battle)</span></li>
+        <li><span class="box"></span>Full card-battle system &mdash; the hook grows teeth</li>
+        <li><span class="box"></span>Settings + save/load UI screens (currently engine-side only)</li>
+        <li><span class="box"></span>Sprite animation for characters and scene transitions</li>
+      </ul>
+    </div>
+    <div class="wishlist">
+      <h3>PHASE 3 WISHLIST *</h3>
+      <ul>
+        <li>A tiny scene editor GUI that reads/writes the same JSON</li>
+        <li>Hot-reload content while the game is running</li>
+        <li>Actually finish writing the game the engine is for</li>
+      </ul>
+      <p class="fine">* contingent on Phase 2 not breaking me</p>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="inner">
+    <a href="https://www.avinashdashin.com">&larr; back to avinashdashin.com</a>
+    <span>proj-dive-73921 &middot; WORK IN PROGRESS &middot; access code redacted, obviously</span>
+  </div>
+</footer>
+
+</body>
+</html>
