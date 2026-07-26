@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>PROJ-DIVE #73921</title>
+<title>PROJ-DIVE #65308</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -95,6 +95,9 @@
   .feat p { margin: 6px 0 0; font-size: 15px; }
   .span2 { grid-column: span 2; }
 
+  .keys { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; font-family: 'Space Mono', monospace; font-size: 13px; }
+  .key { border: 2px solid #191919; background: #F8F8F6; box-shadow: 0 3px 0 #191919; padding: 4px 10px; font-weight: 700; }
+
   .lesson { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 24px 28px; align-items: start; }
   .lesson .num { font-family: 'Bangers', cursive; font-size: 64px; line-height: 1; text-shadow: 3px 3px 0 #c9c9c5; }
   .lesson b.t { font-size: 18px; }
@@ -150,16 +153,16 @@
   <div class="hero">
     <div class="halftone"></div>
     <div class="tagrow">
-      <span class="tag-solid">PROJ-DIVE #73921</span>
-      <span class="tag-tilt">WORK IN PROGRESS</span>
-      <span style="color:#6d6d69;">// issue no. 004 in the dive series</span>
+      <span class="tag-solid">PROJ-DIVE #65308</span>
+      <span class="tag-tilt">PROTOTYPE</span>
+      <span style="color:#6d6d69;">// issue no. 005 in the dive series</span>
     </div>
-    <h1>GANG TOKYO</h1>
-    <p class="sub">A custom visual-novel / narrative-RPG engine where the engine is code and the <em>game</em> is JSON &mdash; built from scratch because Ren'Py fights you and Unity is a cannon for a fly.</p>
+    <h1>SQUARE UP</h1>
+    <p class="sub">A beat-em-up roguelike prototype where everything is a square and the only thing that matters is how the punch <em>feels</em> &mdash; combo chains, special attacks, and rooms you can reset in one keypress.</p>
     <div class="chiprow">
-      <span class="chip">STACK: .NET 8 + MonoGame (DesktopGL)</span>
-      <span class="chip">TIMELINE: Jun 2026 &rarr; present</span>
-      <span class="chip">ROLE: engine, content schema, everything</span>
+      <span class="chip">STACK: Godot 4 + GDScript</span>
+      <span class="chip">TIMELINE: Mar &rarr; May 2026</span>
+      <span class="chip">ROLE: design, code, sound, square wrangler</span>
     </div>
   </div>
 
@@ -184,34 +187,34 @@
     <div class="stack">
       <div class="card speech">
         <div class="mono-label" style="margin-bottom:10px;">THE ITCH</div>
-        <p>"Every VN tool makes you write the story <em>inside</em> the engine. I wanted the opposite: a tiny C# core I fully own, and a game that's just data files I can diff, edit, and regenerate."</p>
+        <p>"Before building a whole roguelike, answer one question: can I make hitting a square with another square feel <em>good</em>? If the combat doesn't slap with placeholder art, no amount of sprites will save it."</p>
         <span class="tail"></span>
       </div>
       <div class="card" style="padding:24px 32px;">
         <div class="mono-label" style="margin-bottom:14px;">RESEARCH TRAIL</div>
         <ul class="list-plain">
-          <li><b>&rarr;</b> Ren'Py teardown &mdash; great until you need a mechanic it doesn't have</li>
-          <li><b>&rarr;</b> Unity dialogue assets &mdash; editor lock-in, 3 packages deep before "hello"</li>
-          <li><b>&rarr;</b> Data-driven engine design &mdash; commands as data, interpreter as code</li>
-          <li><b>&rarr;</b> MonoGame DesktopGL &mdash; the boring, stable, cross-platform choice</li>
+          <li><b>&rarr;</b> Beat-em-up feel studies &mdash; Streets of Rage hitstop, River City knockback</li>
+          <li><b>&rarr;</b> "Juice it or lose it" &mdash; screen shake, hit pause, sound layering</li>
+          <li><b>&rarr;</b> Roguelike room loops &mdash; why dying should restart you in 0.5s, not 5</li>
+          <li><b>&rarr;</b> Godot node patterns &mdash; scenes as prefabs, state machines in GDScript</li>
         </ul>
       </div>
     </div>
     <div class="stack-sm">
       <div class="dump" style="transform:rotate(1.2deg);">
         <h3>BRAIN DUMP #1</h3>
-        <p>The engine is code. The game is JSON. You only touch C# for a brand-new <em>kind</em> of command.</p>
+        <p>Combat feel FIRST. Everything else &mdash; art, story, meta-progression &mdash; is a placeholder square until the punch is right.</p>
       </div>
       <div class="dump" style="transform:rotate(-1.4deg);">
         <h3>BRAIN DUMP #2</h3>
-        <p>Scenes, characters, items, activities, branching logic &mdash; all editable data files. Writers shouldn't need a compiler.</p>
+        <p>One key (R) resets the room instantly. Iteration speed IS the design tool &mdash; tweak a value, R, punch, repeat.</p>
       </div>
       <div class="inkcard" style="transform:rotate(0.8deg);">
         <h3>CONSTRAINTS</h3>
         <ul>
-          <li>.NET 8 SDK is the only prerequisite. No content pipeline.</li>
-          <li>Small, ownable codebase &mdash; readable in one sitting.</li>
-          <li>Combat ships as a hook first; card battles are Phase 2.</li>
+          <li>Placeholder art only. Squares fight squares.</li>
+          <li>Four inputs total: arrows, Z, X, R.</li>
+          <li>GDScript only &mdash; no plugins, no C# escape hatch.</li>
         </ul>
       </div>
     </div>
@@ -230,10 +233,10 @@
     <div class="card">
       <div class="tablehead">THE STACK, LAYER BY LAYER</div>
       <div>
-        <div class="trow"><b class="k">RENDER</b><b>MonoGame</b><span>DesktopGL window, draw loop, input. Cross-platform for free.</span></div>
-        <div class="trow"><b class="k">ENGINE</b><b>C# / .NET 8</b><span>Scene player, command interpreter, condition parser, state.</span></div>
-        <div class="trow"><b class="k">CONTENT</b><b>JSON files</b><span>Scenes, characters, items, activities, branching logic in <code>Content/</code>.</span></div>
-        <div class="trow"><b class="k">DEBUG</b><b>Console log</b><span>Colour-coded engine log runs beside the game window: transitions, commands, state changes, condition results.</span></div>
+        <div class="trow"><b class="k">ENGINE</b><b>Godot 4</b><span>Scene tree, physics, input map. Free, tiny, opens in seconds.</span></div>
+        <div class="trow"><b class="k">LOGIC</b><b>GDScript</b><span>State machines for player &amp; enemies &mdash; idle, move, punch, special, hurt.</span></div>
+        <div class="trow"><b class="k">SCENES</b><b>Rooms + actors</b><span>Each room and actor is a composable scene; the room manager swaps and resets them.</span></div>
+        <div class="trow"><b class="k">AUDIO</b><b>Noise system</b><span>Layered sound_fx with pitch/volume variation so 100 punches don't sound like 1 punch, 100 times.</span></div>
       </div>
     </div>
 
@@ -241,18 +244,18 @@
       <div class="terminal">
         <div class="termbar">
           <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span style="margin-left:8px;">gang-tokyo/pipeline.txt</span>
+          <span style="margin-left:8px;">square-up/pipeline.txt</span>
         </div>
         <pre>
-scenes.json ────┐
-characters ─────┼─▶ [loader] ─▶ scene graph
-items/flags ────┘        │
-                         ▼
-              [command interpreter]
-  dialogue ── choices ── conditions ── stats
-                         │
-                         ▼
-        [MonoGame renderer] + [console log]</pre>
+arrow keys ──┐
+Z / X ───────┼─▶ [player state machine]
+             │            │
+             ▼            ▼
+      [combat resolver: hitboxes]
+    hitstop ── knockback ── noise sys
+                  │
+                  ▼
+     [room manager] ──(R)──▶ reset</pre>
       </div>
       <div class="terminal">
         <div class="termbar">
@@ -265,16 +268,16 @@ items/flags ────┘        │
       <div class="card decision">
         <div class="head">
           <span class="stamp" style="transform:rotate(-2deg);">DECISION!</span>
-          <b style="font-size:16px;">JSON over a custom scripting language</b>
+          <b style="font-size:16px;">Squares over sprites, on purpose</b>
         </div>
-        <p>Almost wrote a DSL. Then remembered every dead engine that started with "first, I invented a language." Commands-as-data means the interpreter stays a switch statement, and content is diffable in git.</p>
+        <p>If a grey rectangle bonking another grey rectangle feels satisfying, the mechanic is real. Art can only make good combat better &mdash; it can't make bad combat good.</p>
       </div>
       <div class="card decision">
         <div class="head">
           <span class="stamp" style="transform:rotate(1.5deg);">DECISION!</span>
-          <b style="font-size:16px;">Ship combat as a hook, not a system</b>
+          <b style="font-size:16px;">Vary the noise, not just the visuals</b>
         </div>
-        <p>A working battle hook you resolve with W/L keeps the narrative loop testable end-to-end today. The full card-battle system waits for Phase 2 instead of blocking everything else.</p>
+        <p>The "noise system" randomizes pitch and stacks impact layers per hit. Half of game feel turned out to live in the audio channel &mdash; the punch got 2x better without touching a single hitbox.</p>
       </div>
     </div>
   </div>
@@ -285,36 +288,39 @@ items/flags ────┘        │
   <div class="sechead">
     <span class="diamond"><b>03</b></span>
     <h2>FEATURES</h2>
-    <span class="slash">/ what the engine covers today</span>
+    <span class="slash">/ what the prototype proves</span>
   </div>
 
   <div class="grid3">
     <div class="card feat span2">
-      <div class="shot">Drop screenshot: scene playback + branching choice</div>
+      <div class="shot">Drop clip: combo punch chain with hitstop</div>
       <div class="body">
-        <div class="title"><span class="name">SCENES &amp; BRANCHES</span><span class="id">feat/01</span></div>
-        <p>Scene playback with dialogue, branching choices, and a condition parser that supports full logic expressions &mdash; a choice can check any stat, flag, item, or relationship rank before it even appears.</p>
+        <div class="title"><span class="name">COMBO PUNCH</span><span class="id">feat/01</span></div>
+        <p>Mash Z and the punches chain &mdash; each hit lands with hitstop, knockback, and a randomized impact sound. The whole prototype exists to make this one input feel right.</p>
+        <div class="keys"><span class="key">Z</span><span style="color:#6d6d69; align-self:center;">combo punch</span></div>
       </div>
     </div>
     <div class="card feat">
-      <div class="shot">Drop screenshot: stats / relationship panel</div>
+      <div class="shot">Drop clip: special attack clearing a crowd</div>
       <div class="body">
-        <div class="title"><span class="name">STATS &amp; RANKS</span><span class="id">feat/02</span></div>
-        <p>Character relationships, ranks, stats, inventory, and flags &mdash; all mutated by scene commands, all persisted.</p>
+        <div class="title"><span class="name">SPECIAL ATTACK</span><span class="id">feat/02</span></div>
+        <p>The big swing &mdash; a crowd-clearing special for when the squares surround you.</p>
+        <div class="keys"><span class="key">X</span><span style="color:#6d6d69; align-self:center;">special</span></div>
       </div>
     </div>
     <div class="card feat">
-      <div class="shot short">Drop screenshot: day/night activity select</div>
+      <div class="shot short">Drop clip: instant room reset</div>
       <div class="body">
-        <div class="title"><span class="name">DAY / NIGHT LOOP</span><span class="id">feat/03</span></div>
-        <p>Phase management and activity scheduling &mdash; the persona-style "what do you do tonight?" loop, defined entirely in data.</p>
+        <div class="title"><span class="name">ROOM RESET</span><span class="id">feat/03</span></div>
+        <p>One keypress rebuilds the room instantly &mdash; the roguelike loop in embryo, and the reason tuning combat took minutes instead of days.</p>
+        <div class="keys"><span class="key">R</span><span style="color:#6d6d69; align-self:center;">reset room</span></div>
       </div>
     </div>
     <div class="card feat span2">
-      <div class="shot short">Drop screenshot: colour-coded engine log beside game window</div>
+      <div class="shot short">Drop clip: same punch, five different sounds</div>
       <div class="body">
-        <div class="title"><span class="name">SAVE / LOAD + LIVE ENGINE LOG</span><span class="id">feat/04</span></div>
-        <p>Save/load with a full dialogue log, plus a colour-coded console that narrates everything the engine does in real time &mdash; scene transitions, commands, state changes, condition results. Debugging a branch takes seconds, not print statements.</p>
+        <div class="title"><span class="name">THE NOISE SYSTEM</span><span class="id">feat/04</span></div>
+        <p>Every impact pulls from layered sound_fx with pitch and volume variation, so repeated hits stay crunchy instead of turning into a metronome. Cheapest juice-per-line-of-code in the project.</p>
       </div>
     </div>
   </div>
@@ -332,22 +338,22 @@ items/flags ────┘        │
     <div class="card lesson">
       <span class="num">#1</span>
       <div>
-        <b class="t">Schema first, engine second.</b>
-        <p>The two "reformatted how scenes work" commits exist because I wrote the interpreter before deciding what a scene file looks like. Rewriting content hurts way more than rewriting code.</p>
+        <b class="t">Game feel is 30% hitbox, 70% everything around it.</b>
+        <p>The punch logic barely changed after week one. Hitstop frames, knockback curves, screen shake, and sound variation are where the "feel" actually came from.</p>
       </div>
     </div>
     <div class="card lesson">
       <span class="num">#2</span>
       <div>
-        <b class="t">A console log is a debugger you get for free.</b>
-        <p>Streaming every command and condition result to a colour-coded console turned "why did this branch fire?" from an hour of guessing into ten seconds of reading.</p>
+        <b class="t">State machines before you think you need them.</b>
+        <p>The first player script was a pile of ifs. Punching while getting hurt while moving broke everything. Rewriting as explicit states (idle / move / punch / special / hurt) killed a whole class of bugs at once.</p>
       </div>
     </div>
     <div class="lesson ink">
       <span class="num">#3</span>
       <div>
-        <b class="t">Engines are 20% features, 80% resisting features.</b>
-        <p>The card-battle system, settings screens, and sprite animation all begged to be built first. Cutting them to Phase 2 is the only reason a playable narrative loop exists at all.</p>
+        <b class="t">A prototype's job is to end.</b>
+        <p>25 commits in, the question was answered: yes, squares can slap. The temptation was to keep polishing forever &mdash; instead it goes on ice with its 4 open issues until it graduates into a real game.</p>
       </div>
       <span class="oof">OOF.</span>
     </div>
@@ -364,23 +370,24 @@ items/flags ────┘        │
 
   <div class="grid2">
     <div class="card roadmap">
-      <div class="roadhead mono-label"><span>PHASE 2 &mdash; IN FLIGHT</span><span>20% done</span></div>
-      <div class="bar"><div class="fill" style="width:20%;"></div></div>
+      <div class="roadhead mono-label"><span>PROTOTYPE &rarr; GAME</span><span>15% done</span></div>
+      <div class="bar"><div class="fill" style="width:15%;"></div></div>
       <ul class="todo">
-        <li><span class="box done"></span><span class="strike">Combat hook wired into scenes (placeholder W/L battle)</span></li>
-        <li><span class="box"></span>Full card-battle system &mdash; the hook grows teeth</li>
-        <li><span class="box"></span>Settings + save/load UI screens (currently engine-side only)</li>
-        <li><span class="box"></span>Sprite animation for characters and scene transitions</li>
+        <li><span class="box done"></span><span class="strike">Core combat loop: combo, special, reset, noise system</span></li>
+        <li><span class="box"></span>Enemy variety &mdash; squares with different jobs (rusher, blocker, thrower)</li>
+        <li><span class="box"></span>Room chains &mdash; string cleared rooms into an actual run</li>
+        <li><span class="box"></span>Real sprites over the placeholder squares (the squares earned it)</li>
       </ul>
     </div>
     <div class="wishlist">
-      <h3>PHASE 3 WISHLIST *</h3>
+      <h3>SOMEDAY WISHLIST *</h3>
       <ul>
-        <li>A tiny scene editor GUI that reads/writes the same JSON</li>
-        <li>Hot-reload content while the game is running</li>
-        <li>Actually finish writing the game the engine is for</li>
+        <li>Weapon pickups &mdash; a square, but you can throw it</li>
+        <li>Couch co-op &mdash; two squares, one screen</li>
+        <li>Controller support, because Z and X deserve real buttons</li>
+        <li>An actual name that isn't a pun (the pun is staying)</li>
       </ul>
-      <p class="fine">* contingent on Phase 2 not breaking me</p>
+      <p class="fine">* contingent on the prototype graduating</p>
     </div>
   </div>
 </section>
@@ -389,7 +396,7 @@ items/flags ────┘        │
 <footer>
   <div class="inner">
     <a href="https://www.avinashdashin.com">&larr; back to avinashdashin.com</a>
-    <span>proj-dive-73921 &middot; WORK IN PROGRESS &middot; access code redacted, obviously</span>
+    <span>proj-dive-65308 &middot; PROTOTYPE &middot; access code redacted, obviously</span>
   </div>
 </footer>
 
@@ -397,7 +404,7 @@ items/flags ────┘        │
 (async () => {
   const el = document.getElementById('latest-commit');
   try {
-    const r = await fetch('/api/repo-latest?repo=gang-tokyo');
+    const r = await fetch('/api/repo-latest?repo=square-up');
     if (!r.ok) throw new Error();
     const c = await r.json();
     const d = new Date(c.date);
