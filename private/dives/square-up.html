@@ -86,6 +86,21 @@
   .decision .head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
   .decision p { margin: 0; font-size: 15px; }
 
+  .explorer { margin-top: 24px; }
+  .exphead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 12px 20px; border-bottom: 3px solid #191919; background: #EDEDEA; }
+  .repname { font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; }
+  .branchpick { margin-left: auto; display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; }
+  .branchpick select { font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; border: 2px solid #191919; background: #F8F8F6; padding: 4px 8px; }
+  .expbody { display: grid; grid-template-columns: 280px 1fr; }
+  .tree { border-right: 3px solid #191919; overflow: auto; max-height: 520px; padding: 8px 0; font-family: 'Space Mono', monospace; font-size: 13px; }
+  .tree .frow { padding: 3px 12px; cursor: pointer; white-space: nowrap; }
+  .tree .frow:hover { background: #EDEDEA; }
+  .tree .frow.sel { background: #191919; color: #F8F8F6; }
+  .viewer { min-width: 0; }
+  .vhead { padding: 8px 16px; border-bottom: 2px dashed #c9c9c5; font-family: 'Space Mono', monospace; font-size: 12px; color: #6d6d69; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .viewer pre { margin: 0; padding: 16px 20px; font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.6; overflow: auto; max-height: 480px; }
+  @media (max-width: 860px) { .expbody { grid-template-columns: 1fr; } .tree { border-right: none; border-bottom: 3px solid #191919; max-height: 260px; } }
+
   .feat .shot { height: 300px; border-bottom: 3px solid #191919; display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(-45deg, #EDEDEA 0 14px, #F1F1EE 14px 28px); color: #8a8a86; font-family: 'Space Mono', monospace; font-size: 13px; text-align: center; padding: 0 16px; }
   .feat .shot.short { height: 240px; }
   .feat .body { padding: 20px 24px; }
@@ -281,6 +296,21 @@ Z / X ───────┼─▶ [player state machine]
       </div>
     </div>
   </div>
+
+  <div class="card explorer">
+    <div class="exphead">
+      <span class="mono-label">REPO EXPLORER</span>
+      <span class="repname">nsriv531/square-up</span>
+      <label class="branchpick">branch <select id="branch-sel"></select></label>
+    </div>
+    <div class="expbody">
+      <div class="tree" id="file-tree">connecting to the repo&hellip;</div>
+      <div class="viewer">
+        <div class="vhead" id="viewer-path">select a file</div>
+        <pre id="viewer-code">// pick a file from the tree — its contents load straight from the repo</pre>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 03 FEATURES -->
@@ -401,12 +431,19 @@ Z / X ───────┼─▶ [player state machine]
 </footer>
 
 <script>
+const REPO = 'square-up';
+
+async function j(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('http ' + r.status);
+  return r.json();
+}
+
+// live latest commit
 (async () => {
   const el = document.getElementById('latest-commit');
   try {
-    const r = await fetch('/api/repo-latest?repo=square-up');
-    if (!r.ok) throw new Error();
-    const c = await r.json();
+    const c = await j('/api/repo-latest?repo=' + REPO);
     const d = new Date(c.date);
     const days = Math.floor((Date.now() - d.getTime()) / 864e5);
     const rel = days <= 0 ? 'today' : days === 1 ? 'yesterday' : days + ' days ago';
@@ -415,6 +452,98 @@ Z / X ───────┼─▶ [player state machine]
   } catch {
     el.textContent = '$ git log -1 --oneline\ncould not reach the repo right now — refresh to retry';
   }
+})();
+
+// live repo explorer
+(() => {
+  const treeEl = document.getElementById('file-tree');
+  const sel = document.getElementById('branch-sel');
+  const headEl = document.getElementById('viewer-path');
+  const codeEl = document.getElementById('viewer-code');
+  let root = null, expanded = new Set(), selPath = null, ref = 'HEAD';
+
+  function build(entries) {
+    const r = { dirs: new Map(), files: [] };
+    for (const e of entries) {
+      const parts = e.path.split('/');
+      let node = r;
+      for (let i = 0; i < parts.length - 1; i++) {
+        if (!node.dirs.has(parts[i])) node.dirs.set(parts[i], { dirs: new Map(), files: [] });
+        node = node.dirs.get(parts[i]);
+      }
+      const name = parts[parts.length - 1];
+      if (e.type === 'tree') { if (!node.dirs.has(name)) node.dirs.set(name, { dirs: new Map(), files: [] }); }
+      else node.files.push({ name, path: e.path, size: e.size || 0 });
+    }
+    return r;
+  }
+
+  function render() {
+    treeEl.textContent = '';
+    const walk = (node, prefix, depth) => {
+      for (const dn of [...node.dirs.keys()].sort((a, b) => a.localeCompare(b))) {
+        const p = prefix ? prefix + '/' + dn : dn;
+        const open = expanded.has(p);
+        const row = document.createElement('div');
+        row.className = 'frow';
+        row.style.paddingLeft = (12 + depth * 16) + 'px';
+        row.textContent = (open ? '▾ ' : '▸ ') + dn + '/';
+        row.onclick = () => { if (open) expanded.delete(p); else expanded.add(p); render(); };
+        treeEl.appendChild(row);
+        if (open) walk(node.dirs.get(dn), p, depth + 1);
+      }
+      for (const f of node.files.sort((a, b) => a.name.localeCompare(b.name))) {
+        const row = document.createElement('div');
+        row.className = 'frow' + (selPath === f.path ? ' sel' : '');
+        row.style.paddingLeft = (12 + depth * 16 + 16) + 'px';
+        row.textContent = f.name;
+        row.onclick = () => openFile(f.path);
+        treeEl.appendChild(row);
+      }
+    };
+    walk(root, '', 0);
+  }
+
+  async function openFile(p) {
+    selPath = p; render();
+    headEl.textContent = p;
+    codeEl.textContent = 'loading…';
+    try {
+      const f = await j('/api/repo-browse?repo=' + REPO + '&action=file&ref=' + encodeURIComponent(ref) + '&path=' + encodeURIComponent(p));
+      if (f.tooBig) { codeEl.textContent = '// ' + Math.round(f.size / 1024) + ' KB — too big to preview here'; return; }
+      if (f.binary) { codeEl.textContent = '// binary file — no text preview'; return; }
+      headEl.textContent = p + ' · ' + (f.size / 1024).toFixed(1) + ' KB';
+      codeEl.textContent = f.content;
+    } catch { codeEl.textContent = '// could not load this file — refresh to retry'; }
+  }
+
+  async function loadTree() {
+    treeEl.textContent = 'loading tree…';
+    selPath = null; expanded = new Set();
+    headEl.textContent = 'select a file';
+    codeEl.textContent = '// pick a file from the tree — its contents load straight from the repo';
+    try {
+      const t = await j('/api/repo-browse?repo=' + REPO + '&action=tree&ref=' + encodeURIComponent(ref));
+      root = build(t.tree);
+      render();
+    } catch { treeEl.textContent = 'could not load the repo tree — refresh to retry'; }
+  }
+
+  (async () => {
+    try {
+      const b = await j('/api/repo-browse?repo=' + REPO + '&action=branches');
+      sel.textContent = '';
+      for (const name of b.branches) {
+        const o = document.createElement('option');
+        o.value = name; o.textContent = name;
+        sel.appendChild(o);
+      }
+      ref = b.default || b.branches[0] || 'HEAD';
+      sel.value = ref;
+      sel.onchange = () => { ref = sel.value; loadTree(); };
+      loadTree();
+    } catch { treeEl.textContent = 'could not reach the repo — refresh to retry'; }
+  })();
 })();
 </script>
 </body>
