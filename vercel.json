@@ -1,8 +1,17 @@
 {
   "rewrites": [
     {
+      "source": "/proj-dive-:code(\\d{5})",
+      "destination": "/api/proj-dive?code=:code"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/proj-dive.js": {
+      "includeFiles": "private/dives/**"
+    }
+  }
 }
