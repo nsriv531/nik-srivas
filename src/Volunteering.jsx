@@ -56,7 +56,7 @@ function Volunteering() {
                     )}
 
                     <div className="image-container mt-4 flex justify-center">
-                        <img src="https://www.camru.ca/_next/static/media/logo-01.4de46dc6.svg" alt="CAMRU" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                        <img src="https://www.camru.ca/_next/static/media/logo.3ipxwtusz86wn.svg" alt="CAMRU" className="w-full h-48 object-cover rounded-lg max-w-full" />
                     </div>
                 </div>
 
