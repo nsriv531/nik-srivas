@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function Project({ title, description, tags, link, projectimage, otherLinks = [] }) {
+function Project({ title, description, tags, link, projectimage, otherLinks = [], imageFit = "object-cover" }) {
     const [showLinks, setShowLinks] = useState(false);
 
     const toggleLinks = () => setShowLinks(!showLinks);
@@ -59,7 +59,7 @@ function Project({ title, description, tags, link, projectimage, otherLinks = []
                 <img
                     src={projectimage}
                     alt={`${title} preview`}
-                    className="w-full h-48 object-cover rounded-lg max-w-full"
+                    className={`w-full h-48 ${imageFit} rounded-lg max-w-full`}
                 />
             </div>
         </div>
