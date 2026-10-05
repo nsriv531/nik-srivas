@@ -92,6 +92,15 @@ function Projects() {
     <>
 
       <Project
+        title = "Bayline"
+        description = "Bayline is service department software for car dealerships. It tracks each vehicle from booking to a paid invoice, covering appointments, work orders, technician queues, multipoint inspections, parts stock and billing. It also has role-based access and a full audit trail. The live demo runs in the browser with seeded data."
+        tags={["C#", "ASP.NET Core", "EF Core", "SQL Server", "React", "Vercel"]}
+        link="https://bayline-steel.vercel.app/"
+        projectimage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+        otherLinks={[{ label: "GitHub", url: "https://github.com/nsriv531/Bayline" }]}
+      />
+
+      <Project
         title = "Attune"
         description = "Attune is a mobile focus session app built on the Cue → Focus → Reward → Reflection → Smart Suggestion loop. It features an avatar companion named Sage, distraction detection, flash cards, and AI-powered study cycle insights, along with Spotify integration for background playback during focus sessions. Built with a team of 4 using React Native (Expo) with a Convex backend."
         tags={["React Native", "Expo", "TypeScript", "Convex", "NativeWind", "Rive", "Spotify API"]}
