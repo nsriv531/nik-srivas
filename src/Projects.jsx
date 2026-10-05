@@ -93,11 +93,14 @@ function Projects() {
 
       <Project
         title = "Bayline"
-        description = "Bayline is service department software for car dealerships. It tracks each vehicle from booking to a paid invoice, covering appointments, work orders, technician queues, multipoint inspections, parts stock and billing. It also has role-based access and a full audit trail. The live demo runs in the browser with seeded data."
-        tags={["C#", "ASP.NET Core", "EF Core", "SQL Server", "React", "Vercel"]}
+        description = "Bayline is service department software for car dealerships. It tracks each vehicle from booking to a paid invoice, covering appointments, work orders, technician queues, multipoint inspections, parts stock and billing. It also has role-based access and a full audit trail. The live demo runs in the browser with seeded data. A Flutter edition rebuilds it as one codebase for web, Android and iOS, backed by a Laravel API on PostgreSQL and Redis, with an offline technician mode and QR scanning."
+        tags={["C#", "ASP.NET Core", "EF Core", "SQL Server", "React", "Flutter", "Dart", "Riverpod", "Laravel", "PHP", "PostgreSQL", "Redis", "Docker", "Vercel", "Render"]}
         link="https://bayline-steel.vercel.app/"
         projectimage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
-        otherLinks={[{ label: "GitHub", url: "https://github.com/nsriv531/Bayline" }]}
+        otherLinks={[
+          { label: "Flutter Edition", url: "https://bayline-flutter-edition.vercel.app/" },
+          { label: "GitHub", url: "https://github.com/nsriv531/Bayline" },
+        ]}
       />
 
       <Project
