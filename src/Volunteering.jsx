@@ -87,7 +87,7 @@ function Volunteering() {
                         <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
                             <a
                                 className="block text-blue-600 hover:text-blue-800 font-medium"
-                                href="https://www.acrobotics.ca"
+                                href="hhttps://www.albertarobotics.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
