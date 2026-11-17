@@ -3,7 +3,7 @@ import "./App.css";
 
 function Volunteering() {
     const [showLinks, setShowLinks] = useState({
-        acRobotics: false,
+        yellowJackets: false,
         mruGddc: false,
         camru: false,
     });
@@ -60,15 +60,15 @@ function Volunteering() {
                     </div>
                 </div>
 
-                {/* AC Robotics Section */}
+                {/* YellowJackets Section */}
                 <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
-                    <div onClick={() => toggleLinks('acRobotics')} className="cursor-pointer">
-                        <h2 className="text-2xl font-semibold mb-2">Director of Education for AC Robotics (March 2023 - May 2024)</h2>
+                    <div onClick={() => toggleLinks('yellowJackets')} className="cursor-pointer">
+                        <h2 className="text-2xl font-semibold mb-2">Lead Mentor - FRC Team 9449 YellowJackets</h2>
                         <p className="text-gray-700 mb-4">
-                            I'm a board member at AC Robotics, a non-profit organization focused on teaching youth and post-secondary students about robotics. I lead the education team, consisting of students, overseeing three FIRST Robotics teams under the 'The Hive' branch. Our team, Neo Robotics, reached the provincial championships in Red Deer in 2023, placing 20th out of 50 teams. I also help organize STEM challenges and competitions.
+                            The YellowJackets are a Calgary community FIRST Robotics Competition team, formerly part of AC Robotics, where I served as Lead Mentor, and now run by the Alberta Robotics Association. At the 2026 Idaho Regional, the team won the FIRST Impact Award, the highest honour at a FIRST event, and reached the semifinals, qualifying for the FIRST Championship in Houston. It was only the second time an Alberta team has earned an award at this level, and the first time an Alberta team has won the Impact Award at an event outside of Canada.
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
-                            {["Leadership", "Creativity", "Teaching", "Teamwork", "Engineering", "Project Management", "Java", "C++"].map((tag, index) => (
+                            {["Leadership", "Mentorship", "Teaching", "Teamwork", "Engineering", "Project Management", "Java"].map((tag, index) => (
                                 <span key={index} className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
                                     {tag}
                                 </span>
@@ -77,17 +77,17 @@ function Volunteering() {
                     </div>
 
                     <button
-                        onClick={() => toggleLinks('acRobotics')}
+                        onClick={() => toggleLinks('yellowJackets')}
                         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
                     >
-                        {showLinks.acRobotics ? "Hide Links" : "Show Links"}
+                        {showLinks.yellowJackets ? "Hide Links" : "Show Links"}
                     </button>
 
-                    {showLinks.acRobotics && (
+                    {showLinks.yellowJackets && (
                         <div className="space-y-2 mt-4 transition-all duration-500 ease-in-out transform opacity-100 scale-y-100 origin-top">
                             <a
                                 className="block text-blue-600 hover:text-blue-800 font-medium"
-                                href="hhttps://www.albertarobotics.com/"
+                                href="https://www.albertarobotics.com/post/9449-yellowjackets-robotics-team-wins-first-impact-award"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -97,7 +97,7 @@ function Volunteering() {
                     )}
 
                     <div className="image-container mt-4 flex justify-center">
-                        <img src="https://pbs.twimg.com/media/FmdDVAmaUAAtwjH.jpg" alt="AC Robotics" className="w-full h-48 object-cover rounded-lg max-w-full" />
+                        <img src="https://static.wixstatic.com/media/b2865e_711ae358202b4203890362c0e1a90ae0~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85/b2865e_711ae358202b4203890362c0e1a90ae0~mv2.jpg" alt="Team 9449 YellowJackets with the 2026 FIRST Impact Award at the Idaho Regional" className="w-full h-48 object-cover rounded-lg max-w-full" />
                     </div>
                 </div>
 
