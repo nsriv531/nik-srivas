@@ -18,7 +18,7 @@ function Landing() {
         Hi, I'm Nik!
       </h1>
       <h2 className="text-lg md:text-xl font-light text-gray-800">
-        I'm a Software + Data Developer, and a leader in STEM education.
+        I'm a Software Developer, and a leader in STEM education.
       </h2>
       {/* Conditional rendering of the Modal component */}
       {isModalOpen && <Modal onClose={toggleModal} />}
