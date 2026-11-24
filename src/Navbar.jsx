@@ -6,7 +6,7 @@ function Navbar() {
     <div className="Navbar bg-gradient-to-r from-lavender-pink to-light-cyan">
      <div className="Navbarlogo text-2xl font-semibold text-gray-800 leading-tight">
   <h4>Nik</h4>
-  <h4> Software + Data Developer</h4>
+  <h4> Software Developer</h4>
 </div>
 
       <div className="Navbarlinks text-gray-800">
